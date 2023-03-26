@@ -1,0 +1,87 @@
+@import "_Palette";
+@import "_Fonts";
+
+.page {
+    background: $darkgrey;
+    //box-shadow: rgba(0,0,0,0.5) 0 1em 3em;
+    background-size: cover;
+    box-shadow: rgba(0,0,0,0.8) 0 5em 15em 0;
+    margin: 0;
+    color: white;
+    display: grid;
+    grid-auto-flow: column; 
+
+
+    & .content {
+        display: grid;
+        height: 100%;
+        grid-template-rows: auto 1fr auto;
+        
+
+        & .header {
+            color: black;
+            background: linear-gradient(to right, $beige, $darkgrey 60%);
+            padding: 3px 8px;
+            font-family: $cursive;
+            font-size: 24px;
+            border-bottom: 1px solid $darkgrey;
+            box-shadow: 0 2px 4px 0 black;
+        }
+
+        & .drink {
+            background: linear-gradient(to right, $green, $darkgrey 60%);
+        }
+        & .drink-alc {
+            background: linear-gradient(to right, $turqouise, $darkgrey 60%);
+        }
+        & .cocktail {
+            background: linear-gradient(to right, $pink, $darkgrey 60%);
+        }
+        & .meal {
+            background: linear-gradient(to right, $lightred, $darkgrey 60%);
+        }
+        & .dessert {
+            background: linear-gradient(to right, $orange, $darkgrey 60%);
+        }
+
+        & .items {
+            padding: 10px;
+            display: grid;
+            grid-gap: 5px;
+            align-content: start;
+
+            & .spacer {
+                border-bottom: 1px solid $lightgrey
+            }
+
+            
+        }
+
+        & .footer {
+            display: grid;
+            justify-items: center;
+            border-top: 1px solid $lightgrey
+        }
+        
+    }
+}
+
+.drink {
+    background-image: url("./../img/drinks.jpg");
+}
+.drink-alc {
+    background-image: url("./../img/drinks-alc.jpg");
+}
+.cocktail {
+    background-image: url("./../img/cocktails.jpg");
+}
+.meal {
+    background-image: url("./../img/meals.jpg");
+}
+.dessert {
+    background-image: url("./../img/desserts.jpg");
+}
+.herb {
+    background-image: url("./../img/herbs.jpg");
+}
+

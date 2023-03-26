@@ -1,0 +1,45 @@
+@use "sass:map";
+
+@import "_Palette";
+
+.menuItem {
+    display: flex;
+    gap: 5px;
+    
+
+    & .column {
+        display: grid;
+        align-content: start;
+
+        & .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        & .image {
+            display: flex;
+            align-items: center;
+
+            & img{
+                width: 120px;
+            }
+        }
+    }
+
+
+
+    & .name {
+        font-size: $medium;
+        color: $red;
+    }
+
+    & .price {
+        color: $gold;
+    }
+
+    & .ingredients {
+        margin-top: 5px;
+        color: $beige;
+    }
+}
