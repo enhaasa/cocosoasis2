@@ -40,22 +40,26 @@ function StaffItem(props: Props) {
 
 
     return (
-        <div className="item">
+        <button className="item">
             <div className="image">
                 <img src={`https://cocosoasis.info/cdn/characters/${name.replace(" ", "")}.webp`}></img>
             </div>
             <div className="text">
                 <div className="name">{name}</div>
-                <div className="hiredSince">{formatDate(hiredDate)}</div>
+                {/*<div className="hiredSince">{formatDate(hiredDate)}</div>*/}
                 <div className="positions">
-                    {positions.map(position => (
+                    {/*positions.map(position => (
                         <div className="position">
                             {capitalizeFirstLetter(position)}
                         </div>
-                    ))}
+                    ))*/
+                    
+                    positions.map(p => capitalizeFirstLetter(p)).join(" & ")
+                    }
+                    
                 </div>
             </div>
-        </div>
+        </button>
     );
 }
 

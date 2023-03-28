@@ -1,4 +1,5 @@
 @import "./common/styles";
+@import "./common/fonts";
 
 section {
     padding: getPadding(standard);
@@ -86,7 +87,7 @@ section {
             text-align: center;
             line-height: 50px;
             font-style: normal;
-            font-family: 'Dancing Script', cursive;
+            font-family: getFont(cursive);
             font-size: 22px;
             font-weight: bold;
         }

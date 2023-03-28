@@ -5,6 +5,12 @@
 @import "./common/_themes";
 @import "./_section.scss";
 
+button {
+    all: unset;
+    & :hover {
+        cursor: pointer;
+    }
+}
 
 html {
     background: getColor(solids, dark);
@@ -27,27 +33,37 @@ main {
         & .item {
 
             & .image {
-
+                height: 350px;
+                display: grid;
+                align-items: end;
+                overflow-y: hidden;
+                
                 & img {
                     width: 100%;
-                    margin: 0;
-                    padding: 0;
+                }
+
+                & :hover {
+                    
+                    
                 }
             }
 
             & .text {
                 background: getColor(solids, dark);
                 padding: getPadding(small);
+                text-align: center;
+                box-shadow: getShadow(box, standard);
+                border: getBorder(double, white);
 
                 & .name {
                     color: white;
-                    font-size: 1.1em;
-                }
-                & .hiredSince {
-                    color: getColor(solids, light);
+                    font-size: getFontSize(header);
+                    font-family: getFont(cursive);
+                    text-shadow: getShadow(text, standard);
                 }
                 & .positions {
-                    color: lightgrey;
+                    
+                    color: getColor(solids, light);
                 }
             }
         }

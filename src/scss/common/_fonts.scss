@@ -1,0 +1,14 @@
+$fonts: (
+    cursive: 'Dancing Script'
+);
+$fontSizes: (
+    standard: 16px,
+    header: 26px,
+    title: 32px
+);
+@function getFont($font) {
+    @return map-get($fonts, $font);
+}
+@function getFontSize($fontSize) {
+    @return map-get($fontSizes, $fontSize);
+}

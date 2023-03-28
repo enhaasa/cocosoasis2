@@ -199,9 +199,16 @@ section:nth-child(even):last-child > .wrapper {
   text-align: center;
   line-height: 50px;
   font-style: normal;
-  font-family: "Dancing Script", cursive;
+  font-family: "Dancing Script";
   font-size: 22px;
   font-weight: bold;
+}
+
+button {
+  all: unset;
+}
+button :hover {
+  cursor: pointer;
 }
 
 html {
@@ -221,22 +228,28 @@ main {
   grid-gap: 10px;
   align-items: end;
 }
+.staff .collection .item .image {
+  height: 350px;
+  display: grid;
+  align-items: end;
+  overflow-y: hidden;
+}
 .staff .collection .item .image img {
   width: 100%;
-  margin: 0;
-  padding: 0;
 }
 .staff .collection .item .text {
   background: rgb(41, 41, 41);
   padding: 5px;
+  text-align: center;
+  box-shadow: 0 0 8px black;
+  border: 4px double white;
 }
 .staff .collection .item .text .name {
   color: white;
-  font-size: 1.1em;
-}
-.staff .collection .item .text .hiredSince {
-  color: rgb(196, 177, 166);
+  font-size: 26px;
+  font-family: "Dancing Script";
+  text-shadow: 0.1em 0.1em 0.2em black;
 }
 .staff .collection .item .text .positions {
-  color: lightgrey;
+  color: rgb(196, 177, 166);
 }/*# sourceMappingURL=main.css.map */
