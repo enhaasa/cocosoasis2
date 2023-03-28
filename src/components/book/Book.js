@@ -61,7 +61,6 @@ function Book() {
                 autoSize={true}
                 maxShadowOpacity={0.5}
                 showCover={true}
-                mobileScrollSupport={true}
                 ref={book}
                 >
 

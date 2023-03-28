@@ -1,0 +1,51 @@
+$colors: (
+    solids: (
+        dark: rgb(41, 41, 41),
+        light: rgb(196, 177, 166),
+        wine: rgb(134, 0, 0),
+    ),
+    gradients: (
+        gold: "radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%)"
+    )
+);
+@function getColor($category, $key) {
+    @return map-get(map-get($colors, $category), $key);
+}
+
+$paddings: (
+    small: 5px,
+    standard: 10px,
+    large: 20px
+);
+@function getPadding($key) {
+    @return map-get($paddings, $key);
+}
+
+$margins: (
+    standard: 20px
+);
+@function getMargin($key) {
+    @return map-get($margins, $key);
+}
+
+$shadows: (
+    box: (
+        standard: 0 0 8px black
+    ),
+    text: (
+        standard: 0.1em 0.1em 0.2em black
+    )
+);
+@function getShadow($category, $key) {
+    @return map-get(map-get($shadows, $category), $key);
+}
+
+$borders: (
+    double: 4px double,
+    solid: 1px solid
+);
+@function getBorder($key, $color) {
+    @return map-get($borders, $key) $color;
+}
+
+

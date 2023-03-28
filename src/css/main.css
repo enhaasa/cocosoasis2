@@ -117,4 +117,126 @@
 
 * {
   font-family: "Cabin", sans-serif;
+}
+
+section {
+  padding: 10px;
+}
+section .wrapper {
+  padding: 10px;
+}
+section:nth-child(odd) {
+  background: rgb(196, 177, 166);
+  color: rgb(41, 41, 41);
+}
+section:nth-child(odd) > .wrapper {
+  border-left: 4px double rgb(41, 41, 41);
+  border-right: 4px double rgb(41, 41, 41);
+}
+section:nth-child(odd):first-child > .wrapper {
+  border-top: 4px double rgb(41, 41, 41);
+}
+section:nth-child(odd):last-child > .wrapper {
+  border-bottom: 4px double rgb(41, 41, 41);
+}
+section:nth-child(even) {
+  background: rgb(41, 41, 41);
+  color: rgb(196, 177, 166);
+}
+section:nth-child(even) > .wrapper {
+  border-left: 4px double rgb(196, 177, 166);
+  border-right: 4px double rgb(196, 177, 166);
+}
+section:nth-child(even):first-child > .wrapper {
+  border-top: 4px double rgb(196, 177, 166);
+}
+section:nth-child(even):last-child > .wrapper {
+  border-bottom: 4px double rgb(196, 177, 166);
+}
+
+.h-divider {
+  margin: auto;
+  margin-top: -21px;
+  margin-bottom: 40px;
+  width: 80%;
+  position: relative;
+}
+.h-divider .shadow {
+  overflow: hidden;
+  height: 20px;
+}
+.h-divider .shadow:after {
+  content: "";
+  display: block;
+  margin: -25px auto 0;
+  width: 100%;
+  height: 25px;
+  border-radius: 125px/12px;
+  box-shadow: 0 0 8px black;
+}
+.h-divider .text {
+  width: 100px;
+  height: 45px;
+  padding: 10px;
+  position: absolute;
+  bottom: 100%;
+  margin-bottom: -33px;
+  left: 50%;
+  margin-left: -60px;
+  border-radius: 100%;
+  color: rgb(41, 41, 41);
+  box-shadow: 0 2px 4px black;
+  background: white;
+}
+.h-divider .text i {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  border-radius: 100%;
+  border: 1px dashed rgb(41, 41, 41);
+  text-align: center;
+  line-height: 50px;
+  font-style: normal;
+  font-family: "Dancing Script", cursive;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+html {
+  background: rgb(41, 41, 41);
+}
+
+main {
+  width: 1000px;
+  box-shadow: 0 0 8px black;
+  margin: 20px auto;
+}
+
+.staff .collection {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 10px;
+  align-items: end;
+}
+.staff .collection .item .image img {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.staff .collection .item .text {
+  background: rgb(41, 41, 41);
+  padding: 5px;
+}
+.staff .collection .item .text .name {
+  color: white;
+  font-size: 1.1em;
+}
+.staff .collection .item .text .hiredSince {
+  color: rgb(196, 177, 166);
+}
+.staff .collection .item .text .positions {
+  color: lightgrey;
 }/*# sourceMappingURL=main.css.map */

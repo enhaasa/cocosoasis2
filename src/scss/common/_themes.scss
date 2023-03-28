@@ -1,0 +1,29 @@
+@import "_styles"; 
+
+@mixin theme-light {
+    background: getColor(solids, light);
+    color: getColor(solids, dark);
+}
+
+@mixin theme-dark {
+    background: getColor(solids, dark);
+    color: getColor(solids, light);
+}
+
+
+
+@mixin section-light {
+    @include theme-light;
+    & > .wrapper {
+        border-left: getBorder(double, getColor(solids, dark));
+        border-right: getBorder(double, getColor(solids, dark));
+    }
+}
+
+@mixin section-dark {
+    @include theme-dark;
+    & > .wrapper {
+        border-left: getBorder(double, getColor(solids, light));
+        border-right: getBorder(double, getColor(solids, light));
+    }
+}
