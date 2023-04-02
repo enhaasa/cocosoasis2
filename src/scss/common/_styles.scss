@@ -5,7 +5,11 @@ $colors: (
         wine: rgb(134, 0, 0),
     ),
     gradients: (
-        gold: "radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%)"
+        gold: linear-gradient(to bottom right, #D1B464, #8A6E2F),
+        silver: linear-gradient(to bottom right, lightgrey, grey),
+        steel: linear-gradient(to bottom right,rgb(49, 49, 49), black),
+        wine: linear-gradient(to bottom right, rgb(194, 34, 34), rgb(107, 0, 0)),
+        grape: linear-gradient(to bottom right, rgb(146, 19, 146), rgb(53, 0, 53))
     )
 );
 @function getColor($category, $key) {
@@ -22,15 +26,25 @@ $paddings: (
 }
 
 $margins: (
-    standard: 20px
+    standard: 10px,
+    large: 20px
 );
 @function getMargin($key) {
     @return map-get($margins, $key);
 }
 
+$border-radiuses: (
+    small: 15px,
+    standard: 25px,
+);
+@function getRadius($key) {
+    @return map-get($border-radiuses, $key);
+}
+
 $shadows: (
     box: (
-        standard: 0 0 8px black
+        standard: 0 0 8px black,
+        exaggerated: 0 4px 8px 0 black,
     ),
     text: (
         standard: 0.1em 0.1em 0.2em black
@@ -46,6 +60,13 @@ $borders: (
 );
 @function getBorder($key, $color) {
     @return map-get($borders, $key) $color;
+}
+
+$transitions: (
+    standard: ease all 200ms
+);
+@function getTransition($key) {
+    @return map-get($transitions, $key);
 }
 
 

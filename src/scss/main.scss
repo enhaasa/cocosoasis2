@@ -2,8 +2,10 @@
 @import "./../components/staff/scss/Staff";
 
 @import "./common/_styles"; 
+@import "./common/_fonts"; 
 @import "./common/_themes";
-@import "./_section.scss";
+@import "./_section";
+@import "./modal";
 
 button {
     all: unset;
@@ -13,7 +15,9 @@ button {
 }
 
 html {
-    background: getColor(solids, dark);
+    background-image: url("https://cocosoasis.info/cdn/background/background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 main {
@@ -22,50 +26,68 @@ main {
     margin: getMargin(standard) auto;
 }
 
-.staff {
-    & .collection {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: minmax(100px, auto);
-        grid-gap: 10px;
-        align-items: end;
+button, select {
+    &:hover {
+        filter: brightness(1.2) !important;
+    }
+}
+
+.staffModal {
+    width: 900px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
     
-        & .item {
 
-            & .image {
-                height: 350px;
-                display: grid;
-                align-items: end;
-                overflow-y: hidden;
-                
-                & img {
-                    width: 100%;
-                }
+    & .image {
+        background: getColor(gradients, silver);
+        display: flex;
+        justify-content: center;
+        border-right: getBorder(solid, black);
+        z-index: 101;
+        background-image: url("https://cocosoasis.info/cdn/background/background.webp");
+        overflow-y: hidden;
+        padding-top: getPadding(standard);
 
-                & :hover {
-                    
-                    
-                }
-            }
+       & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+       }
+    }
 
-            & .text {
-                background: getColor(solids, dark);
-                padding: getPadding(small);
-                text-align: center;
-                box-shadow: getShadow(box, standard);
-                border: getBorder(double, white);
+    & .info {
+        background: getColor(gradients, steel);
+        color: white;
+        text-align: center;
+        padding: getPadding(large);
+        display: grid;
+        grid-template-rows: auto auto 1fr auto;
+        box-shadow: inset 2px 0 8px 0 black;
 
-                & .name {
-                    color: white;
-                    font-size: getFontSize(header);
-                    font-family: getFont(cursive);
-                    text-shadow: getShadow(text, standard);
-                }
-                & .positions {
-                    
-                    color: getColor(solids, light);
-                }
+        & .header {
+            color: white;
+            font-size: getFontSize(title);
+            font-family: getFont(cursive);
+            text-shadow: getShadow(text, standard);
+        }
+
+        & .positions {
+            color: getColor(solids, light);
+        }
+
+        & .bio {
+            display: grid;
+            align-content: center;
+            
+            p {
+                margin: 0 0 1em 0;
             }
         }
+
+        & .hiredSince {
+            color: getColor(solids, light);
+        }
     }
-} 
+
+}

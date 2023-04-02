@@ -1,65 +1,47 @@
 import { StaffItemType } from "../../../commonTypes";
+import { capitalizeWords } from "../../../commonFunctions";
+import StaffModal from './../components/_StaffModal';
+import Modal from './../../common/Modal';
+import { useState } from "react";
+
 
 type Props = {
     item: StaffItemType;
-}
-
-function formatDate(dateStr: string): string {
-    const [day, month, year] = dateStr.split('.').map((str) => parseInt(str, 10));
-  
-    const now = new Date();
-    const then = new Date(year, month - 1, day);
-  
-    const diffTime = now.getTime() - then.getTime();
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  
-    if (diffDays >= 30) {
-        const months = Math.floor(diffDays / 30);
-        return `${months} ${months === 1 ? 'month' : 'months'}`;
-    } else if (diffDays >= 7) {
-        const weeks = Math.floor(diffDays / 7);
-        return `${weeks} ${weeks === 1 ? 'week' : 'weeks'}`;
-    } else {
-        return `${diffDays} ${diffDays === 1 ? 'day' : 'days'}`;
-    }
-}
-
-function capitalizeFirstLetter(string: string): string {
-    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 function StaffItem(props: Props) {
     const {
         name,
         positions,
-        admin,
-        isActive,
-        bio,
-        hiredDate,
     } = props.item;
 
 
+    const [ modal, setModal ] = useState<StaffItemType | null>(null);
+
+    function handleModalContent(content: StaffItemType | null):void {
+        setModal(content);
+    }
+
     return (
-        <button className="item">
-            <div className="image">
-                <img src={`https://cocosoasis.info/cdn/characters/${name.replace(" ", "")}.webp`}></img>
-            </div>
-            <div className="text">
-                <div className="name">{name}</div>
-                {/*<div className="hiredSince">{formatDate(hiredDate)}</div>*/}
-                <div className="positions">
-                    {/*positions.map(position => (
-                        <div className="position">
-                            {capitalizeFirstLetter(position)}
-                        </div>
-                    ))*/
-                    
-                    positions.map(p => capitalizeFirstLetter(p)).join(" & ")
-                    }
-                    
+        <>
+            {modal && 
+                <Modal handleClose={() => {handleModalContent(null)}}>
+                    <StaffModal item={props.item} handleClose={() => {handleModalContent(null)}}/>
+                </Modal>
+            }
+
+            <button className="item" onClick={() => {handleModalContent(props.item)}}>
+                <div className="image">
+                    <img src={`https://enhasa.dev/cocosoasis/cdn/characters/${name.replace(" ", "")}.webp`}></img>
                 </div>
-            </div>
-        </button>
+                <div className="text">
+                    <div className="name">{name}</div>
+                    <div className="positions">
+                        {positions.map(p => capitalizeWords(p)).join(" & ")}
+                    </div>
+                </div>
+            </button>
+        </>
     );
 }
 

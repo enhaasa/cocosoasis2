@@ -24,7 +24,7 @@ const format = {
                 {keyword: "luxe", replacement:"Luxe"}
             ]
 
-            let ruleIndex = null;
+            let ruleIndex:number | null = null;
             rules.forEach((rule, index) => {
                 if (rule.keyword === typeText) {
                     ruleIndex = index;
@@ -49,10 +49,29 @@ const format = {
         })
     },
     staff: function(list: any[]): StaffItemType[] {
+
+        function adjustFemalePosition(position:string, gender:string):string {
+            
+            if(gender === "male") return position;
+
+            const rules = [
+                {keyword: "waiter", replacement: "waitress"},
+            ]
+
+            let ruleIndex:number | null = null;
+            rules.forEach((rule, index) => {
+                if (rule.keyword === position) {
+                    ruleIndex = index;
+                }
+            })
+
+            return ruleIndex === null ? position : rules[ruleIndex].replacement;
+        }
+
         return (list.map(item => (
             {
                 ...item,
-                positions: item.positions.split(","),
+                positions: item.positions.split(",").map((position: string) => adjustFemalePosition(position, item.gender)),
                 admin: stringToBoolean(item.admin),
                 isActive: stringToBoolean(item.isActive)
             }

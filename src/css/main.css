@@ -119,6 +119,49 @@
   font-family: "Cabin", sans-serif;
 }
 
+.staff .collection {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 20px;
+  align-items: end;
+}
+.staff .collection .item {
+  background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
+  border-radius: 15px;
+  box-shadow: 0 0 8px black;
+  border: 1px solid black;
+  transition: ease all 200ms;
+}
+.staff .collection .item:hover {
+  transform: scale(1.02);
+}
+.staff .collection .item .image {
+  height: 320px;
+  display: grid;
+  align-items: end;
+  overflow-y: hidden;
+}
+.staff .collection .item .image img {
+  width: 100%;
+}
+.staff .collection .item .text {
+  background: linear-gradient(to bottom right, #D1B464, #8A6E2F);
+  padding: 5px;
+  text-align: center;
+  box-shadow: 0 0 8px black;
+  border-radius: 0 0 15px 15px;
+  border-top: 1px solid black;
+}
+.staff .collection .item .text .name {
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+}
+.staff .collection .item .text .positions {
+  color: rgb(41, 41, 41);
+}
+
 section {
   padding: 10px;
 }
@@ -204,6 +247,61 @@ section:nth-child(even):last-child > .wrapper {
   font-weight: bold;
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  z-index: 99;
+}
+.modal .background {
+  position: inherit;
+  left: inherit;
+  top: inherit;
+  width: 100vw;
+  height: 100vw;
+  background: rgba(0, 0, 0, 0.6);
+  display: grid;
+  place-content: center;
+}
+.modal .content {
+  box-shadow: 0 4px 8px 0 black;
+  border: 4px double rgb(196, 177, 166);
+  z-index: 100;
+}
+.modal .content .titleBar {
+  color: white;
+  background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  padding: 3px 3px 0 3px;
+}
+.modal .content .titleBar .closeButton {
+  box-shadow: 0 0 8px black;
+}
+.modal .content .divider {
+  margin: 8px 0;
+  position: relative;
+  border-bottom: 1px solid grey;
+}
+.modal .content .divider::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  box-shadow: inset 0 0 8px black;
+}
+.modal .content .divider::after {
+  border-bottom: 1px solid rgb(41, 41, 41);
+}
+
 button {
   all: unset;
 }
@@ -212,44 +310,68 @@ button :hover {
 }
 
 html {
-  background: rgb(41, 41, 41);
+  background-image: url("https://cocosoasis.info/cdn/background/background.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 main {
   width: 1000px;
   box-shadow: 0 0 8px black;
-  margin: 20px auto;
+  margin: 10px auto;
 }
 
-.staff .collection {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(100px, auto);
-  grid-gap: 10px;
-  align-items: end;
+button:hover, select:hover {
+  filter: brightness(1.2) !important;
 }
-.staff .collection .item .image {
-  height: 350px;
+
+.staffModal {
+  width: 900px;
+  height: 500px;
   display: grid;
-  align-items: end;
+  grid-template-columns: 2fr 3fr;
+}
+.staffModal .image {
+  background: linear-gradient(to bottom right, lightgrey, grey);
+  display: flex;
+  justify-content: center;
+  border-right: 1px solid black;
+  z-index: 101;
+  background-image: url("https://cocosoasis.info/cdn/background/background.webp");
   overflow-y: hidden;
+  padding-top: 10px;
 }
-.staff .collection .item .image img {
+.staffModal .image img {
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-.staff .collection .item .text {
-  background: rgb(41, 41, 41);
-  padding: 5px;
-  text-align: center;
-  box-shadow: 0 0 8px black;
-  border: 4px double white;
-}
-.staff .collection .item .text .name {
+.staffModal .info {
+  background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
   color: white;
-  font-size: 26px;
+  text-align: center;
+  padding: 20px;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  box-shadow: inset 2px 0 8px 0 black;
+}
+.staffModal .info .header {
+  color: white;
+  font-size: 42px;
   font-family: "Dancing Script";
   text-shadow: 0.1em 0.1em 0.2em black;
 }
-.staff .collection .item .text .positions {
+.staffModal .info .positions {
+  color: rgb(196, 177, 166);
+}
+.staffModal .info .bio {
+  display: grid;
+  align-content: center;
+}
+.staffModal .info .bio p {
+  margin: 0 0 1em 0;
+}
+.staffModal .info .hiredSince {
   color: rgb(196, 177, 166);
 }/*# sourceMappingURL=main.css.map */

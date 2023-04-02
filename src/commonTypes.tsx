@@ -25,6 +25,7 @@ export type StaffItemType = {
     isActive: boolean;
     bio: string;
     hiredDate: string;
+    gender: string;
 }
 
 

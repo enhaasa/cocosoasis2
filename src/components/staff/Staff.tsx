@@ -12,15 +12,17 @@ function Staff() {
     useEffect(() => {
         db.get("getStaff").then(data => {
             setStaffs(format.staff(data));
-            console.log(format.staff(data));
         })
     }, []);
 
     return (
         <>
+
             <div className="header">
                 <h1>Staff</h1>
             </div>
+
+            
 
             <div className="collection">
                 {staffs.map(staff => (staff.isActive && <StaffItem item={staff}/>))}

@@ -1,0 +1,55 @@
+@import "./../../../scss/common/_styles";
+@import "./../../../scss/common/_themes";
+@import "./../../../scss/common/_fonts";
+
+.staff {
+    & .collection {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        grid-gap: getMargin(large);
+        align-items: end;
+    
+        & .item {
+            background: getColor(gradients, steel);
+            border-radius: getRadius(small);
+            box-shadow: getShadow(box, standard);
+            border: getBorder(solid, black);
+            transition: getTransition(standard);
+
+            &:hover {
+                transform: scale(1.02);
+            }
+
+            & .image {
+                height: 320px;
+                display: grid;
+                align-items: end;
+                overflow-y: hidden;
+                
+                & img {
+                    width: 100%;
+                }
+            }
+
+            & .text {
+                background: getColor(gradients, gold);
+                padding: getPadding(small);
+                text-align: center;
+                box-shadow: getShadow(box, standard);
+                border-radius: 0 0 getRadius(small) getRadius(small);
+                border-top: getBorder(solid, black);
+
+                & .name {
+                    color: black;
+                    font-size: getFontSize(large);
+                    font-family: getFont(standard);
+                    font-weight: bold;
+                }
+                & .positions {
+                    color: getColor(solids, dark);
+                }
+            }
+        }
+    }
+} 
