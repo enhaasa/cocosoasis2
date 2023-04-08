@@ -5,6 +5,9 @@ import { MenuTypeType } from '../../commonTypes';
 import MenuItem from './components/_MenuItem';
 import SelectNav from '../common/SelectNav/SelectNav';
 
+import decor1Left from '../../icons/decor1-gold-left.png';
+import decor1Right from '../../icons/decor1-gold-right.png';
+
 function Menu() {
     
     const [ menu, setMenu ] = useState<MenuTypeType[]>([]);
@@ -44,6 +47,7 @@ function Menu() {
     return (
         <>
             <div className="sectionSelection">
+                <img className="decoration" src={decor1Left} />
                 <SelectNav 
                     options={sections.map((section, index) => (
                         {
@@ -54,6 +58,7 @@ function Menu() {
                     ))}
                     activeId={selectedSection}
                 />
+                <img className="decoration" src={decor1Right} />
             </div>
             <div className="menuList">
                 {menu.map(type => (

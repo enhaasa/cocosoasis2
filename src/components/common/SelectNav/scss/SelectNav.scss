@@ -3,6 +3,8 @@
 @import "../../../../scss/common/_themes";
 
 .selectNav {
+    box-shadow: getShadow(box, standard);
+    display: flex;
 
     & .option {
 

@@ -1,2 +1,55 @@
 @import "../../../scss/common/_styles"; 
 @import "../../../scss/common/_fonts"; 
+@import "../../../scss/common/_themes"; 
+
+
+.menuItem {
+    display: flex;
+    margin: 0;
+
+    & .column {
+        display: grid;
+        align-content: start;
+
+        & .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        & .image {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+
+            & img{
+                width: 120px;
+            }
+        }
+    }
+
+
+
+    & .name {
+        font-size: getFontSize(large);
+        font-family: getFont(standard);
+        color: white;
+        text-shadow: getShadow(text, standard);
+    }
+
+    & .description {
+        text-shadow: getShadow(text, standard);
+    }
+
+    & .price {
+        color: getColor(solids, gold);
+        text-shadow: getShadow(text, standard);
+    }
+
+    & .ingredients {
+        margin-top: 5px;
+        color: grey;
+        
+    }
+    
+}

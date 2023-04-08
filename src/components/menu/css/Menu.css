@@ -1,2 +1,86 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");/*# sourceMappingURL=Menu.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+.menuItem {
+  display: flex;
+  margin: 0;
+}
+.menuItem .column {
+  display: grid;
+  align-content: start;
+}
+.menuItem .column .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menuItem .column .image {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.menuItem .column .image img {
+  width: 120px;
+}
+.menuItem .name {
+  font-size: 18px;
+  font-family: "Cabin";
+  color: white;
+  text-shadow: 0.1em 0.1em 0.2em black;
+}
+.menuItem .description {
+  text-shadow: 0.1em 0.1em 0.2em black;
+}
+.menuItem .price {
+  color: #cead54;
+  text-shadow: 0.1em 0.1em 0.2em black;
+}
+.menuItem .ingredients {
+  margin-top: 5px;
+  color: grey;
+}
+
+.menu .divider {
+  margin: 8px 0;
+  position: relative;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.8);
+  margin: 4px 0 2px 0;
+}
+.menu .divider::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  box-shadow: inset 0 0 8px black;
+}
+.menu .divider::after {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.menu .header {
+  padding: 10px 0;
+  font-size: 42px;
+  font-family: "Dancing Script";
+  color: white;
+  text-align: center;
+  text-shadow: 0.1em 0.1em 0.2em black;
+}
+.menu .menuList {
+  padding: 10px;
+}
+.menu .menuList .category {
+  display: grid;
+}
+.menu .menuList .category .items {
+  display: grid;
+}
+.menu .menuList .category .items.single {
+  grid-gap: 15px;
+  grid-template-columns: 1fr;
+}
+.menu .menuList .category .items.double {
+  grid-gap: 10px 20px;
+  grid-template-columns: 1fr 1fr;
+}/*# sourceMappingURL=Menu.css.map */

@@ -35,119 +35,52 @@ main {
 button, select {
     &:hover {
         filter: brightness(1.2) !important;
+        cursor: pointer;
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.menu {
-    & .divider {
-        @include divider-dark;
-        margin: 4px 0 2px 0;
-    }
-
-        & .header {
-            padding: getPadding(standard) 0;
-            font-size: getFontSize(title);
-            font-family: getFont(cursive);
-            color: white;
-            text-align:center;
-            text-shadow: getShadow(text, standard);
-        }
-
-        & .menuList {
-            padding: getPadding(standard);
-
-            & .category {
-                display: grid;
-
-
-                & .items {
-                    display: grid;
-                    
-                    &.single {
-                        grid-gap: 15px;
-                        grid-template-columns: 1fr;
-                    }
-
-                    &.double {
-                        grid-gap: getMargin(standard) getMargin(large);
-                        grid-template-columns: 1fr 1fr;
-                    }
-                }
-            }
-        }
-    
-}
-
-
-.menuItem {
+.sectionSelection {
     display: flex;
-    margin: 0;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 
-    & .column {
-        display: grid;
-        align-content: start;
+    & .decoration {
+        height: 50px;
+    }
+}
 
-        & .row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.selectNavWrapper {
+    display: flex;
 
-        & .image {
-            display: flex;
-            align-items: center;
-            margin-right: 10px;
+    & .selectNav {
+        box-shadow: getShadow(box, standard);
+        border-radius: 25px;
+    
+        & .option {
+            padding: getPadding(standard) getPadding(large);
+            font-size: getFontSize(larger);
 
-            & img{
-                width: 120px;
+            &:first-child {
+                border-radius: 25px 0 0 25px;
+            }
+            &:last-child {
+                border-radius: 0 25px 25px 0;
+            }
+            
+    
+            &.active {
+                background: getColor(gradients, gold);
+                color: black;
+                box-shadow: getShadow(box, standard);
+            }
+
+            &.inactive {
+
+                box-shadow: inset getShadow(box, standard)
             }
         }
     }
-
-
-
-    & .name {
-        font-size: getFontSize(large);
-        font-family: getFont(standard);
-        color: white;
-        text-shadow: getShadow(text, standard);
-    }
-
-    & .description {
-        text-shadow: getShadow(text, standard);
-    }
-
-    & .price {
-        color: getColor(solids, gold);
-        text-shadow: getShadow(text, standard);
-    }
-
-    & .ingredients {
-        margin-top: 5px;
-        color: grey;
-        
-    }
-    
 }
+
+

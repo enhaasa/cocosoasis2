@@ -1,1 +1,44 @@
 @import "_MenuItem";
+@import "../../../scss/common/_styles"; 
+@import "../../../scss/common/_fonts"; 
+@import "../../../scss/common/_themes"; 
+
+.menu {
+    & .divider {
+        @include divider-dark;
+        margin: 4px 0 2px 0;
+    }
+
+        & .header {
+            padding: getPadding(standard) 0;
+            font-size: getFontSize(title);
+            font-family: getFont(cursive);
+            color: white;
+            text-align:center;
+            text-shadow: getShadow(text, standard);
+        }
+
+        & .menuList {
+            padding: getPadding(standard);
+
+            & .category {
+                display: grid;
+
+
+                & .items {
+                    display: grid;
+                    
+                    &.single {
+                        grid-gap: 15px;
+                        grid-template-columns: 1fr;
+                    }
+
+                    &.double {
+                        grid-gap: getMargin(standard) getMargin(large);
+                        grid-template-columns: 1fr 1fr;
+                    }
+                }
+            }
+        }
+    
+}

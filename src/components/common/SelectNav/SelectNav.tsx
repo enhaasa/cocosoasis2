@@ -13,15 +13,17 @@ function SelectNav(props: Props) {
     const { options, activeId } = props;
 
     return(
-        <nav className="selectNav">
-            {options.map((option, index) => (
-                <button 
-                    className={`option ${index === activeId && "active"}`} 
-                    key={`${option.title}${option.id}`}
-                    onClick={() => {option.callback(option.id)}}>{option.title}
-                </button>
-            ))}
-        </nav>
+        <div className="selectNavWrapper">
+            <nav className="selectNav">
+                {options.map((option, index) => (
+                    <button 
+                        className={`option ${index === activeId ? "active" : "inactive"}`} 
+                        key={`${option.title}${option.id}`}
+                        onClick={() => {option.callback(option.id)}}>{option.title}
+                    </button>
+                ))}
+            </nav>
+        </div>
     )
 }
 
