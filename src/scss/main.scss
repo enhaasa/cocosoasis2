@@ -15,12 +15,6 @@ button {
     }
 }
 
-html {
-    background-image: url("https://cocosoasis.info/cdn/background/background.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 main {
     width: 1000px; 
     box-shadow: getShadow(box, standard);
@@ -39,6 +33,18 @@ button, select {
     }
 }
 
+.background {
+    background-image: url('./../images/background.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
 .sectionSelection {
     display: flex;
     align-items: flex-start;
@@ -53,58 +59,4 @@ button, select {
     & .decoration {
         height: 80px;
     }
-}
-
-.menu {
-    & .divider {
-        @include divider-dark;
-        margin: 4px 0 2px 0;
-    }
-
-    & .header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
-        padding: getPadding(standard) 0;
-        font-size: getFontSize(title);
-        font-family: getFont(cursive);
-        color: white;
-        text-align:center;
-        text-shadow: getShadow(text, standard);
-
-        & .decoration {
-            height: 20px;
-        }
-    }
-
-    & .menuList {
-        padding: getPadding(standard);
-
-        & .category {
-            display: grid;
-            margin-bottom: getMargin(larger);
-
-            & .header {
-                & .icon {
-                    height: 50px;
-                }
-            }
-
-            & .items {
-                display: grid;
-                
-                &.single {
-                    grid-gap: 15px;
-                    grid-template-columns: 1fr;
-                }
-
-                &.double {
-                    grid-gap: getMargin(standard) getMargin(large);
-                    grid-template-columns: 1fr 1fr;
-                }
-            }
-        }
-    }
-    
 }

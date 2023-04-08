@@ -29,8 +29,9 @@
             }
 
             &.inactive {
-
-                box-shadow: inset getShadow(box, standard)
+                //background: getColor(solids, dark);
+                box-shadow: inset getShadow(box, standard);
+                color: grey;
             }
         }
     }

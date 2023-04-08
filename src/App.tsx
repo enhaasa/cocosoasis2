@@ -34,15 +34,20 @@ function App() {
   ];
 
   return (
-    <main>
-      {sections.map(section => (
-        <Section 
-          title={section.title} 
-          id={section.id}
-          content={section.content}
-        />
-      ))}
-    </main>
+    <>
+      <main>
+        {sections.map(section => (
+          <Section 
+            title={section.title} 
+            id={section.id}
+            content={section.content}
+          />
+        ))}
+      </main>
+      <div className="background">
+        
+      </div>
+    </>
   );
 }
 

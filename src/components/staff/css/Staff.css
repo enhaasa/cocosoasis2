@@ -7,20 +7,22 @@
   grid-template-columns: 2fr 3fr;
 }
 .staffModal .image {
-  background: linear-gradient(to bottom right, lightgrey, grey);
-  display: flex;
+  display: grid;
   justify-content: center;
+  align-content: end;
   border-right: 1px solid black;
   z-index: 101;
-  background-image: url("https://cocosoasis.info/cdn/background/background.webp");
   overflow-y: hidden;
   padding-top: 10px;
+  background-image: url("./../icons/oasis-palm-shade.webp"), linear-gradient(to bottom right, #D1B464, #8A6E2F);
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-shadow: inset 2px 0 8px 0 black;
 }
 .staffModal .image img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  overflow: auto;
 }
 .staffModal .info {
   background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
@@ -29,7 +31,6 @@
   padding: 20px;
   display: grid;
   grid-template-rows: auto auto 1fr auto;
-  box-shadow: inset 2px 0 8px 0 black;
   text-shadow: 0.1em 0.1em 0.2em black;
 }
 .staffModal .info .header {
@@ -59,12 +60,20 @@
   grid-gap: 20px;
   align-items: end;
 }
+.staff .collection .backgroundDecor {
+  position: absolute;
+  z-index: 99;
+  display: none;
+}
 .staff .collection .item {
   background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
   border-radius: 15px;
   box-shadow: 0 0 8px black;
   border: 1px solid black;
   transition: ease all 200ms;
+  background-image: url("./../icons/oasis-palm-shade.webp"), linear-gradient(to bottom right, rgb(49, 49, 49), black);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .staff .collection .item:hover {
   transform: scale(1.02);

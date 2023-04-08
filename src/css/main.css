@@ -17,20 +17,22 @@
   grid-template-columns: 2fr 3fr;
 }
 .staffModal .image {
-  background: linear-gradient(to bottom right, lightgrey, grey);
-  display: flex;
+  display: grid;
   justify-content: center;
+  align-content: end;
   border-right: 1px solid black;
   z-index: 101;
-  background-image: url("https://cocosoasis.info/cdn/background/background.webp");
   overflow-y: hidden;
   padding-top: 10px;
+  background-image: url("./../icons/oasis-palm-shade.webp"), linear-gradient(to bottom right, #D1B464, #8A6E2F);
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-shadow: inset 2px 0 8px 0 black;
 }
 .staffModal .image img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  overflow: auto;
 }
 .staffModal .info {
   background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
@@ -39,7 +41,6 @@
   padding: 20px;
   display: grid;
   grid-template-rows: auto auto 1fr auto;
-  box-shadow: inset 2px 0 8px 0 black;
   text-shadow: 0.1em 0.1em 0.2em black;
 }
 .staffModal .info .header {
@@ -69,12 +70,20 @@
   grid-gap: 20px;
   align-items: end;
 }
+.staff .collection .backgroundDecor {
+  position: absolute;
+  z-index: 99;
+  display: none;
+}
 .staff .collection .item {
   background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
   border-radius: 15px;
   box-shadow: 0 0 8px black;
   border: 1px solid black;
   transition: ease all 200ms;
+  background-image: url("./../icons/oasis-palm-shade.webp"), linear-gradient(to bottom right, rgb(49, 49, 49), black);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .staff .collection .item:hover {
   transform: scale(1.02);
@@ -184,6 +193,10 @@
 }
 .menu .menuList .category {
   display: grid;
+  margin-bottom: 30px;
+}
+.menu .menuList .category .header .icon {
+  height: 50px;
 }
 .menu .menuList .category .items {
   display: grid;
@@ -221,6 +234,7 @@
 }
 .selectNavWrapper .selectNav .option.inactive {
   box-shadow: inset 0 0 8px black;
+  color: grey;
 }
 
 section {
@@ -370,12 +384,6 @@ button :hover {
   cursor: pointer;
 }
 
-html {
-  background-image: url("https://cocosoasis.info/cdn/background/background.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 main {
   width: 1000px;
   box-shadow: 0 0 8px black;
@@ -389,6 +397,18 @@ main {
 button:hover, select:hover {
   filter: brightness(1.2) !important;
   cursor: pointer;
+}
+
+.background {
+  background-image: url("./../images/background.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 .sectionSelection {
@@ -417,59 +437,4 @@ button:hover, select:hover {
 }
 .sectionSelection .decoration {
   height: 80px;
-}
-
-.menu .divider {
-  margin: 8px 0;
-  position: relative;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.8);
-  margin: 4px 0 2px 0;
-}
-.menu .divider::after {
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  box-shadow: inset 0 0 8px black;
-}
-.menu .divider::after {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-}
-.menu .header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  padding: 10px 0;
-  font-size: 42px;
-  font-family: "Dancing Script";
-  color: white;
-  text-align: center;
-  text-shadow: 0.1em 0.1em 0.2em black;
-}
-.menu .header .decoration {
-  height: 20px;
-}
-.menu .menuList {
-  padding: 10px;
-}
-.menu .menuList .category {
-  display: grid;
-  margin-bottom: 30px;
-}
-.menu .menuList .category .header .icon {
-  height: 50px;
-}
-.menu .menuList .category .items {
-  display: grid;
-}
-.menu .menuList .category .items.single {
-  grid-gap: 15px;
-  grid-template-columns: 1fr;
-}
-.menu .menuList .category .items.double {
-  grid-gap: 10px 20px;
-  grid-template-columns: 1fr 1fr;
 }/*# sourceMappingURL=main.css.map */

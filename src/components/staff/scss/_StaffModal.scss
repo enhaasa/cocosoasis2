@@ -1,4 +1,3 @@
-
 .staffModal {
     width: 900px;
     height: 500px;
@@ -7,19 +6,23 @@
     
 
     & .image {
-        background: getColor(gradients, silver);
-        display: flex;
+        display: grid;
         justify-content: center;
+        align-content: end;
+
         border-right: getBorder(solid, black);
         z-index: 101;
-        background-image: url("https://cocosoasis.info/cdn/background/background.webp");
         overflow-y: hidden;
         padding-top: getPadding(standard);
+        background-image: url('./../icons/oasis-palm-shade.webp'), getColor(gradients, gold);
+        background-repeat: no-repeat;
+        background-size: contain;
+        box-shadow: inset 2px 0 8px 0 black;
 
        & img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
        }
     }
 
@@ -30,7 +33,6 @@
         padding: getPadding(large);
         display: grid;
         grid-template-rows: auto auto 1fr auto;
-        box-shadow: inset 2px 0 8px 0 black;
         text-shadow: getShadow(text, standard);
 
         & .header {

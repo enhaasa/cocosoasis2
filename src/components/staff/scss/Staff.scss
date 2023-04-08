@@ -3,6 +3,7 @@
 @import "./../../../scss/common/_fonts";
 @import "./_StaffModal";
 
+
 .staff {
     & .collection {
         display: grid;
@@ -10,6 +11,13 @@
         grid-auto-rows: minmax(100px, auto);
         grid-gap: getMargin(large);
         align-items: end;
+
+        & .backgroundDecor {
+            position: absolute;
+            z-index: 99;
+            display: none;
+            
+        }
     
         & .item {
             background: getColor(gradients, steel);
@@ -17,10 +25,14 @@
             box-shadow: getShadow(box, standard);
             border: getBorder(solid, black);
             transition: getTransition(standard);
-
+            background-image: url('./../icons/oasis-palm-shade.webp'), getColor(gradients, steel);
+            background-repeat: no-repeat;
+            background-size: contain;
+            
             &:hover {
                 transform: scale(1.02);
             }
+
 
             & .image {
                 height: 320px;

@@ -80,6 +80,10 @@
 }
 .menu .menuList .category {
   display: grid;
+  margin-bottom: 30px;
+}
+.menu .menuList .category .header .icon {
+  height: 50px;
 }
 .menu .menuList .category .items {
   display: grid;

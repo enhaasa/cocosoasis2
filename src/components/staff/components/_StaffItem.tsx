@@ -4,7 +4,7 @@ import StaffModal from './../components/_StaffModal';
 import Modal from './../../common/Modal';
 import { useState } from "react";
 import sources from "../../../sources";
-
+import backgroundDecor from './../../../icons/oasis-palm-shade.webp';
 
 type Props = {
     item: StaffItemType;
@@ -35,6 +35,7 @@ function StaffItem(props: Props) {
             }
 
             <button className="item" onClick={() => {handleModalContent(props.item)}}>
+                <img className="backgroundDecor" src={backgroundDecor}/>
                 <div className="image">
                     <img src={`${sources.cdn}/characters/${name.replace(" ", "")}.webp`}></img>
                 </div>

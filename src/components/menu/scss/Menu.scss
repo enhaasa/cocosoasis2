@@ -3,7 +3,11 @@
 @import "../../../scss/common/_fonts"; 
 @import "../../../scss/common/_themes"; 
 
+
 .menu {
+    //background-image: url('./../icons/oasis-palm-shade.webp'), getColor(gradients, steel);
+    //background-repeat: no-repeat;
+
     & .divider {
         @include divider-dark;
         margin: 4px 0 2px 0;
@@ -31,7 +35,13 @@
 
         & .category {
             display: grid;
+            margin-bottom: getMargin(larger);
 
+            & .header {
+                & .icon {
+                    height: 50px;
+                }
+            }
 
             & .items {
                 display: grid;
