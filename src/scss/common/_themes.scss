@@ -1,12 +1,12 @@
 @import "_styles"; 
 
 @mixin theme-light {
-    background: getColor(solids, light);
+    background: getColor(gradients, light);
     color: getColor(solids, dark);
 }
 
 @mixin theme-dark {
-    background: getColor(solids, dark);
+    background: getColor(gradients, steel);
     color: getColor(solids, light);
 }
 
@@ -47,10 +47,10 @@
     @include divider;
 
 
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.8);
 
     &::after {
-        border-bottom: 1px solid $darkgrey;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
     }
     
-}
+} 

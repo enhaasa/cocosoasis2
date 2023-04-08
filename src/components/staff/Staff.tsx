@@ -19,7 +19,7 @@ function Staff() {
         <>
 
             <div className="header">
-                <h1>Staff</h1>
+               
             </div>
 
             

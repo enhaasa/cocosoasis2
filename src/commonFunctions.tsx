@@ -27,4 +27,12 @@ export function capitalizeWords(full: string): string {
       .split(" ")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(" ");
+}
+
+export function formatStringAsPrice(str: string): string {
+    const reversedStr = str.split('').reverse().join(''); // reverse the input string
+    const regex = /(\d{3})(?=\d)/g; // use regex to match every three digits
+    const withCommas = reversedStr.replace(regex, '$1,'); // insert commas after every three digits
+    return withCommas.split('').reverse().join(''); // reverse the string again and return
   }
+  

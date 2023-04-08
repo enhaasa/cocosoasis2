@@ -1,4 +1,4 @@
-import { MenuItem, MenuTypeType, StaffItemType } from "./commonTypes";
+import { MenuItemType, MenuTypeType, StaffItemType } from "./commonTypes";
 
 function stringToBoolean(str: string): boolean | null {
     if (str === '0') {
@@ -12,15 +12,13 @@ function stringToBoolean(str: string): boolean | null {
 
 
 const format = {
-    menu: function(list: MenuItem[]) {
+    menu: function(list: MenuItemType[]) {
 
         const rawTypes = list.map(item => item.type);
         const types = Array.from(new Set(rawTypes));
         
-        function convertTypeText(typeText: string) {
+        function convertType(typeText: string) {
             const rules = [
-                {keyword: "drink-alc", replacement: "Alcoholic Drinks"},
-                {keyword: "drink", replacement:"Alcohol-free Drinks"},
                 {keyword: "luxe", replacement:"Luxe"}
             ]
 
@@ -43,10 +41,12 @@ const format = {
         types.forEach(type => {
             menu.push({
                 name: type,
-                text: convertTypeText(type),
-                items: list.filter(item => type === item.type && item)
+                title: convertType(type),
+                items: list.filter(item => type === item.type && item.available === "1" && item)
             });
         })
+
+        return menu;
     },
     staff: function(list: any[]): StaffItemType[] {
 

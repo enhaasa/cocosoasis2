@@ -3,11 +3,13 @@ $colors: (
         dark: rgb(41, 41, 41),
         light: rgb(196, 177, 166),
         wine: rgb(134, 0, 0),
+        gold: #cead54
     ),
     gradients: (
         gold: linear-gradient(to bottom right, #D1B464, #8A6E2F),
         silver: linear-gradient(to bottom right, lightgrey, grey),
         steel: linear-gradient(to bottom right,rgb(49, 49, 49), black),
+        light: linear-gradient(to bottom right,rgb(196, 177, 166), rgb(148, 123, 107)),
         wine: linear-gradient(to bottom right, rgb(194, 34, 34), rgb(107, 0, 0)),
         grape: linear-gradient(to bottom right, rgb(146, 19, 146), rgb(53, 0, 53))
     )

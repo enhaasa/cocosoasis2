@@ -1,5 +1,6 @@
-@import "./../components/book/scss/Book"; 
 @import "./../components/staff/scss/Staff";
+@import "./../components/menu/scss/Menu";
+@import "./../components/common/SelectNav/scss/SelectNav";
 
 @import "./common/_styles"; 
 @import "./common/_fonts"; 
@@ -26,68 +27,127 @@ main {
     margin: getMargin(standard) auto;
 }
 
+* {
+    font-family: getFont(standard);
+}
+
+
 button, select {
     &:hover {
         filter: brightness(1.2) !important;
     }
 }
 
-.staffModal {
-    width: 900px;
-    height: 500px;
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    
 
-    & .image {
-        background: getColor(gradients, silver);
-        display: flex;
-        justify-content: center;
-        border-right: getBorder(solid, black);
-        z-index: 101;
-        background-image: url("https://cocosoasis.info/cdn/background/background.webp");
-        overflow-y: hidden;
-        padding-top: getPadding(standard);
 
-       & img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu {
+    & .divider {
+        @include divider-dark;
+        margin: 4px 0 2px 0;
     }
 
-    & .info {
-        background: getColor(gradients, steel);
-        color: white;
-        text-align: center;
-        padding: getPadding(large);
-        display: grid;
-        grid-template-rows: auto auto 1fr auto;
-        box-shadow: inset 2px 0 8px 0 black;
-
         & .header {
-            color: white;
+            padding: getPadding(standard) 0;
             font-size: getFontSize(title);
             font-family: getFont(cursive);
+            color: white;
+            text-align:center;
             text-shadow: getShadow(text, standard);
         }
 
-        & .positions {
-            color: getColor(solids, light);
-        }
+        & .menuList {
+            padding: getPadding(standard);
 
-        & .bio {
-            display: grid;
-            align-content: center;
-            
-            p {
-                margin: 0 0 1em 0;
+            & .category {
+                display: grid;
+
+
+                & .items {
+                    display: grid;
+                    
+                    &.single {
+                        grid-gap: 15px;
+                        grid-template-columns: 1fr;
+                    }
+
+                    &.double {
+                        grid-gap: getMargin(standard) getMargin(large);
+                        grid-template-columns: 1fr 1fr;
+                    }
+                }
             }
         }
+    
+}
 
-        & .hiredSince {
-            color: getColor(solids, light);
+
+.menuItem {
+    display: flex;
+    margin: 0;
+
+    & .column {
+        display: grid;
+        align-content: start;
+
+        & .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        & .image {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+
+            & img{
+                width: 120px;
+            }
         }
     }
 
+
+
+    & .name {
+        font-size: getFontSize(large);
+        font-family: getFont(standard);
+        color: white;
+        text-shadow: getShadow(text, standard);
+    }
+
+    & .description {
+        text-shadow: getShadow(text, standard);
+    }
+
+    & .price {
+        color: getColor(solids, gold);
+        text-shadow: getShadow(text, standard);
+    }
+
+    & .ingredients {
+        margin-top: 5px;
+        color: grey;
+        
+    }
+    
 }

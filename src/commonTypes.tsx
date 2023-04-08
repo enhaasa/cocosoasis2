@@ -1,4 +1,4 @@
-export type MenuItem = {
+export type MenuItemType = {
     name: string;
     type: string;
     price: number;
@@ -14,8 +14,8 @@ export type MenuItem = {
 
 export type MenuTypeType = {
     name: string;
-    text: string;
-    items: MenuItem[];
+    title: string;
+    items: MenuItemType[];
 }
 
 export type StaffItemType = {

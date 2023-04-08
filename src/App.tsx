@@ -1,7 +1,6 @@
-import Book from './components/book/Book';
 import Section from './components/Section';
 import Home from './components/Home';
-import Menu from './components/Menu';
+import Menu from './components/menu/Menu';
 import Staff from './components/staff/Staff';
 
 function App() {
@@ -43,7 +42,6 @@ function App() {
           content={section.content}
         />
       ))}
-
     </main>
   );
 }

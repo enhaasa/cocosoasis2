@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
 $fonts: (
-    cursive: 'Dancing Script'
+    cursive: 'Dancing Script',
+    standard: 'Cabin'
 );
 $fontSizes: (
     standard: 16px,
     large: 18px,
+    larger: 24px,
     header: 32px,
     title: 42px
 );

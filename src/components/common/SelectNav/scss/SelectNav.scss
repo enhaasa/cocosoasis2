@@ -1,0 +1,13 @@
+@import "../../../../scss/common/_styles"; 
+@import "../../../../scss/common/_fonts"; 
+@import "../../../../scss/common/_themes";
+
+.selectNav {
+
+    & .option {
+
+        &.active {
+            color: red;
+        }
+    }
+}

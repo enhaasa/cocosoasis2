@@ -1,3 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+.staffModal {
+  width: 900px;
+  height: 500px;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+.staffModal .image {
+  background: linear-gradient(to bottom right, lightgrey, grey);
+  display: flex;
+  justify-content: center;
+  border-right: 1px solid black;
+  z-index: 101;
+  background-image: url("https://cocosoasis.info/cdn/background/background.webp");
+  overflow-y: hidden;
+  padding-top: 10px;
+}
+.staffModal .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.staffModal .info {
+  background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  box-shadow: inset 2px 0 8px 0 black;
+  text-shadow: 0.1em 0.1em 0.2em black;
+}
+.staffModal .info .header {
+  color: white;
+  font-size: 42px;
+  font-family: "Dancing Script";
+}
+.staffModal .info .positions {
+  color: rgb(196, 177, 166);
+}
+.staffModal .info .bio {
+  display: grid;
+  align-content: center;
+  color: rgb(196, 177, 166);
+}
+.staffModal .info .bio p {
+  margin: 0 0 1em 0;
+}
+.staffModal .info .hiredSince {
+  color: rgb(196, 177, 166);
+}
+
 .staff .collection {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -35,6 +89,7 @@
 .staff .collection .item .text .name {
   color: black;
   font-size: 18px;
+  font-family: "Cabin";
   font-weight: bold;
 }
 .staff .collection .item .text .positions {
