@@ -1,6 +1,7 @@
 import { MenuItemType } from "../../../commonTypes";
 import { useState } from "react";
 import { formatStringAsPrice } from "../../../commonFunctions";
+import sources from "../../../sources";
 
 type Props = {
     item: MenuItemType
@@ -14,34 +15,29 @@ function MenuItem(props: Props) {
         description,
         size,
         available,
-        pairings
+        pairings,
+        hasImage
     } = props.item;
 
     function trimFull(string:string):string {
         return string.replace(/\s/g, '');
     }
 
-    const cdn = "https://cocosoasis.info/cdn/items/";
+    const cdn = sources.cdn + "/items/";
     const imgFormat = ".webp";
     const imgName = cdn + trimFull(name) + imgFormat;
-
-    const [ hasImage, setHasImage ] = useState(true);
-    function handleImageError() {
-        setHasImage(false);
-    }
 
     return (
         <div className="menuItem">
 
         {hasImage &&
         <span className="column">
-            <span className="image">
-                <img 
-                    src={imgName}
-                    onError={handleImageError}
-                >
+            {hasImage === "1" && 
+                <span className="image">
+                <img src={imgName}>
                 </img>
             </span>
+            }
         </span>}
 
         <span className="column">

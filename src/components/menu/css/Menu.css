@@ -5,6 +5,7 @@
 .menuItem {
   display: flex;
   margin: 0;
+  transition: all ease 200ms;
 }
 .menuItem .column {
   display: grid;
@@ -60,12 +61,19 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 .menu .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
   padding: 10px 0;
   font-size: 42px;
   font-family: "Dancing Script";
   color: white;
   text-align: center;
   text-shadow: 0.1em 0.1em 0.2em black;
+}
+.menu .header .decoration {
+  height: 20px;
 }
 .menu .menuList {
   padding: 10px;

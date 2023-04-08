@@ -10,6 +10,7 @@ export type MenuItemType = {
     id: string;
     item: string;
     available: string | boolean;
+    hasImage: string | boolean;
 }
 
 export type MenuTypeType = {

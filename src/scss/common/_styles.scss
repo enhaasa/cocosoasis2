@@ -29,7 +29,8 @@ $paddings: (
 
 $margins: (
     standard: 10px,
-    large: 20px
+    large: 20px,
+    larger: 30px
 );
 @function getMargin($key) {
     @return map-get($margins, $key);

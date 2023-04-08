@@ -41,46 +41,70 @@ button, select {
 
 .sectionSelection {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: 10px;
+    
+    & .divider {
+        @include divider-dark;
+        margin: 4px 0 2px 0;
+    }
 
     & .decoration {
-        height: 50px;
+        height: 80px;
     }
 }
 
-.selectNavWrapper {
-    display: flex;
+.menu {
+    & .divider {
+        @include divider-dark;
+        margin: 4px 0 2px 0;
+    }
 
-    & .selectNav {
-        box-shadow: getShadow(box, standard);
-        border-radius: 25px;
-    
-        & .option {
-            padding: getPadding(standard) getPadding(large);
-            font-size: getFontSize(larger);
+    & .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        padding: getPadding(standard) 0;
+        font-size: getFontSize(title);
+        font-family: getFont(cursive);
+        color: white;
+        text-align:center;
+        text-shadow: getShadow(text, standard);
 
-            &:first-child {
-                border-radius: 25px 0 0 25px;
+        & .decoration {
+            height: 20px;
+        }
+    }
+
+    & .menuList {
+        padding: getPadding(standard);
+
+        & .category {
+            display: grid;
+            margin-bottom: getMargin(larger);
+
+            & .header {
+                & .icon {
+                    height: 50px;
+                }
             }
-            &:last-child {
-                border-radius: 0 25px 25px 0;
-            }
-            
-    
-            &.active {
-                background: getColor(gradients, gold);
-                color: black;
-                box-shadow: getShadow(box, standard);
-            }
 
-            &.inactive {
+            & .items {
+                display: grid;
+                
+                &.single {
+                    grid-gap: 15px;
+                    grid-template-columns: 1fr;
+                }
 
-                box-shadow: inset getShadow(box, standard)
+                &.double {
+                    grid-gap: getMargin(standard) getMargin(large);
+                    grid-template-columns: 1fr 1fr;
+                }
             }
         }
     }
+    
 }
-
-

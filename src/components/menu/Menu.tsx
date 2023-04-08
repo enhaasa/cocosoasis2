@@ -4,9 +4,9 @@ import format from '../../format';
 import { MenuTypeType } from '../../commonTypes';
 import MenuItem from './components/_MenuItem';
 import SelectNav from '../common/SelectNav/SelectNav';
-
-import decor1Left from '../../icons/decor1-gold-left.png';
-import decor1Right from '../../icons/decor1-gold-right.png';
+import decorLeft from '../../icons/decor2-white-left.png';
+import decorRight from '../../icons/decor2-white-right.png';
+import sources from '../../sources';
 
 function Menu() {
     
@@ -37,6 +37,9 @@ function Menu() {
     function handleSelectSection(option:number):void {
         setSelectedSection(option);
     }
+    function trimFull(string:string):string {
+        return string.replace(/\s/g, '');
+    }
 
     useEffect(() => {
         db.get("getMenu").then(data => {    
@@ -44,10 +47,11 @@ function Menu() {
         })
     }, []);
 
+
+
     return (
         <>
             <div className="sectionSelection">
-                <img className="decoration" src={decor1Left} />
                 <SelectNav 
                     options={sections.map((section, index) => (
                         {
@@ -58,13 +62,18 @@ function Menu() {
                     ))}
                     activeId={selectedSection}
                 />
-                <img className="decoration" src={decor1Right} />
             </div>
+            
             <div className="menuList">
                 {menu.map(type => (
                     sections[selectedSection].types.includes(type.name) &&
                         <div className="category">
-                            <div className="header">{type.title}</div>
+                            <div className="header">
+                                <img className="decoration" src={decorLeft} />
+                                {type.title} <img className="icon" src={`${sources.cdn}/icons/${trimFull(type.name)}-white.png`}></img>
+                                <img className="decoration" src={decorRight} />
+                            </div>
+
                             <div className="items double">
                                 {type.items.map(item => (
                                     <MenuItem item={item} />

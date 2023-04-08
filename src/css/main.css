@@ -109,6 +109,7 @@
 .menuItem {
   display: flex;
   margin: 0;
+  transition: all ease 200ms;
 }
 .menuItem .column {
   display: grid;
@@ -164,12 +165,19 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 .menu .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
   padding: 10px 0;
   font-size: 42px;
   font-family: "Dancing Script";
   color: white;
   text-align: center;
   text-shadow: 0.1em 0.1em 0.2em black;
+}
+.menu .header .decoration {
+  height: 20px;
 }
 .menu .menuList {
   padding: 10px;
@@ -189,12 +197,30 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.selectNav {
-  box-shadow: 0 0 8px black;
+.selectNavWrapper {
   display: flex;
 }
-.selectNav .option.active {
-  color: red;
+.selectNavWrapper .selectNav {
+  border-radius: 25px;
+}
+.selectNavWrapper .selectNav .option {
+  padding: 10px 20px;
+  font-size: 24px;
+  transition: all ease 200ms;
+}
+.selectNavWrapper .selectNav .option:first-child {
+  border-radius: 25px 0 0 25px;
+}
+.selectNavWrapper .selectNav .option:last-child {
+  border-radius: 0 25px 25px 0;
+}
+.selectNavWrapper .selectNav .option.active {
+  background: linear-gradient(to bottom right, #D1B464, #8A6E2F);
+  color: black;
+  box-shadow: 0 0 8px black;
+}
+.selectNavWrapper .selectNav .option.inactive {
+  box-shadow: inset 0 0 8px black;
 }
 
 section {
@@ -367,36 +393,83 @@ button:hover, select:hover {
 
 .sectionSelection {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 10px;
 }
+.sectionSelection .divider {
+  margin: 8px 0;
+  position: relative;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.8);
+  margin: 4px 0 2px 0;
+}
+.sectionSelection .divider::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  box-shadow: inset 0 0 8px black;
+}
+.sectionSelection .divider::after {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
 .sectionSelection .decoration {
-  height: 50px;
+  height: 80px;
 }
 
-.selectNavWrapper {
-  display: flex;
+.menu .divider {
+  margin: 8px 0;
+  position: relative;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.8);
+  margin: 4px 0 2px 0;
 }
-.selectNavWrapper .selectNav {
-  box-shadow: 0 0 8px black;
-  border-radius: 25px;
-}
-.selectNavWrapper .selectNav .option {
-  padding: 10px 20px;
-  font-size: 24px;
-}
-.selectNavWrapper .selectNav .option:first-child {
-  border-radius: 25px 0 0 25px;
-}
-.selectNavWrapper .selectNav .option:last-child {
-  border-radius: 0 25px 25px 0;
-}
-.selectNavWrapper .selectNav .option.active {
-  background: linear-gradient(to bottom right, #D1B464, #8A6E2F);
-  color: black;
-  box-shadow: 0 0 8px black;
-}
-.selectNavWrapper .selectNav .option.inactive {
+.menu .divider::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
   box-shadow: inset 0 0 8px black;
+}
+.menu .divider::after {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.menu .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 0;
+  font-size: 42px;
+  font-family: "Dancing Script";
+  color: white;
+  text-align: center;
+  text-shadow: 0.1em 0.1em 0.2em black;
+}
+.menu .header .decoration {
+  height: 20px;
+}
+.menu .menuList {
+  padding: 10px;
+}
+.menu .menuList .category {
+  display: grid;
+  margin-bottom: 30px;
+}
+.menu .menuList .category .header .icon {
+  height: 50px;
+}
+.menu .menuList .category .items {
+  display: grid;
+}
+.menu .menuList .category .items.single {
+  grid-gap: 15px;
+  grid-template-columns: 1fr;
+}
+.menu .menuList .category .items.double {
+  grid-gap: 10px 20px;
+  grid-template-columns: 1fr 1fr;
 }/*# sourceMappingURL=main.css.map */

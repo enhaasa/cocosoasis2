@@ -3,6 +3,7 @@ import { capitalizeWords } from "../../../commonFunctions";
 import StaffModal from './../components/_StaffModal';
 import Modal from './../../common/Modal';
 import { useState } from "react";
+import sources from "../../../sources";
 
 
 type Props = {
@@ -21,6 +22,9 @@ function StaffItem(props: Props) {
     function handleModalContent(content: StaffItemType | null):void {
         setModal(content);
     }
+        function trimFull(string:string):string {
+        return string.replace(/\s/g, '');
+    }
 
     return (
         <>
@@ -32,7 +36,7 @@ function StaffItem(props: Props) {
 
             <button className="item" onClick={() => {handleModalContent(props.item)}}>
                 <div className="image">
-                    <img src={`https://enhasa.dev/cocosoasis/cdn/characters/${name.replace(" ", "")}.webp`}></img>
+                    <img src={`${sources.cdn}/characters/${name.replace(" ", "")}.webp`}></img>
                 </div>
                 <div className="text">
                     <div className="name">{name}</div>

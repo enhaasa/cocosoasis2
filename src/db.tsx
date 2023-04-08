@@ -1,4 +1,6 @@
-const api = "https://enhasa.dev/cocosoasis/api/dbQuery.php?query=";
+import sources from "./sources";
+
+const api = sources.api;
 const db = {
     get: async function(query: string) {
         return await fetch(api + encodeURIComponent(query))
