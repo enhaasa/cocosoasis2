@@ -1,7 +1,7 @@
 import Section from './components/Section';
 import Home from './components/Home';
 import Menu from './components/menu/Menu';
-import Staff from './components/staff/Staff';
+import About from './components/about/About';
 
 function App() {
 
@@ -27,9 +27,9 @@ function App() {
       content: null
     },
     {
-      title: "Staff",
-      id: "staff",
-      content: <Staff />
+      title: "About",
+      id: "about",
+      content: <About />
     }
   ];
 
@@ -44,9 +44,7 @@ function App() {
           />
         ))}
       </main>
-      <div className="background">
-        
-      </div>
+      <div className="background" />
     </>
   );
 }

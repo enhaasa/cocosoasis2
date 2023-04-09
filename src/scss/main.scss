@@ -1,12 +1,12 @@
-@import "./../components/staff/scss/Staff";
+@import "./../components/about/scss/About";
 @import "./../components/menu/scss/Menu";
 @import "./../components/common/SelectNav/scss/SelectNav";
 
 @import "./common/_styles"; 
 @import "./common/_fonts"; 
 @import "./common/_themes";
-@import "./_section";
-@import "./modal";
+@import "./common/_section";
+@import "./common/_modal";
 
 button {
     all: unset;
@@ -16,7 +16,7 @@ button {
 }
 
 main {
-    width: 1000px; 
+    width: 1100px; 
     box-shadow: getShadow(box, standard);
     margin: getMargin(standard) auto;
 }
@@ -26,7 +26,8 @@ main {
 }
 
 
-button, select {
+button, select, a {
+    transition: getTransition(standard);
     &:hover {
         filter: brightness(1.2) !important;
         cursor: pointer;

@@ -30,7 +30,8 @@ $paddings: (
 $margins: (
     standard: 10px,
     large: 20px,
-    larger: 30px
+    larger: 30px,
+    largest: 50px
 );
 @function getMargin($key) {
     @return map-get($margins, $key);
@@ -47,6 +48,7 @@ $border-radiuses: (
 $shadows: (
     box: (
         standard: 0 0 8px black,
+        standard-light: 0 0 4px rgb(136, 119, 108),
         exaggerated: 0 4px 8px 0 black,
     ),
     text: (

@@ -46,11 +46,20 @@
 @mixin divider-dark {
     @include divider;
 
-
     border-bottom: 1px solid rgba(128, 128, 128, 0.8);
 
     &::after {
         border-bottom: 1px solid rgba(0, 0, 0, 0.5);
     }
-    
+} 
+
+@mixin divider-light {
+    @include divider;
+
+    border-bottom: 1px solid rgba(224, 224, 224, 0.2);
+
+    &::after {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: inset getShadow(box, standard-light);
+    }
 } 
