@@ -95,11 +95,14 @@
 .about .intro .about .text {
   margin: 10px 0;
 }
-.about .intro a img {
+.about .intro .groupShot img {
   width: 550px;
   border: 5px solid #cead54;
   box-shadow: 0 4px 8px 0 black;
   transform: rotate(-1deg);
+}
+.about .intro .groupShot:hover {
+  transform: scale(1.05);
 }
 .about .collection {
   display: grid;
@@ -363,6 +366,16 @@ section:nth-child(even):last-child > .wrapper {
   font-weight: bold;
 }
 
+.imageModal {
+  min-width: 0;
+  max-width: 80vw;
+  max-height: 100vh;
+}
+.imageModal img {
+  width: 100%;
+  margin-bottom: -4px;
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -416,6 +429,16 @@ section:nth-child(even):last-child > .wrapper {
 }
 .modal .content .divider::after {
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.imageModal {
+  min-width: 0;
+  max-width: 80vw;
+  max-height: 100vh;
+}
+.imageModal img {
+  width: 100%;
+  margin-bottom: -4px;
 }
 
 button {
@@ -481,4 +504,14 @@ button:hover, select:hover, a:hover {
 }
 .sectionSelection .decoration {
   height: 80px;
+}
+
+.galleryModal nav {
+  display: flex;
+  color: white;
+  background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
+  justify-content: center;
+  align-content: center;
+  padding: 3px;
+  border-top: 1px solid black;
 }/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,9 @@
+.galleryModal {
+  color: white;
+  background: getColor(gradients, steel);
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  padding: 3px 3px 0 3px;
+}/*# sourceMappingURL=GalleryModal.css.map */

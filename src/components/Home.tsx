@@ -1,6 +1,8 @@
+type Props = {
+    handleModal: (content: any) => void;
+}
 
-
-function Home() {
+function Home(props: Props) {
     return (
         <>
             <div className="logo">

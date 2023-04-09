@@ -4,12 +4,18 @@ import db from '../../db';
 import format from '../../format';
 import StaffItem from './components/_StaffItem';
 import groupshot from './../../images/anniversary.webp';
+import ImageModal from '../common/ModalTemplates/ImageModal';
+import GalleryModal from '../common/ModalTemplates/GalleryModal';
 
+type Props = {
+    handleModal: (content: any) => void;
+}
 
-function Staff() {
+function Staff(props: Props) {
+    const { handleModal } = props;
     
     const [ staffs, setStaffs ] = useState<StaffItemType[]>([]);
-    const activeStaff = staffs.map(staff => (staff.isActive && <StaffItem item={staff}/>));
+    const activeStaff = staffs.map(staff => (staff.isActive && <StaffItem item={staff} handleModal={handleModal}/>));
 
     useEffect(() => {
         db.get("getStaff").then(data => {
@@ -17,8 +23,25 @@ function Staff() {
         })
     }, []);
 
+    const image = {
+        name: "Group Shop", 
+        url: groupshot
+    }
+    const imageModal = <ImageModal image={image}/>;
+    const images = [
+        {
+            name: "Image 1",
+            url: "https://wallpapercave.com/wp/dcFwnop.jpg"
+        },
+        {
+            name: "Image 2",
+            url: "https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701311457-optimized.jpg"
+        }
+    ]
+
     return (
         <>
+            <button onClick={() => handleModal(<GalleryModal images={images}/>)}>Create GalleryModal</button>
             <div className="intro">
                 <div className="about">
                     <div className="header">
@@ -43,9 +66,9 @@ function Staff() {
                     </span>
                 </div>
 
-                <a href={groupshot} target="_blank">
+                <button className="groupShot" onClick={() => handleModal(imageModal)}>
                     <img src={groupshot} loading="lazy" />
-                </a>
+                </button>
             </div>
 
             <div className="header">

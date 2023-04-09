@@ -7,6 +7,7 @@
 @import "./common/_themes";
 @import "./common/_section";
 @import "./common/_modal";
+@import './../components/common/ModalTemplates/scss/ImageModal';
 
 button {
     all: unset;
@@ -59,5 +60,20 @@ button, select, a {
 
     & .decoration {
         height: 80px;
+    }
+}
+
+
+.galleryModal {
+    
+
+    & nav {
+        display: flex;
+        color: white;
+        background: getColor(gradients, steel);
+        justify-content: center;
+        align-content: center;
+        padding: 3px;
+        border-top: 1px solid black;
     }
 }

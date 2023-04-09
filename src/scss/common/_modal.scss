@@ -1,5 +1,6 @@
 @import "./_styles"; 
 @import "./_themes"; 
+@import "./../../components/common/ModalTemplates/scss/ImageModal.scss";
 
 .modal {
     position: fixed;
@@ -32,7 +33,6 @@
             color: white;
             background: getColor(gradients, steel);
             border-bottom: 1px solid black;
-
             display: flex;
             justify-content: flex-end;
             align-content: center;

@@ -1,13 +1,12 @@
 import { StaffItemType } from "../../../commonTypes";
 import { capitalizeWords } from "../../../commonFunctions";
 import StaffModal from './../components/_StaffModal';
-import Modal from './../../common/Modal';
-import { useState } from "react";
 import sources from "../../../sources";
 import backgroundDecor from './../../../icons/oasis-palm-shade.webp';
 
 type Props = {
     item: StaffItemType;
+    handleModal: (content: any) => void;
 }
 
 function StaffItem(props: Props) {
@@ -15,24 +14,15 @@ function StaffItem(props: Props) {
         name,
         positions,
     } = props.item;
+    const {
+        handleModal
+    } = props;
 
-
-    const [ modal, setModal ] = useState<StaffItemType | null>(null);
-
-    function handleModalContent(content: StaffItemType | null):void {
-        setModal(content);
-    }
-
+    const staffModal =  <StaffModal item={props.item} handleClose={() => {handleModal(null)}}/>;
 
     return (
         <>
-            {modal && 
-                <Modal handleClose={() => {handleModalContent(null)}}>
-                    <StaffModal item={props.item} handleClose={() => {handleModalContent(null)}}/>
-                </Modal>
-            }
-
-            <button className="item" onClick={() => {handleModalContent(props.item)}}>
+            <button className="item" onClick={() => {handleModal(staffModal)}}>
                 <img className="backgroundDecor" src={backgroundDecor}/>
                 <div className="image">
                     <img src={`${sources.cdn}/characters/${name.replace(" ", "")}.webp`} loading="lazy"></img>

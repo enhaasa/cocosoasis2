@@ -15,8 +15,7 @@ function Section(props: Props) {
                     <div className="h-divider">
                         <div className="shadow"></div>
                         <div className="text"><i>{title}</i></div>
-                    </div>
-                }
+                    </div>}
                 {content}
             </div>
         </section>

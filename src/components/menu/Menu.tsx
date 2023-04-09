@@ -8,7 +8,11 @@ import decorLeft from '../../icons/decor2-white-left.png';
 import decorRight from '../../icons/decor2-white-right.png';
 import sources from '../../sources';
 
-function Menu() {
+type Props = {
+    handleModal: (content: any) => void;
+}
+
+function Menu(props:Props) {
     
     const [ menu, setMenu ] = useState<MenuTypeType[]>([]);
     const [ selectedSection, setSelectedSection ] = useState<number>(0);

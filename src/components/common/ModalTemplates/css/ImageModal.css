@@ -1,0 +1,9 @@
+.imageModal {
+  min-width: 0;
+  max-width: 80vw;
+  max-height: 100vh;
+}
+.imageModal img {
+  width: 100%;
+  margin-bottom: -4px;
+}/*# sourceMappingURL=ImageModal.css.map */

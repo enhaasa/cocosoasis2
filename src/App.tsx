@@ -2,19 +2,28 @@ import Section from './components/Section';
 import Home from './components/Home';
 import Menu from './components/menu/Menu';
 import About from './components/about/About';
+import Modal from './components/common/Modal';
+import { useState } from 'react';
+
 
 function App() {
+
+
+  const [ modal, setModal ] = useState<any | null>(null);
+  function handleModal(content: any | null):void {
+      setModal(content);  
+  }
 
   const sections = [
     {
       title: null,
       id: "home",
-      content: <Home />
+      content: <Home handleModal={handleModal}/>
     },
     {
       title: "Menu",
       id: "menu",
-      content: <Menu />
+      content: <Menu handleModal={handleModal}/>
     },
     {
       title: "Rules",
@@ -29,12 +38,18 @@ function App() {
     {
       title: "About",
       id: "about",
-      content: <About />
+      content: <About handleModal={handleModal}
+      />
     }
   ];
 
   return (
     <>
+      {modal && 
+      <Modal handleClose={() => {handleModal(null)}}>
+        {modal}  
+      </Modal>}
+      
       <main>
         {sections.map(section => (
           <Section 
