@@ -15,6 +15,8 @@
 @import './../components/common/ModalTemplates/scss/GalleryModal';
 @import './../components/common/GalleryButton/scss/GalleryButton';
 
+@import './dimensions.scss';
+
 button {
     all: unset;
     & :hover {
@@ -23,9 +25,20 @@ button {
 }
 
 main {
-    width: 1100px; 
+    width: $width; 
     box-shadow: getShadow(box, standard);
     margin: getMargin(standard) auto;
+}
+
+body {
+    margin: 0;
+}
+
+@media only screen and (max-width: $width) {
+    main {
+      width: 100%;
+      margin: 0;
+    }
 }
 
 * {
@@ -66,5 +79,233 @@ button, select, a {
 
     & .decoration {
         height: 80px;
+    }
+}
+
+
+.home {
+    display: grid;
+    gap: 5px;
+
+    & .logo {
+
+        text-align: center;
+
+        & img {
+            width: 80%;
+            margin-bottom: -10px;
+        }
+        
+        & .underTitle {
+            font-size: getFontSize(larger);
+        }
+    }
+
+    & .header {
+
+        font-family: getFont(cursive);
+        font-size: getFontSize(chonk);
+        font-weight: bold;
+        text-align: center;
+    }
+
+    & .venueInfo {
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+        font-size: getFontSize(large);
+
+        & .row {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    }
+}
+
+.about {
+    & .header {
+        font-family: getFont(cursive);
+        font-size: getFontSize(title);
+        font-weight: bold;
+    }
+
+    & .divider {
+        @include divider-light;
+        margin: 4px 0 2px 0;
+    }
+
+    & .intro {
+        margin-bottom: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        
+
+        & .about {
+
+            & .text {
+                margin: getMargin(standard) 0;
+            }
+        }
+
+    }
+    @media only screen and (max-width: $largeWidth) {
+        & .intro {
+            grid-template-columns: 1fr;
+            & .galleryButton {
+                max-width: 100%;
+                margin: getMargin(larger);
+            }
+        }
+    }
+
+    & .collection {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        grid-gap: getMargin(standard);
+        align-items: end;
+        margin-top: getMargin(large);
+
+        & .backgroundDecor {
+            position: absolute;
+            z-index: 99;
+            display: none;
+            
+        }
+    
+        & .item {
+            background: getColor(gradients, steel);
+            border-radius: getRadius(small);
+            box-shadow: getShadow(box, standard);
+            border: getBorder(solid, black);
+            transition: getTransition(standard);
+            background-image: url('./../icons/oasis-palm-shade.webp'), getColor(gradients, steel);
+            background-repeat: no-repeat;
+            background-size: contain;
+            font-family: getFont(standard);
+            
+            &:hover {
+                transform: scale(1.02);
+            }
+
+
+            & .image {
+                height: 270px;
+                display: grid;
+                align-items: end;
+                overflow-y: hidden;
+                
+                & img {
+                    width: 100%;
+                }
+            }
+            
+
+            & .text {
+                background: getColor(gradients, gold);
+                padding: getPadding(small);
+                text-align: center;
+                box-shadow: getShadow(box, standard);
+                border-radius: 0 0 getRadius(small) getRadius(small);
+                border-top: getBorder(solid, black);
+                
+
+                & .name {
+                    color: black;
+                    font-size: getFontSize(large);
+                    
+                    font-family: getFont(standard);
+                }
+                & .positions {
+                    color: getColor(solids, dark);
+                    font-size: 14px;
+                    font-family: getFont(standard);
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: $width) {
+        & .collection {
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: minmax(100px, auto);
+            & .item {
+                & .image {
+                    height: 300px;
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: $largeWidth) {
+        & .collection {
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: minmax(100px, auto);
+            & .item {
+                & .image {
+                    height: 320px;
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: $mediumWidth) {
+        & .collection {
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 30px;
+            & .item {
+                & .image {
+                    height: 100%;
+                }
+            }
+        }
+    }
+} 
+
+.modal {
+    max-width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    z-index: 99;
+
+    & .background {
+        position: inherit;
+        left: inherit;
+        top: inherit;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: grid;
+        place-content: center;
+    }
+    
+
+    & .content {
+        box-shadow: getShadow(box, exaggerated);
+        border: getBorder(double, getColor(solids, light));
+        z-index: 100;
+
+        & .titleBar {
+            color: white;
+            background: getColor(gradients, steel);
+            border-bottom: 1px solid black;
+            display: flex;
+            justify-content: flex-end;
+            align-content: center;
+            padding: 3px 3px 0 3px;
+
+            & .closeButton {
+                box-shadow: getShadow(box, standard);
+            }
+        }
+
+        .divider {
+            @include divider-dark;
+        }
+        
     }
 }

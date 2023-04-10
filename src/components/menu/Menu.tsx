@@ -78,7 +78,7 @@ function Menu(props:Props) {
                                 <img className="decoration" src={decorRight} />
                             </div>
 
-                            <div className="items double">
+                            <div className="items">
                                 {type.items.map(item => (
                                     <MenuItem item={item} />
                                 ))}

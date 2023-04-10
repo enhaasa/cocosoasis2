@@ -10,7 +10,8 @@ $fontSizes: (
     large: 18px,
     larger: 24px,
     header: 32px,
-    title: 42px
+    title: 42px,
+    chonk: 52px
 );
 @function getFont($font) {
     @return map-get($fonts, $font);

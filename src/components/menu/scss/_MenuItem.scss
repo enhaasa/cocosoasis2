@@ -4,14 +4,16 @@
 
 
 .menuItem {
-    display: flex;
-    margin: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: auto 1fr;
     transition: all ease 200ms;
+    width: 100%;
 
     & .column {
         display: grid;
         align-content: start;
-
+        width: 100%;
         & .row {
             display: flex;
             justify-content: space-between;
@@ -23,13 +25,11 @@
             align-items: center;
             margin-right: 10px;
 
-            & img{
+            & img {
                 width: 120px;
             }
         }
     }
-
-
 
     & .name {
         font-size: getFontSize(large);
@@ -50,7 +50,5 @@
     & .ingredients {
         margin-top: 5px;
         color: grey;
-        
     }
-    
 }

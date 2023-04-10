@@ -22,6 +22,10 @@ section {
             border-bottom: getBorder("double", getColor(solids, dark));
         }
 
+        & .divider {
+            @include divider-light;
+            margin: 4px 0 2px 0;
+        }
     }
     &:nth-child(even) {
         @include theme-dark;
@@ -38,6 +42,10 @@ section {
         }
     }
 
+    & .divider {
+        @include divider-dark;
+        margin: 4px 0 2px 0;
+    }
 }
 
 .h-divider {

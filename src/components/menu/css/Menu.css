@@ -3,13 +3,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 .menuItem {
-  display: flex;
-  margin: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: auto 1fr;
   transition: all ease 200ms;
+  width: 100%;
 }
 .menuItem .column {
   display: grid;
   align-content: start;
+  width: 100%;
 }
 .menuItem .column .row {
   display: flex;
@@ -87,12 +90,6 @@
 }
 .menu .menuList .category .items {
   display: grid;
-}
-.menu .menuList .category .items.single {
-  grid-gap: 15px;
-  grid-template-columns: 1fr;
-}
-.menu .menuList .category .items.double {
   grid-gap: 10px 20px;
   grid-template-columns: 1fr 1fr;
 }/*# sourceMappingURL=Menu.css.map */

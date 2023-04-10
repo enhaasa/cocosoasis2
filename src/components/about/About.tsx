@@ -3,9 +3,6 @@ import { StaffItemType, ImageType } from '../../commonTypes';
 import getExternal from '../../getExternal';
 import format from '../../format';
 import StaffItem from './components/_StaffItem';
-import groupshot from './../../images/anniversary.webp';
-import ImageModal from '../common/ModalTemplates/ImageModal';
-import GalleryModal from '../common/ModalTemplates/GalleryModal';
 import GalleryButton from '../common/GalleryButton/GalleryButton';
 
 type Props = {

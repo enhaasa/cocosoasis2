@@ -1,3 +1,6 @@
+@import "./../../../scss/dimensions.scss";
+@import "./../../../scss/common/styles";
+
 .staffModal {
     width: 900px;
     height: 500px;
@@ -60,4 +63,10 @@
         }
     }
 
+}
+@media only screen and (max-width: $width) {
+    .staffModal {
+        width: 100%;
+        height: auto;
+    }
 }

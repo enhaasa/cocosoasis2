@@ -1,5 +1,5 @@
 import Section from './components/Section';
-import Home from './components/Home';
+import Home from './components/home/Home';
 import Menu from './components/menu/Menu';
 import About from './components/about/About';
 import Modal from './components/common/Modal';

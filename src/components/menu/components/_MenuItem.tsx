@@ -1,5 +1,4 @@
 import { MenuItemType } from "../../../commonTypes";
-import { useState } from "react";
 import { formatStringAsPrice } from "../../../commonFunctions";
 import sources from "../../../sources";
 
@@ -13,9 +12,6 @@ function MenuItem(props: Props) {
         price,
         ingredients,
         description,
-        size,
-        available,
-        pairings,
         hasImage
     } = props.item;
 
@@ -34,7 +30,7 @@ function MenuItem(props: Props) {
         <span className="column">
             {hasImage === "1" && 
                 <span className="image">
-                <img src={imgName}>
+                <img src={imgName} loading="lazy">
                 </img>
             </span>
             }

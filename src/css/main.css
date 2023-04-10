@@ -63,110 +63,23 @@
   color: rgb(196, 177, 166);
 }
 
-.about .header {
-  font-family: "Dancing Script";
-  font-size: 42px;
-  font-weight: bold;
+@media only screen and (max-width: 1100px) {
+  .staffModal {
+    width: 100%;
+    height: auto;
+  }
 }
-.about .divider {
-  margin: 8px 0;
-  position: relative;
-  border-bottom: 1px solid rgba(224, 224, 224, 0.2);
-  margin: 4px 0 2px 0;
-}
-.about .divider::after {
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  box-shadow: inset 0 0 8px black;
-}
-.about .divider::after {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: inset 0 0 4px rgb(136, 119, 108);
-}
-.about .intro {
-  margin-bottom: 20px;
-  display: flex;
-  gap: 15px;
-}
-.about .intro .about .text {
-  margin: 10px 0;
-}
-.about .intro .groupShot img {
-  width: 550px;
-  border: 5px solid #cead54;
-  box-shadow: 0 4px 8px 0 black;
-  transform: rotate(-1deg);
-}
-.about .intro .groupShot:hover {
-  transform: scale(1.05);
-}
-.about .collection {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-auto-rows: minmax(100px, auto);
-  grid-gap: 10px;
-  align-items: end;
-  margin-top: 20px;
-}
-.about .collection .backgroundDecor {
-  position: absolute;
-  z-index: 99;
-  display: none;
-}
-.about .collection .item {
-  background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
-  border-radius: 15px;
-  box-shadow: 0 0 8px black;
-  border: 1px solid black;
-  transition: ease all 200ms;
-  background-image: url("./../icons/oasis-palm-shade.webp"), linear-gradient(to bottom right, rgb(49, 49, 49), black);
-  background-repeat: no-repeat;
-  background-size: contain;
-  font-family: "Cabin";
-}
-.about .collection .item:hover {
-  transform: scale(1.02);
-}
-.about .collection .item .image {
-  height: 270px;
-  display: grid;
-  align-items: end;
-  overflow-y: hidden;
-}
-.about .collection .item .image img {
-  width: 100%;
-}
-.about .collection .item .text {
-  background: linear-gradient(to bottom right, #D1B464, #8A6E2F);
-  padding: 5px;
-  text-align: center;
-  box-shadow: 0 0 8px black;
-  border-radius: 0 0 15px 15px;
-  border-top: 1px solid black;
-}
-.about .collection .item .text .name {
-  color: black;
-  font-size: 18px;
-  font-family: "Cabin";
-}
-.about .collection .item .text .positions {
-  color: rgb(41, 41, 41);
-  font-size: 14px;
-  font-family: "Cabin";
-}
-
 .menuItem {
-  display: flex;
-  margin: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: auto 1fr;
   transition: all ease 200ms;
+  width: 100%;
 }
 .menuItem .column {
   display: grid;
   align-content: start;
+  width: 100%;
 }
 .menuItem .column .row {
   display: flex;
@@ -244,14 +157,13 @@
 }
 .menu .menuList .category .items {
   display: grid;
-}
-.menu .menuList .category .items.single {
-  grid-gap: 15px;
-  grid-template-columns: 1fr;
-}
-.menu .menuList .category .items.double {
   grid-gap: 10px 20px;
   grid-template-columns: 1fr 1fr;
+}
+@media only screen and (max-width: 737px) {
+  .menu .menuList .category .items {
+    grid-template-columns: 1fr;
+  }
 }
 
 section {
@@ -274,6 +186,25 @@ section:nth-child(odd):first-child > .wrapper {
 section:nth-child(odd):last-child > .wrapper {
   border-bottom: 4px double rgb(41, 41, 41);
 }
+section:nth-child(odd) .divider {
+  margin: 8px 0;
+  position: relative;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.2);
+  margin: 4px 0 2px 0;
+}
+section:nth-child(odd) .divider::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  box-shadow: inset 0 0 8px black;
+}
+section:nth-child(odd) .divider::after {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 4px rgb(136, 119, 108);
+}
 section:nth-child(even) {
   background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
   color: rgb(196, 177, 166);
@@ -287,6 +218,24 @@ section:nth-child(even):first-child > .wrapper {
 }
 section:nth-child(even):last-child > .wrapper {
   border-bottom: 4px double rgb(196, 177, 166);
+}
+section .divider {
+  margin: 8px 0;
+  position: relative;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.8);
+  margin: 4px 0 2px 0;
+}
+section .divider::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  box-shadow: inset 0 0 8px black;
+}
+section .divider::after {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .h-divider {
@@ -350,11 +299,12 @@ section:nth-child(even):last-child > .wrapper {
 }
 
 .modal {
+  max-width: 100vw;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: grid;
   place-content: center;
   z-index: 99;
@@ -528,6 +478,16 @@ main {
   margin: 10px auto;
 }
 
+body {
+  margin: 0;
+}
+
+@media only screen and (max-width: 1100px) {
+  main {
+    width: 100%;
+    margin: 0;
+  }
+}
 * {
   font-family: "Cabin";
 }
@@ -578,4 +538,216 @@ button:hover, select:hover, a:hover {
 }
 .sectionSelection .decoration {
   height: 80px;
+}
+
+.home {
+  display: grid;
+  gap: 5px;
+}
+.home .logo {
+  text-align: center;
+}
+.home .logo img {
+  width: 80%;
+  margin-bottom: -10px;
+}
+.home .logo .underTitle {
+  font-size: 24px;
+}
+.home .header {
+  font-family: "Dancing Script";
+  font-size: 52px;
+  font-weight: bold;
+  text-align: center;
+}
+.home .venueInfo {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  font-size: 18px;
+}
+.home .venueInfo .row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.about .header {
+  font-family: "Dancing Script";
+  font-size: 42px;
+  font-weight: bold;
+}
+.about .divider {
+  margin: 8px 0;
+  position: relative;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.2);
+  margin: 4px 0 2px 0;
+}
+.about .divider::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  box-shadow: inset 0 0 8px black;
+}
+.about .divider::after {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 4px rgb(136, 119, 108);
+}
+.about .intro {
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.about .intro .about .text {
+  margin: 10px 0;
+}
+@media only screen and (max-width: 880px) {
+  .about .intro {
+    grid-template-columns: 1fr;
+  }
+  .about .intro .galleryButton {
+    max-width: 100%;
+    margin: 30px;
+  }
+}
+.about .collection {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 10px;
+  align-items: end;
+  margin-top: 20px;
+}
+.about .collection .backgroundDecor {
+  position: absolute;
+  z-index: 99;
+  display: none;
+}
+.about .collection .item {
+  background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
+  border-radius: 15px;
+  box-shadow: 0 0 8px black;
+  border: 1px solid black;
+  transition: ease all 200ms;
+  background-image: url("./../icons/oasis-palm-shade.webp"), linear-gradient(to bottom right, rgb(49, 49, 49), black);
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-family: "Cabin";
+}
+.about .collection .item:hover {
+  transform: scale(1.02);
+}
+.about .collection .item .image {
+  height: 270px;
+  display: grid;
+  align-items: end;
+  overflow-y: hidden;
+}
+.about .collection .item .image img {
+  width: 100%;
+}
+.about .collection .item .text {
+  background: linear-gradient(to bottom right, #D1B464, #8A6E2F);
+  padding: 5px;
+  text-align: center;
+  box-shadow: 0 0 8px black;
+  border-radius: 0 0 15px 15px;
+  border-top: 1px solid black;
+}
+.about .collection .item .text .name {
+  color: black;
+  font-size: 18px;
+  font-family: "Cabin";
+}
+.about .collection .item .text .positions {
+  color: rgb(41, 41, 41);
+  font-size: 14px;
+  font-family: "Cabin";
+}
+@media only screen and (max-width: 1100px) {
+  .about .collection {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .about .collection .item .image {
+    height: 300px;
+  }
+}
+@media only screen and (max-width: 880px) {
+  .about .collection {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .about .collection .item .image {
+    height: 320px;
+  }
+}
+@media only screen and (max-width: 737px) {
+  .about .collection {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+  }
+  .about .collection .item .image {
+    height: 100%;
+  }
+}
+
+.modal {
+  max-width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  z-index: 99;
+}
+.modal .background {
+  position: inherit;
+  left: inherit;
+  top: inherit;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: grid;
+  place-content: center;
+}
+.modal .content {
+  box-shadow: 0 4px 8px 0 black;
+  border: 4px double rgb(196, 177, 166);
+  z-index: 100;
+}
+.modal .content .titleBar {
+  color: white;
+  background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  padding: 3px 3px 0 3px;
+}
+.modal .content .titleBar .closeButton {
+  box-shadow: 0 0 8px black;
+}
+.modal .content .divider {
+  margin: 8px 0;
+  position: relative;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.8);
+}
+.modal .content .divider::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  box-shadow: inset 0 0 8px black;
+}
+.modal .content .divider::after {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }/*# sourceMappingURL=main.css.map */

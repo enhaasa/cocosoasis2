@@ -3,11 +3,7 @@
 @import "../../../scss/common/_fonts"; 
 @import "../../../scss/common/_themes"; 
 
-
 .menu {
-    //background-image: url('./../icons/oasis-palm-shade.webp'), getColor(gradients, steel);
-    //background-repeat: no-repeat;
-
     & .divider {
         @include divider-dark;
         margin: 4px 0 2px 0;
@@ -45,18 +41,15 @@
 
             & .items {
                 display: grid;
+                grid-gap: getMargin(standard) getMargin(large);
+                grid-template-columns: 1fr 1fr;
                 
-                &.single {
-                    grid-gap: 15px;
+            }
+            @media only screen and (max-width: $mediumWidth) {
+                & .items {
                     grid-template-columns: 1fr;
-                }
-
-                &.double {
-                    grid-gap: getMargin(standard) getMargin(large);
-                    grid-template-columns: 1fr 1fr;
                 }
             }
         }
     }
-    
 }
