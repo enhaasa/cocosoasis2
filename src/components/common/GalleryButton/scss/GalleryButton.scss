@@ -1,0 +1,35 @@
+.galleryButton {
+    //border: 5px solid getColor(solids, gold);
+    max-width: 500px;
+
+    & .image {
+        max-width: inherit;
+        position: relative;
+
+
+        & img {
+            max-width: inherit;
+            margin-bottom: -5px;
+            top: 0;
+            left: 0;
+            box-shadow: getShadow(box, exaggerated);
+        }
+        & img + img {
+            position: absolute;
+        }
+        & .topImage {
+            transform: rotate(-1deg);
+        }
+        & .bottomImage {
+            transition: all ease 200ms;
+            filter: brightness(0.3);
+            transform: rotate(4deg);
+        }
+    }
+    &:hover {
+        transform: scale(1.05) rotate(-1deg);
+        & .bottomImage {
+            transform: rotate(5deg);
+        }
+    }
+}

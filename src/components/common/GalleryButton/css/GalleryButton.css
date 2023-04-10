@@ -1,0 +1,31 @@
+.galleryButton {
+  max-width: 500px;
+}
+.galleryButton .image {
+  max-width: inherit;
+  position: relative;
+}
+.galleryButton .image img {
+  max-width: inherit;
+  margin-bottom: -5px;
+  top: 0;
+  left: 0;
+  box-shadow: getShadow(box, exaggerated);
+}
+.galleryButton .image img + img {
+  position: absolute;
+}
+.galleryButton .image .topImage {
+  transform: rotate(-1deg);
+}
+.galleryButton .image .bottomImage {
+  transition: all ease 200ms;
+  filter: brightness(0.3);
+  transform: rotate(4deg);
+}
+.galleryButton:hover {
+  transform: scale(1.05) rotate(-1deg);
+}
+.galleryButton:hover .bottomImage {
+  transform: rotate(5deg);
+}/*# sourceMappingURL=GalleryButton.css.map */

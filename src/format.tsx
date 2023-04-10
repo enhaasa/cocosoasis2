@@ -1,4 +1,5 @@
-import { MenuItemType, MenuTypeType, StaffItemType } from "./commonTypes";
+import { MenuItemType, MenuTypeType, StaffItemType, ImageType } from "./commonTypes";
+import sources from "./sources";
 
 function stringToBoolean(str: string): boolean | null {
     if (str === '0') {
@@ -76,6 +77,15 @@ const format = {
                 isActive: stringToBoolean(item.isActive)
             }
         )))
+    },
+    gallery: function(list: any[]): ImageType[] {
+
+        const formattedList = list.map(item => ({
+            ...item,
+            url: `${sources.cdn}/${item.url}`
+        }))
+
+        return formattedList;
     }
 }
 

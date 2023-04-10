@@ -12,7 +12,8 @@ function ImageModal(props: Props) {
 
     return (
         <div className="imageModal">
-            <img src={image.url} />
+            <img src={image.url}>
+            </img>
         </div>
     )
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import db from '../../db';
+import getExternal from '../../getExternal';
 import format from '../../format';
 import { MenuTypeType } from '../../commonTypes';
 import MenuItem from './components/_MenuItem';
@@ -46,7 +46,7 @@ function Menu(props:Props) {
     }
 
     useEffect(() => {
-        db.get("getMenu").then(data => {    
+        getExternal.db("getMenu").then(data => {    
             setMenu(format.menu(data));
         })
     }, []);

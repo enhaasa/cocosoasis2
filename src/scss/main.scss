@@ -1,13 +1,19 @@
+//Sections
 @import "./../components/about/scss/About";
 @import "./../components/menu/scss/Menu";
-@import "./../components/common/SelectNav/scss/SelectNav";
 
+//Core Templates
 @import "./common/_styles"; 
 @import "./common/_fonts"; 
 @import "./common/_themes";
 @import "./common/_section";
 @import "./common/_modal";
+
+//TSX Components
+@import "./../components/common/SelectNav/scss/SelectNav";
 @import './../components/common/ModalTemplates/scss/ImageModal';
+@import './../components/common/ModalTemplates/scss/GalleryModal';
+@import './../components/common/GalleryButton/scss/GalleryButton';
 
 button {
     all: unset;
@@ -60,20 +66,5 @@ button, select, a {
 
     & .decoration {
         height: 80px;
-    }
-}
-
-
-.galleryModal {
-    
-
-    & nav {
-        display: flex;
-        color: white;
-        background: getColor(gradients, steel);
-        justify-content: center;
-        align-content: center;
-        padding: 3px;
-        border-top: 1px solid black;
     }
 }

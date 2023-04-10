@@ -29,4 +29,10 @@ export type StaffItemType = {
     gender: string;
 }
 
+export type ImageType = {
+    name: string,
+    url: string,
+    format: string
+}
+
 
