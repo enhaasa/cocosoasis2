@@ -1,0 +1,66 @@
+@import "../../../scss/common/styles";
+
+.home {
+    display: grid;
+    gap: 5px;
+    justify-content: center;
+
+    & .logo {
+        text-align: center;
+        
+
+        & img {
+            max-width: 80%;
+            height: auto;
+            margin-bottom: -10px;
+        }
+        
+        & .underTitle {
+            font-size: getFontSize(larger);
+        }
+    }
+
+    & .header {
+
+        font-family: getFont(cursive);
+        font-size: clamp(3rem, 4vw, 3.5rem);
+        font-weight: bold;
+        text-align: center;
+    }
+
+
+    & .partners {
+        display: flex;
+        justify-content: center;
+    }
+
+    & .venueInfo {
+        display: grid;
+
+        grid-template-columns: 1fr auto;
+        font-size: getFontSize(large) auto;
+        
+
+        & .column {
+            display: flex;
+            flex-direction: column;
+
+            
+
+            & .row {
+                display: flex;
+                justify-content: space-around
+            }
+        }
+    }
+    @media only screen and (max-width: $largeWidth) {
+        & .venueInfo {
+            grid-template-columns: 1fr;
+
+            & .galleryButtonWrapper {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+}

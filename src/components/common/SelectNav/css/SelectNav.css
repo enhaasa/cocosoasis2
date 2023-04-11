@@ -8,7 +8,7 @@
 }
 .selectNavWrapper .selectNav .option {
   padding: 10px 20px;
-  font-size: 24px;
+  font-size: 1.3em;
   transition: all ease 200ms;
 }
 .selectNavWrapper .selectNav .option:first-child {

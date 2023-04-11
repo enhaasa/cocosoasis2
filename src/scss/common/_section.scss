@@ -5,7 +5,7 @@ section {
     padding: getPadding(standard);
 
     & .wrapper {
-        padding: getPadding(standard);
+        padding: getPadding(large);
 
     }
 
@@ -50,7 +50,7 @@ section {
 
 .h-divider {
     margin: auto;
-    margin-top: -21px;
+    margin-top: -31px;
     margin-bottom: 40px;
     width: 80%;
     position: relative;

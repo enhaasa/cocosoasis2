@@ -35,4 +35,11 @@ export type ImageType = {
     format: string
 }
 
+export type OpeningType = {
+    date: string,
+    event: string,
+    active: string | boolean,
+    id: string
+}
+
 

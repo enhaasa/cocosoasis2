@@ -1,1 +1,31 @@
-/*# sourceMappingURL=Home.css.map */
+.home {
+  display: grid;
+  gap: 5px;
+}
+.home .logo {
+  text-align: center;
+}
+.home .logo img {
+  width: 80%;
+  margin-bottom: -10px;
+}
+.home .logo .underTitle {
+  font-size: getFontSize(larger);
+}
+.home .header {
+  font-family: getFont(cursive);
+  font-size: getFontSize(chonk);
+  font-weight: bold;
+  text-align: center;
+}
+.home .venueInfo {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  font-size: getFontSize(large);
+}
+.home .venueInfo .row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}/*# sourceMappingURL=Home.css.map */

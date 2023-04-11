@@ -3,7 +3,10 @@ import Home from './components/home/Home';
 import Menu from './components/menu/Menu';
 import About from './components/about/About';
 import Modal from './components/common/Modal';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import getExternal from './getExternal';
+import { getNextOpening } from './commonFunctions';
+import { OpeningType } from './commonTypes';
 
 
 function App() {
@@ -14,11 +17,18 @@ function App() {
       setModal(content);  
   }
 
+  const [ nextOpening, setNextOpening ] = useState<OpeningType | null>(null);
+  useEffect(() => {
+    getExternal.db("getOpenings").then((data: OpeningType[]) => {
+      setNextOpening(getNextOpening(data));
+  })
+  }, [])
+
   const sections = [
     {
       title: null,
       id: "home",
-      content: <Home handleModal={handleModal}/>
+      content: <Home handleModal={handleModal} nextOpening={nextOpening}/>
     },
     {
       title: "Menu",

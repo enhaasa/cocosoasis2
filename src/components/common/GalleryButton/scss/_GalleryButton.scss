@@ -1,6 +1,7 @@
 .galleryButton {
     //border: 5px solid getColor(solids, gold);
-    max-width: 500px;
+    max-width: 450px;
+    margin: getMargin(large);
 
     & .image {
         max-width: inherit;
@@ -16,7 +17,7 @@
         }
         & img + img {
             position: absolute;
-        }
+        } 
         & .topImage {
             transform: rotate(-1deg);
         }
@@ -31,5 +32,11 @@
         & .bottomImage {
             transform: rotate(5deg);
         }
+    }
+}
+@media only screen and (max-width: $largeWidth) {
+    .galleryButton {
+        max-width: 100%;
+        margin: getMargin(larger);
     }
 }

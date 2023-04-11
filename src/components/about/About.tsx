@@ -20,10 +20,10 @@ function Staff(props: Props) {
     useEffect(() => {
         getExternal.db("getStaff").then(data => {
             setStaffs(format.staff(data));
-        })
+        });
         getExternal.files("family").then(data => {
             setFamilyGallery(format.gallery(data));
-        })
+        });
     }, []);
 
     return (

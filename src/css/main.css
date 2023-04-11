@@ -45,7 +45,7 @@
 }
 .staffModal .info .header {
   color: white;
-  font-size: 42px;
+  font-size: 2em;
   font-family: "Dancing Script";
 }
 .staffModal .info .positions {
@@ -69,6 +69,130 @@
     height: auto;
   }
 }
+.about .header {
+  font-family: "Dancing Script";
+  font-size: 3em;
+  font-weight: bold;
+}
+.about .divider {
+  margin: 8px 0;
+  position: relative;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.2);
+  margin: 4px 0 2px 0;
+}
+.about .divider::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  box-shadow: inset 0 0 8px black;
+}
+.about .divider::after {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 4px rgb(136, 119, 108);
+}
+.about .intro {
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.about .intro .about .text {
+  margin: 10px 0;
+}
+@media only screen and (max-width: 880px) {
+  .about .intro {
+    grid-template-columns: 1fr;
+  }
+  .about .intro .galleryButton {
+    max-width: 100%;
+    margin: 30px;
+  }
+}
+.about .collection {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 10px;
+  align-items: end;
+  margin-top: 20px;
+}
+.about .collection .backgroundDecor {
+  position: absolute;
+  z-index: 99;
+  display: none;
+}
+.about .collection .item {
+  background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
+  border-radius: 15px;
+  box-shadow: 0 0 8px black;
+  border: 1px solid black;
+  transition: ease all 200ms;
+  background-image: url("./../icons/oasis-palm-shade.webp"), linear-gradient(to bottom right, rgb(49, 49, 49), black);
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-family: "Cabin";
+}
+.about .collection .item:hover {
+  transform: scale(1.02);
+}
+.about .collection .item .image {
+  height: 270px;
+  display: grid;
+  align-items: end;
+  overflow-y: hidden;
+}
+.about .collection .item .image img {
+  width: 100%;
+}
+.about .collection .item .text {
+  background: linear-gradient(to bottom right, #D1B464, #8A6E2F);
+  padding: 5px;
+  text-align: center;
+  box-shadow: 0 0 8px black;
+  border-radius: 0 0 15px 15px;
+  border-top: 1px solid black;
+}
+.about .collection .item .text .name {
+  color: black;
+  font-size: 1.2em;
+  font-family: "Cabin";
+}
+.about .collection .item .text .positions {
+  color: rgb(41, 41, 41);
+  font-size: 14px;
+  font-family: "Cabin";
+}
+@media only screen and (max-width: 1100px) {
+  .about .collection {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .about .collection .item .image {
+    height: 300px;
+  }
+}
+@media only screen and (max-width: 880px) {
+  .about .collection {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .about .collection .item .image {
+    height: 320px;
+  }
+}
+@media only screen and (max-width: 737px) {
+  .about .collection {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+  }
+  .about .collection .item .image {
+    height: 100%;
+  }
+}
+
 .menuItem {
   display: grid;
   grid-auto-flow: column;
@@ -95,7 +219,7 @@
   width: 120px;
 }
 .menuItem .name {
-  font-size: 18px;
+  font-size: 1.2em;
   font-family: "Cabin";
   color: white;
   text-shadow: 0.1em 0.1em 0.2em black;
@@ -112,6 +236,9 @@
   color: grey;
 }
 
+.menu {
+  max-width: 100%;
+}
 .menu .divider {
   margin: 8px 0;
   position: relative;
@@ -136,17 +263,23 @@
   align-items: center;
   gap: 15px;
   padding: 10px 0;
-  font-size: 42px;
+  font-size: 2em;
   font-family: "Dancing Script";
   color: white;
   text-align: center;
   text-shadow: 0.1em 0.1em 0.2em black;
 }
+.menu .header img {
+  max-width: 100%;
+  height: auto;
+}
 .menu .header .decoration {
   height: 20px;
 }
-.menu .menuList {
-  padding: 10px;
+@media only screen and (max-width: 363px) {
+  .menu .header .decoration {
+    display: none;
+  }
 }
 .menu .menuList .category {
   display: grid;
@@ -160,9 +293,61 @@
   grid-gap: 10px 20px;
   grid-template-columns: 1fr 1fr;
 }
-@media only screen and (max-width: 737px) {
+@media only screen and (max-width: 550px) {
   .menu .menuList .category .items {
     grid-template-columns: 1fr;
+  }
+  .menu .menuList .category .header .icon {
+    display: none;
+  }
+}
+
+.home {
+  display: grid;
+  gap: 5px;
+  justify-content: center;
+}
+.home .logo {
+  text-align: center;
+}
+.home .logo img {
+  max-width: 80%;
+  height: auto;
+  margin-bottom: -10px;
+}
+.home .logo .underTitle {
+  font-size: 1.3em;
+}
+.home .header {
+  font-family: "Dancing Script";
+  font-size: clamp(3rem, 4vw, 3.5rem);
+  font-weight: bold;
+  text-align: center;
+}
+.home .partners {
+  display: flex;
+  justify-content: center;
+}
+.home .venueInfo {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  font-size: 1.2em auto;
+}
+.home .venueInfo .column {
+  display: flex;
+  flex-direction: column;
+}
+.home .venueInfo .column .row {
+  display: flex;
+  justify-content: space-around;
+}
+@media only screen and (max-width: 880px) {
+  .home .venueInfo {
+    grid-template-columns: 1fr;
+  }
+  .home .venueInfo .galleryButtonWrapper {
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -170,7 +355,7 @@ section {
   padding: 10px;
 }
 section .wrapper {
-  padding: 10px;
+  padding: 20px;
 }
 section:nth-child(odd) {
   background: linear-gradient(to bottom right, rgb(196, 177, 166), rgb(148, 123, 107));
@@ -240,7 +425,7 @@ section .divider::after {
 
 .h-divider {
   margin: auto;
-  margin-top: -21px;
+  margin-top: -31px;
   margin-bottom: 40px;
   width: 80%;
   position: relative;
@@ -362,14 +547,14 @@ section .divider::after {
 }
 .selectNavWrapper .selectNav .option {
   padding: 10px 20px;
-  font-size: 24px;
+  font-size: clamp(1rem, 2vw, 2rem);
   transition: all ease 200ms;
 }
 .selectNavWrapper .selectNav .option:first-child {
-  border-radius: 25px 0 0 25px;
+  border-radius: 50px 0 0 50px;
 }
 .selectNavWrapper .selectNav .option:last-child {
-  border-radius: 0 25px 25px 0;
+  border-radius: 0 50px 50px 0;
 }
 .selectNavWrapper .selectNav .option.active {
   background: linear-gradient(to bottom right, #D1B464, #8A6E2F);
@@ -379,6 +564,11 @@ section .divider::after {
 .selectNavWrapper .selectNav .option.inactive {
   box-shadow: inset 0 0 8px black;
   color: grey;
+}
+@media only screen and (max-width: 363px) {
+  .selectNavWrapper .option {
+    padding: 5px 10px !important;
+  }
 }
 
 .imageModal {
@@ -434,7 +624,8 @@ section .divider::after {
 }
 
 .galleryButton {
-  max-width: 500px;
+  max-width: 450px;
+  margin: 20px;
 }
 .galleryButton .image {
   max-width: inherit;
@@ -465,6 +656,12 @@ section .divider::after {
   transform: rotate(5deg);
 }
 
+@media only screen and (max-width: 880px) {
+  .galleryButton {
+    max-width: 100%;
+    margin: 30px;
+  }
+}
 button {
   all: unset;
 }
@@ -518,236 +715,9 @@ button:hover, select:hover, a:hover {
   justify-content: center;
   gap: 10px;
 }
-.sectionSelection .divider {
-  margin: 8px 0;
-  position: relative;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.8);
-  margin: 4px 0 2px 0;
-}
-.sectionSelection .divider::after {
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  box-shadow: inset 0 0 8px black;
-}
-.sectionSelection .divider::after {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-}
-.sectionSelection .decoration {
-  height: 80px;
-}
 
-.home {
-  display: grid;
-  gap: 5px;
-}
-.home .logo {
-  text-align: center;
-}
-.home .logo img {
-  width: 80%;
-  margin-bottom: -10px;
-}
-.home .logo .underTitle {
-  font-size: 24px;
-}
-.home .header {
-  font-family: "Dancing Script";
-  font-size: 52px;
-  font-weight: bold;
-  text-align: center;
-}
-.home .venueInfo {
-  display: grid;
-  justify-content: center;
-  justify-items: center;
-  font-size: 18px;
-}
-.home .venueInfo .row {
+.infoWithIcon {
   display: flex;
   align-items: center;
-  gap: 5px;
-}
-
-.about .header {
-  font-family: "Dancing Script";
-  font-size: 42px;
-  font-weight: bold;
-}
-.about .divider {
-  margin: 8px 0;
-  position: relative;
-  border-bottom: 1px solid rgba(224, 224, 224, 0.2);
-  margin: 4px 0 2px 0;
-}
-.about .divider::after {
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  box-shadow: inset 0 0 8px black;
-}
-.about .divider::after {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: inset 0 0 4px rgb(136, 119, 108);
-}
-.about .intro {
-  margin-bottom: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-}
-.about .intro .about .text {
-  margin: 10px 0;
-}
-@media only screen and (max-width: 880px) {
-  .about .intro {
-    grid-template-columns: 1fr;
-  }
-  .about .intro .galleryButton {
-    max-width: 100%;
-    margin: 30px;
-  }
-}
-.about .collection {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-auto-rows: minmax(100px, auto);
-  grid-gap: 10px;
-  align-items: end;
-  margin-top: 20px;
-}
-.about .collection .backgroundDecor {
-  position: absolute;
-  z-index: 99;
-  display: none;
-}
-.about .collection .item {
-  background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
-  border-radius: 15px;
-  box-shadow: 0 0 8px black;
-  border: 1px solid black;
-  transition: ease all 200ms;
-  background-image: url("./../icons/oasis-palm-shade.webp"), linear-gradient(to bottom right, rgb(49, 49, 49), black);
-  background-repeat: no-repeat;
-  background-size: contain;
-  font-family: "Cabin";
-}
-.about .collection .item:hover {
-  transform: scale(1.02);
-}
-.about .collection .item .image {
-  height: 270px;
-  display: grid;
-  align-items: end;
-  overflow-y: hidden;
-}
-.about .collection .item .image img {
-  width: 100%;
-}
-.about .collection .item .text {
-  background: linear-gradient(to bottom right, #D1B464, #8A6E2F);
-  padding: 5px;
-  text-align: center;
-  box-shadow: 0 0 8px black;
-  border-radius: 0 0 15px 15px;
-  border-top: 1px solid black;
-}
-.about .collection .item .text .name {
-  color: black;
-  font-size: 18px;
-  font-family: "Cabin";
-}
-.about .collection .item .text .positions {
-  color: rgb(41, 41, 41);
-  font-size: 14px;
-  font-family: "Cabin";
-}
-@media only screen and (max-width: 1100px) {
-  .about .collection {
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(100px, auto);
-  }
-  .about .collection .item .image {
-    height: 300px;
-  }
-}
-@media only screen and (max-width: 880px) {
-  .about .collection {
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(100px, auto);
-  }
-  .about .collection .item .image {
-    height: 320px;
-  }
-}
-@media only screen and (max-width: 737px) {
-  .about .collection {
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 30px;
-  }
-  .about .collection .item .image {
-    height: 100%;
-  }
-}
-
-.modal {
-  max-width: 100vw;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  place-content: center;
-  z-index: 99;
-}
-.modal .background {
-  position: inherit;
-  left: inherit;
-  top: inherit;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: grid;
-  place-content: center;
-}
-.modal .content {
-  box-shadow: 0 4px 8px 0 black;
-  border: 4px double rgb(196, 177, 166);
-  z-index: 100;
-}
-.modal .content .titleBar {
-  color: white;
-  background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
-  border-bottom: 1px solid black;
-  display: flex;
-  justify-content: flex-end;
-  align-content: center;
-  padding: 3px 3px 0 3px;
-}
-.modal .content .titleBar .closeButton {
-  box-shadow: 0 0 8px black;
-}
-.modal .content .divider {
-  margin: 8px 0;
-  position: relative;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.8);
-}
-.modal .content .divider::after {
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  box-shadow: inset 0 0 8px black;
-}
-.modal .content .divider::after {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  gap: 2px;
 }/*# sourceMappingURL=main.css.map */
