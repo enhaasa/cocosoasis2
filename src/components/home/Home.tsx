@@ -1,6 +1,7 @@
 import logo from '../../images/logo.webp';
-import dateIcon from '../../icons/date-black.png';
+import dateIcon from '../../icons/calendar-black.png';
 import locationIcon from '../../icons/location-black.png';
+import timeIcon from '../../icons/time-black.png';
 import twitchIcon from '../../icons/twitch.png';
 import discordIcon from '../../icons/discord.png';
 import { ImageType, OpeningType } from '../../commonTypes';
@@ -51,17 +52,23 @@ function Home(props: Props) {
                     
                     
                     <div className="row">
-                        <div className="infoWithIcon">
+                        <span className="infoWithIcon">
                             <img src={locationIcon} />
                             [Alpha] The Goblet<br />
                             Ward 2, Plot 8
-                        </div>
+                        </span>
 
-                        <div className="infoWithIcon">
+                        <span className="infoWithIcon">
                             <img src={dateIcon} />
                             Next opening: <br />
                             {nextOpening ? nextOpening.date : "No openings currently scheduled."}
-                        </div>
+                        </span>
+
+                        <span className="infoWithIcon">
+                            <img src={timeIcon} />
+                            Opening times: <br />
+                            6pm to 9pm ST
+                        </span>
                     </div>
                     <div className="divider" />
 

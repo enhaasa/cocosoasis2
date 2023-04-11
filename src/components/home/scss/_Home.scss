@@ -40,16 +40,14 @@
         grid-template-columns: 1fr auto;
         font-size: getFontSize(large) auto;
         
-
         & .column {
             display: flex;
             flex-direction: column;
 
-            
-
             & .row {
                 display: flex;
-                justify-content: space-around
+                justify-content: space-around;
+                flex-wrap: wrap;
             }
         }
     }

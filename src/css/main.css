@@ -340,6 +340,7 @@
 .home .venueInfo .column .row {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 @media only screen and (max-width: 880px) {
   .home .venueInfo {
@@ -719,5 +720,6 @@ button:hover, select:hover, a:hover {
 .infoWithIcon {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
+  font-weight: bold;
 }/*# sourceMappingURL=main.css.map */

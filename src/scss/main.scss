@@ -72,11 +72,11 @@ button, select, a {
     align-items: flex-start;
     justify-content: center;
     gap: 10px;
-
 }
 
 .infoWithIcon {
     display: flex;
     align-items: center;
-    gap: 2px;
+    gap: 3px;
+    font-weight: bold;
 }
