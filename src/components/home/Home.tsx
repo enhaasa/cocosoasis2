@@ -8,7 +8,7 @@ import discordIcon from '../../icons/discord-white.png';
 import reservationIcon from '../../icons/reservation-white.png';
 import { ImageType, OpeningType } from '../../commonTypes';
 import GalleryButton from '../common/GalleryButton/GalleryButton';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import format from '../../format';
 import getExternal from '../../getExternal';
 
@@ -18,31 +18,17 @@ type Props = {
     nextOpening: OpeningType | null;
 }
 
-type Partner = {
-    name: string,
-    bio: string,
-    website: string,
-    discord: string,
-    level: string
-}
+
 
 function Home(props: Props) {
     const { handleModal, nextOpening } = props;
     const [ venueGallery, setVenueGallery ] = useState<ImageType[]>([]);
-    const [ partners, setPartners ] = useState<Partner[]>();
 
     useEffect(() => {
         getExternal.files("venue").then(data => {
             setVenueGallery(format.gallery(data));
         });
-        getExternal.db("getPartners").then(data => {
-            setPartners(data);
-        });
     }, []);
-
-    function trimFull(string:string):string {
-        return string.replace(/\s/g, '');
-    }
 
     return (
         <>
@@ -52,19 +38,7 @@ function Home(props: Props) {
             </div>
             <div className="divider" />
 
-            {/*
-            <div className="partners">
-                <span className="intro">In close collaboration with...</span>
-                {partners && partners.map(partner => (
-                    <a className="partner" href={partner.website} target="_blank">
-                        <img src={`${sources.cdn}/partners/${trimFull(partner.name)}.webp`} />
-                    </a>
-                ))}
-                <a className="allPartnersButton">All Partners</a>
-            </div>
 
-            <div className="divider" />
-                */}
 
             <div className="header">Welcome to the Oasis<img src={heartsIcon} /></div>
             <div className="linkbar">

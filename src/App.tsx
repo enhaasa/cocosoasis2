@@ -3,6 +3,7 @@ import Home from './components/home/Home';
 import Menu from './components/menu/Menu';
 import About from './components/about/About';
 import Modal from './components/common/Modal';
+import Partners from './components/partners/Partners';
 import { useState, useEffect, useRef } from 'react';
 import getExternal from './getExternal';
 import { getNextOpening } from './commonFunctions';
@@ -55,7 +56,7 @@ function App() {
     {
       title: "Partners",
       id: "partners",
-      content: null
+      content: <Partners handleModal={handleModal} />
     }
   ];
 

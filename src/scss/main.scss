@@ -33,7 +33,7 @@ button {
     gap: getMargin(large);
     font-family: getFont(cursive);
     font-size: getFontSize(header);
-    color: white;
+    color: lightgrey;
     position: fixed;
     background: getColor(gradients, steel);
     padding: getMargin(small) 0;
@@ -57,7 +57,7 @@ button {
         }
         
         &:hover {
-            color: getColor(solids, wine);
+            color: white;
         }
     }
 }

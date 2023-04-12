@@ -761,7 +761,7 @@ button :hover {
   gap: 20px;
   font-family: "Dancing Script";
   font-size: 1.4em;
-  color: white;
+  color: lightgrey;
   position: fixed;
   background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
   padding: 5px 0;
@@ -782,7 +782,7 @@ button :hover {
   color: inherit;
 }
 .navbar a:hover, .navbar button:hover {
-  color: rgb(134, 0, 0);
+  color: white;
 }
 
 main {
