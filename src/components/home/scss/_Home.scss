@@ -43,7 +43,6 @@
         margin-bottom: getMargin(standard);
         flex-wrap: wrap;
         
-
         & a, & button {
             display: flex;
             align-items: center;
@@ -52,14 +51,23 @@
             text-decoration: none;
             color: lightgrey;
             background: getColor(gradients, steel);
+            box-shadow: getShadow(box, standard);
 
+            &.twitch {
+                background: getColor(gradients, twitch);
+            }
+            &.discord {
+                background: getColor(gradients, discord);
+            }
 
             & img {
                 opacity: 0.8;
             }
-
             &:visited {
                 color: lightgrey;
+            }
+            &:hover {
+                transform: scale(1.05);
             }
         }
     }

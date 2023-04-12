@@ -93,7 +93,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  box-shadow: inset 0 0 8px black;
+  box-shadow: inset 0 2px 8px black;
 }
 .about .divider::after {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
@@ -133,7 +133,7 @@
 .about .collection .item {
   background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
   border-radius: 15px;
-  box-shadow: 0 0 8px black;
+  box-shadow: 0 2px 8px black;
   border: 1px solid black;
   transition: ease all 200ms;
   background-image: url("./../icons/oasis-palm-shade.webp"), linear-gradient(to bottom right, rgb(49, 49, 49), black);
@@ -157,7 +157,7 @@
   background: linear-gradient(to bottom right, #D1B464, #8A6E2F);
   padding: 5px;
   text-align: center;
-  box-shadow: 0 0 8px black;
+  box-shadow: 0 2px 8px black;
   border-radius: 0 0 15px 15px;
   border-top: 1px solid black;
 }
@@ -190,6 +190,15 @@
   }
 }
 @media only screen and (max-width: 737px) {
+  .about .collection {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+  }
+  .about .collection .item .image {
+    height: 380px;
+  }
+}
+@media only screen and (max-width: 550px) {
   .about .collection {
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 30px;
@@ -258,7 +267,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  box-shadow: inset 0 0 8px black;
+  box-shadow: inset 0 2px 8px black;
 }
 .menu .divider::after {
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
@@ -353,12 +362,22 @@
   text-decoration: none;
   color: lightgrey;
   background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
+  box-shadow: 0 2px 8px black;
+}
+.home .linkbar a.twitch, .home .linkbar button.twitch {
+  background: linear-gradient(to bottom right, rgb(146, 19, 146), rgb(99, 4, 99));
+}
+.home .linkbar a.discord, .home .linkbar button.discord {
+  background: linear-gradient(to bottom right, rgb(88, 101, 242), rgb(57, 70, 209));
 }
 .home .linkbar a img, .home .linkbar button img {
   opacity: 0.8;
 }
 .home .linkbar a:visited, .home .linkbar button:visited {
   color: lightgrey;
+}
+.home .linkbar a:hover, .home .linkbar button:hover {
+  transform: scale(1.05);
 }
 .home .partners {
   display: grid;
@@ -439,7 +458,7 @@ section:nth-child(odd) .divider::after {
   left: 0;
   width: 100%;
   height: 2px;
-  box-shadow: inset 0 0 8px black;
+  box-shadow: inset 0 2px 8px black;
 }
 section:nth-child(odd) .divider::after {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
@@ -472,7 +491,7 @@ section .divider::after {
   left: 0;
   width: 100%;
   height: 2px;
-  box-shadow: inset 0 0 8px black;
+  box-shadow: inset 0 2px 8px black;
 }
 section .divider::after {
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
@@ -584,7 +603,7 @@ section .bigdivider img {
   padding: 3px 3px 0 3px;
 }
 .modal .content .titleBar .closeButton {
-  box-shadow: 0 0 8px black;
+  box-shadow: 0 2px 8px black;
 }
 .modal .content .divider {
   margin: 8px 0;
@@ -598,7 +617,7 @@ section .bigdivider img {
   left: 0;
   width: 100%;
   height: 2px;
-  box-shadow: inset 0 0 8px black;
+  box-shadow: inset 0 2px 8px black;
 }
 .modal .content .divider::after {
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
@@ -624,10 +643,10 @@ section .bigdivider img {
 .selectNavWrapper .selectNav .option.active {
   background: linear-gradient(to bottom right, #D1B464, #8A6E2F);
   color: black;
-  box-shadow: 0 0 8px black;
+  box-shadow: 0 2px 8px black;
 }
 .selectNavWrapper .selectNav .option.inactive {
-  box-shadow: inset 0 0 8px black;
+  box-shadow: inset 0 2px 8px black;
   color: grey;
 }
 @media only screen and (max-width: 363px) {
@@ -746,7 +765,7 @@ button :hover {
   position: fixed;
   background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
   padding: 5px 0;
-  box-shadow: 0 0 8px black;
+  box-shadow: 0 2px 8px black;
   width: 100%;
   left: 0;
   top: 0;
@@ -757,6 +776,7 @@ button :hover {
   font-size: 1.4em;
   text-decoration: none;
   text-shadow: 0.1em 0.1em 0.2em black;
+  color: white;
 }
 .navbar a:visited, .navbar button:visited {
   color: inherit;
@@ -767,7 +787,7 @@ button :hover {
 
 main {
   width: 1100px;
-  box-shadow: 0 0 8px black;
+  box-shadow: 0 2px 8px black;
   margin: 60px auto 10px auto;
 }
 
@@ -779,6 +799,9 @@ body {
   main {
     width: 100%;
     margin: 0;
+  }
+  .navbar {
+    display: none;
   }
 }
 * {

@@ -7,6 +7,7 @@ import { useState, useEffect, useRef } from 'react';
 import getExternal from './getExternal';
 import { getNextOpening } from './commonFunctions';
 import { OpeningType } from './commonTypes';
+import { capitalizeWords } from './commonFunctions';
 
 
 function App() {
@@ -25,6 +26,11 @@ function App() {
   }, [])
 
   const sections = [
+    {
+      title: null,
+      id: "home",
+      content: <Home handleModal={handleModal} nextOpening={nextOpening} />
+    },
     {
       title: "Menu",
       id: "menu",
@@ -59,17 +65,11 @@ function App() {
       
       <div className="navbar">
           {sections.map((section: any) => (
-              <a href={`#${section.id}`} key={`${section.title}link`}>{section.title}</a>
+              <a href={`#${section.id}`} key={`${section.id}link`}>{capitalizeWords(section.id)}</a>
           ))}
       </div>
       
       <main>
-
-      <Section 
-        title={null}
-        id={"home"}
-        content={<Home handleModal={handleModal} nextOpening={nextOpening} sections={sections}/>}
-      />
         
         {sections.map(section => (
           <Section 

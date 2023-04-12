@@ -3,7 +3,6 @@ import dateIcon from '../../icons/calendar-black.png';
 import locationIcon from '../../icons/location-black.png';
 import timeIcon from '../../icons/time-black.png';
 import heartsIcon from '../../icons/hearts-black.png';
-import decorDividerIcon from '../../icons/decor5-black.png';
 import twitchIcon from '../../icons/twitch-white.png';
 import discordIcon from '../../icons/discord-white.png';
 import reservationIcon from '../../icons/reservation-white.png';
@@ -11,15 +10,12 @@ import { ImageType, OpeningType } from '../../commonTypes';
 import GalleryButton from '../common/GalleryButton/GalleryButton';
 import { useState, useEffect, useRef } from 'react';
 import format from '../../format';
-import sources from '../../sources';
 import getExternal from '../../getExternal';
-import { capitalizeWords } from '../../commonFunctions';
 
 
 type Props = {
     handleModal: (content: any) => void;
     nextOpening: OpeningType | null;
-    sections: any;
 }
 
 type Partner = {
@@ -31,7 +27,7 @@ type Partner = {
 }
 
 function Home(props: Props) {
-    const { handleModal, nextOpening, sections } = props;
+    const { handleModal, nextOpening } = props;
     const [ venueGallery, setVenueGallery ] = useState<ImageType[]>([]);
     const [ partners, setPartners ] = useState<Partner[]>();
 
@@ -72,25 +68,25 @@ function Home(props: Props) {
 
             <div className="header">Welcome to the Oasis<img src={heartsIcon} /></div>
             <div className="linkbar">
-                <a href="https://discord.gg/cbYNypvWpn" target="_blank">
-                    <img src={discordIcon} /> Community
-                </a>
                 
-                <button>
+                <button className="reservations">
                     <img src={reservationIcon} /> Reservations
                 </button>
 
-                <a href="https://www.twitch.tv/cocosoasis" target="_blank">
+                <a className="twitch" href="https://www.twitch.tv/cocosoasis" target="_blank">
                     <img src={twitchIcon} /> Music Stream
                 </a>
+
+                <a className="discord" href="https://discord.gg/cbYNypvWpn" target="_blank">
+                    <img src={discordIcon} /> Community
+                </a>
+                
             </div>
 
             
             <div className="divider" />
             <div className="venueInfo">
                 <div className="column">
-                    
-                    
                     <div className="row">
                         <span className="infoWithIcon">
                             <img src={locationIcon} />
@@ -135,13 +131,6 @@ function Home(props: Props) {
                         />
                     </div>
                 </div>
-                
-
-            </div>
-
-
-            <div className="gallery">
-                
             </div>
 
         </>

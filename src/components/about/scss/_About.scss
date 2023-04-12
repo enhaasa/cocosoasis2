@@ -134,6 +134,17 @@
     }
     @media only screen and (max-width: $mediumWidth) {
         & .collection {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 30px;
+            & .item {
+                & .image {
+                    height: 380px;
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: $smallWidth) {
+        & .collection {
             grid-template-columns: repeat(1, 1fr);
             grid-gap: 30px;
             & .item {

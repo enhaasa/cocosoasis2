@@ -50,6 +50,7 @@ button {
         font-size: getFontSize(header);
         text-decoration: none;
         text-shadow: getShadow(text, standard);
+        color: white;
 
         &:visited {
             color: inherit;
@@ -62,7 +63,6 @@ button {
 }
 
 main {
-    
     width: $width; 
     box-shadow: getShadow(box, standard);
     margin: 60px auto getMargin(standard) auto;
@@ -76,6 +76,9 @@ body {
     main {
       width: 100%;
       margin: 0;
+    }
+    .navbar {
+        display: none;
     }
 }
 
