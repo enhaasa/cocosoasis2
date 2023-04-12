@@ -12,7 +12,7 @@ function Section(props: Props) {
         <section>
             <div className={`wrapper ${id}`} id={id}>
                 {title &&
-                    <div className="h-divider">
+                    <div className="h-divider" >
                         <div className="shadow"></div>
                         <div className="text"><i>{title}</i></div>
                     </div>}

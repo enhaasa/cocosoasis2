@@ -24,35 +24,33 @@ function MenuItem(props: Props) {
     const imgName = cdn + trimFull(name) + imgFormat;
 
     return (
-        <div className="menuItem">
+        <div className="menuItem" key={name}>
+            {hasImage &&
+            <span className="column">
+                {hasImage === "1" && 
+                    <span className="image">
+                    <img src={imgName} loading="lazy">
+                    </img>
+                </span>
+                }
+            </span>}
 
-        {hasImage &&
-        <span className="column">
-            {hasImage === "1" && 
-                <span className="image">
-                <img src={imgName} loading="lazy">
-                </img>
+            <span className="column" >
+                <div className="row">
+                    <span className="name">{name}</span>
+                    <span className="price">{formatStringAsPrice(price.toString())} gil</span>
+                </div>
+                <div className="divider" />
+                
+                <div className="row">
+                    <span className="description">{description}</span>
+                </div>
+
+                <div className="row">
+                    <span className="ingredients">{ingredients.replace(/,/g, ", ")}</span>
+                </div>
             </span>
-            }
-        </span>}
-
-        <span className="column">
-            <div className="row">
-                <span className="name">{name}</span>
-                <span className="price">{formatStringAsPrice(price.toString())} gil</span>
-            </div>
-            <div className="divider" />
-            
-            <div className="row">
-                <span className="description">{description}</span>
-            </div>
-
-            <div className="row">
-                <span className="ingredients">{ingredients.replace(/,/g, ", ")}</span>
-            </div>
-        </span>
-
-    </div>
+        </div>
     );
 }
 

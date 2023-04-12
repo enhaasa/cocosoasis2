@@ -13,7 +13,7 @@ function Staff(props: Props) {
     const { handleModal } = props;
     
     const [ staffs, setStaffs ] = useState<StaffItemType[]>([]);
-    const activeStaff = staffs.map(staff => (staff.isActive && <StaffItem item={staff} handleModal={handleModal}/>));
+    const activeStaff = staffs.map(staff => (staff.isActive && <StaffItem key={staff.name} item={staff} handleModal={handleModal}/>));
 
     const [ familyGallery, setFamilyGallery ] = useState<ImageType[]>([]);
 

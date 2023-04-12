@@ -10,6 +10,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 .staffModal {
   width: 900px;
   height: 500px;
@@ -69,10 +71,14 @@
     height: auto;
   }
 }
+.about {
+  margin-bottom: 20px;
+}
 .about .header {
   font-family: "Dancing Script";
   font-size: 3em;
   font-weight: bold;
+  margin-bottom: 6px;
 }
 .about .divider {
   margin: 8px 0;
@@ -319,19 +325,61 @@
   font-size: 1.3em;
 }
 .home .header {
+  color: black;
   font-family: "Dancing Script";
   font-size: clamp(3rem, 4vw, 3.5rem);
   font-weight: bold;
-  text-align: center;
-}
-.home .partners {
   display: flex;
   justify-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+  margin: 10px 0;
+}
+.home .linkbar {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.home .linkbar a, .home .linkbar button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 10px;
+  text-decoration: none;
+  color: lightgrey;
+  background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
+}
+.home .linkbar a img, .home .linkbar button img {
+  opacity: 0.8;
+}
+.home .linkbar a:visited, .home .linkbar button:visited {
+  color: lightgrey;
+}
+.home .partners {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: auto 1fr auto;
+  justify-items: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.home .partners .intro {
+  justify-self: flex-start;
+}
+.home .partners .allPartnersButton {
+  justify-self: flex-end;
 }
 .home .venueInfo {
   display: grid;
   grid-template-columns: 1fr auto;
   font-size: 1.2em auto;
+  color: black;
 }
 .home .venueInfo .column {
   display: flex;
@@ -341,6 +389,7 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  margin: 2px 0 4px 0;
 }
 @media only screen and (max-width: 880px) {
   .home .venueInfo {
@@ -349,6 +398,11 @@
   .home .venueInfo .galleryButtonWrapper {
     display: flex;
     justify-content: center;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .home .header img {
+    display: none;
   }
 }
 
@@ -376,7 +430,7 @@ section:nth-child(odd) .divider {
   margin: 8px 0;
   position: relative;
   border-bottom: 1px solid rgba(224, 224, 224, 0.2);
-  margin: 4px 0 2px 0;
+  margin: 0;
 }
 section:nth-child(odd) .divider::after {
   content: "";
@@ -409,7 +463,7 @@ section .divider {
   margin: 8px 0;
   position: relative;
   border-bottom: 1px solid rgba(128, 128, 128, 0.8);
-  margin: 4px 0 2px 0;
+  margin: 0;
 }
 section .divider::after {
   content: "";
@@ -422,6 +476,16 @@ section .divider::after {
 }
 section .divider::after {
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+section .bigdivider {
+  margin-top: -10px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+section .bigdivider img {
+  max-width: 90%;
+  height: auto;
 }
 
 .h-divider {
@@ -548,7 +612,7 @@ section .divider::after {
 }
 .selectNavWrapper .selectNav .option {
   padding: 10px 20px;
-  font-size: clamp(1rem, 2vw, 2rem);
+  font-size: clamp(1rem, 2vw, 1.5rem);
   transition: all ease 200ms;
 }
 .selectNavWrapper .selectNav .option:first-child {
@@ -670,10 +734,41 @@ button :hover {
   cursor: pointer;
 }
 
+.navbar {
+  display: flex;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  font-family: "Dancing Script";
+  font-size: 1.4em;
+  color: white;
+  position: fixed;
+  background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
+  padding: 5px 0;
+  box-shadow: 0 0 8px black;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 98;
+}
+.navbar a, .navbar button {
+  font-family: "Dancing Script";
+  font-size: 1.4em;
+  text-decoration: none;
+  text-shadow: 0.1em 0.1em 0.2em black;
+}
+.navbar a:visited, .navbar button:visited {
+  color: inherit;
+}
+.navbar a:hover, .navbar button:hover {
+  color: rgb(134, 0, 0);
+}
+
 main {
   width: 1100px;
   box-shadow: 0 0 8px black;
-  margin: 10px auto;
+  margin: 60px auto 10px auto;
 }
 
 body {
@@ -688,6 +783,7 @@ body {
 }
 * {
   font-family: "Cabin";
+  scroll-behavior: smooth;
 }
 
 button, select, a {
@@ -722,4 +818,5 @@ button:hover, select:hover, a:hover {
   align-items: center;
   gap: 3px;
   font-weight: bold;
+  color: black;
 }/*# sourceMappingURL=main.css.map */

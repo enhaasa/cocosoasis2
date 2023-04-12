@@ -12,7 +12,7 @@
         
         & .option {
             padding: getPadding(standard) getPadding(large);
-            font-size: clamp(1rem, 2vw, 2rem);
+            font-size: clamp(1rem, 2vw, 1.5rem);
             transition: all ease 200ms;
 
             &:first-child {

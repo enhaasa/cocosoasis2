@@ -24,7 +24,7 @@ section {
 
         & .divider {
             @include divider-light;
-            margin: 4px 0 2px 0;
+            margin: 0;
         }
     }
     &:nth-child(even) {
@@ -44,7 +44,19 @@ section {
 
     & .divider {
         @include divider-dark;
-        margin: 4px 0 2px 0;
+        margin: 0;
+    }
+
+    & .bigdivider {
+        margin-top: -10px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        & img {
+            max-width: 90%;
+            height: auto;
+        }
     }
 }
 

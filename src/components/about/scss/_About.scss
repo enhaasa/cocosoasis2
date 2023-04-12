@@ -5,10 +5,13 @@
 @import "./../../../scss/dimensions.scss";
 
 .about {
+    margin-bottom: 20px;
+
     & .header {
         font-family: getFont(cursive);
         font-size: getFontSize(chonk);
         font-weight: bold;
+        margin-bottom: 6px;
     }
 
     & .divider {

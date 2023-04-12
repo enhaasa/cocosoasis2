@@ -3,7 +3,7 @@ import Home from './components/home/Home';
 import Menu from './components/menu/Menu';
 import About from './components/about/About';
 import Modal from './components/common/Modal';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import getExternal from './getExternal';
 import { getNextOpening } from './commonFunctions';
 import { OpeningType } from './commonTypes';
@@ -26,11 +26,6 @@ function App() {
 
   const sections = [
     {
-      title: null,
-      id: "home",
-      content: <Home handleModal={handleModal} nextOpening={nextOpening}/>
-    },
-    {
       title: "Menu",
       id: "menu",
       content: <Menu handleModal={handleModal}/>
@@ -50,22 +45,38 @@ function App() {
       id: "about",
       content: <About handleModal={handleModal}
       />
+    },
+    {
+      title: "Partners",
+      id: "partners",
+      content: null
     }
   ];
 
   return (
     <>
-      {modal && 
-      <Modal handleClose={() => {handleModal(null)}}>
-        {modal}  
-      </Modal>}
+      {modal && <Modal handleClose={() => {handleModal(null)}}>{modal}</Modal>}
+      
+      <div className="navbar">
+          {sections.map((section: any) => (
+              <a href={`#${section.id}`} key={`${section.title}link`}>{section.title}</a>
+          ))}
+      </div>
       
       <main>
+
+      <Section 
+        title={null}
+        id={"home"}
+        content={<Home handleModal={handleModal} nextOpening={nextOpening} sections={sections}/>}
+      />
+        
         {sections.map(section => (
           <Section 
             title={section.title} 
             id={section.id}
             content={section.content}
+            key={section.id}
           />
         ))}
       </main>

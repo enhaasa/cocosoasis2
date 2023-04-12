@@ -25,10 +25,47 @@ button {
     }
 }
 
+.navbar {
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: getMargin(large);
+    font-family: getFont(cursive);
+    font-size: getFontSize(header);
+    color: white;
+    position: fixed;
+    background: getColor(gradients, steel);
+    padding: getMargin(small) 0;
+    box-shadow: getShadow(box, standard);
+
+    width: 100%;
+    left: 0;
+    top: 0;
+
+    z-index: 98;
+
+    & a, & button {
+        font-family: getFont(cursive);
+        font-size: getFontSize(header);
+        text-decoration: none;
+        text-shadow: getShadow(text, standard);
+
+        &:visited {
+            color: inherit;
+        }
+        
+        &:hover {
+            color: getColor(solids, wine);
+        }
+    }
+}
+
 main {
+    
     width: $width; 
     box-shadow: getShadow(box, standard);
-    margin: getMargin(standard) auto;
+    margin: 60px auto getMargin(standard) auto;
 }
 
 body {
@@ -44,6 +81,7 @@ body {
 
 * {
     font-family: getFont(standard);
+    scroll-behavior: smooth;
 }
 
 
@@ -79,4 +117,7 @@ button, select, a {
     align-items: center;
     gap: 3px;
     font-weight: bold;
+    color: black;
 }
+
+

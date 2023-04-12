@@ -1,4 +1,5 @@
 @import "../../../scss/common/styles";
+@import "../../../scss/common/fonts";
 
 .home {
     display: grid;
@@ -21,33 +22,82 @@
     }
 
     & .header {
-
+        color: black;
         font-family: getFont(cursive);
         font-size: clamp(3rem, 4vw, 3.5rem);
         font-weight: bold;
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
         text-align: center;
+        gap: 5px;
+        margin: getMargin(standard) 0;
+    }
+
+    & .linkbar {
+        display: flex;
+        margin: auto;
+        justify-content: center;
+        gap: getMargin(standard);
+        margin-bottom: getMargin(standard);
+        flex-wrap: wrap;
+        
+
+        & a, & button {
+            display: flex;
+            align-items: center;
+            gap: getMargin(small);
+            padding: 2px getPadding(standard);
+            text-decoration: none;
+            color: lightgrey;
+            background: getColor(gradients, steel);
+
+
+            & img {
+                opacity: 0.8;
+            }
+
+            &:visited {
+                color: lightgrey;
+            }
+        }
     }
 
 
     & .partners {
-        display: flex;
-        justify-content: center;
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: auto 1fr auto;
+        justify-items: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+
+        & .intro {
+            justify-self: flex-start;
+        }
+        & .allPartnersButton {
+            justify-self: flex-end;
+        }
     }
 
     & .venueInfo {
         display: grid;
-
         grid-template-columns: 1fr auto;
         font-size: getFontSize(large) auto;
+        color: black;
         
         & .column {
             display: flex;
             flex-direction: column;
+            
 
             & .row {
                 display: flex;
                 justify-content: space-around;
                 flex-wrap: wrap;
+                margin: 2px 0 4px 0;
             }
         }
     }
@@ -58,6 +108,13 @@
             & .galleryButtonWrapper {
                 display: flex;
                 justify-content: center;
+            }
+        }
+    }
+    @media only screen and (max-width: $smallWidth) {
+        & .header { 
+            & img {
+                display: none;
             }
         }
     }

@@ -18,11 +18,11 @@ function StaffItem(props: Props) {
         handleModal
     } = props;
 
-    const staffModal =  <StaffModal item={props.item} handleClose={() => {handleModal(null)}}/>;
+    const staffModal = <StaffModal item={props.item} handleClose={() => {handleModal(null)}}/>;
 
     return (
         <>
-            <button className="item" onClick={() => {handleModal(staffModal)}}>
+            <button className="item" key={name} onClick={() => {handleModal(staffModal)}}>
                 <img className="backgroundDecor" src={backgroundDecor}/>
                 <div className="image">
                     <img src={`${sources.cdn}/characters/${name.replace(" ", "")}.webp`} loading="lazy"></img>

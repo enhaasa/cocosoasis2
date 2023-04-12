@@ -72,7 +72,7 @@ function Menu(props:Props) {
                 {menu.map(type => (
                     sections[selectedSection].types.includes(type.name) &&
                         <div className="category">
-                            <div className="header">
+                            <div className="header" key={type.name}>
                                 <img className="decoration" src={decorLeft} />
                                 {type.title} <img className="icon" src={`${sources.cdn}/icons/${trimFull(type.name)}-white.png`}></img>
                                 <img className="decoration" src={decorRight} />
@@ -80,7 +80,7 @@ function Menu(props:Props) {
 
                             <div className="items">
                                 {type.items.map(item => (
-                                    <MenuItem item={item} />
+                                    <MenuItem item={item} key={item.id} />
                                 ))}
                             </div>
                         </div>

@@ -2,30 +2,51 @@ import logo from '../../images/logo.webp';
 import dateIcon from '../../icons/calendar-black.png';
 import locationIcon from '../../icons/location-black.png';
 import timeIcon from '../../icons/time-black.png';
-import twitchIcon from '../../icons/twitch.png';
-import discordIcon from '../../icons/discord.png';
+import heartsIcon from '../../icons/hearts-black.png';
+import decorDividerIcon from '../../icons/decor5-black.png';
+import twitchIcon from '../../icons/twitch-white.png';
+import discordIcon from '../../icons/discord-white.png';
+import reservationIcon from '../../icons/reservation-white.png';
 import { ImageType, OpeningType } from '../../commonTypes';
 import GalleryButton from '../common/GalleryButton/GalleryButton';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import format from '../../format';
+import sources from '../../sources';
 import getExternal from '../../getExternal';
+import { capitalizeWords } from '../../commonFunctions';
 
 
 type Props = {
     handleModal: (content: any) => void;
     nextOpening: OpeningType | null;
+    sections: any;
+}
+
+type Partner = {
+    name: string,
+    bio: string,
+    website: string,
+    discord: string,
+    level: string
 }
 
 function Home(props: Props) {
-    const { handleModal, nextOpening } = props;
+    const { handleModal, nextOpening, sections } = props;
     const [ venueGallery, setVenueGallery ] = useState<ImageType[]>([]);
+    const [ partners, setPartners ] = useState<Partner[]>();
 
     useEffect(() => {
         getExternal.files("venue").then(data => {
             setVenueGallery(format.gallery(data));
         });
+        getExternal.db("getPartners").then(data => {
+            setPartners(data);
+        });
     }, []);
-    
+
+    function trimFull(string:string):string {
+        return string.replace(/\s/g, '');
+    }
 
     return (
         <>
@@ -35,17 +56,36 @@ function Home(props: Props) {
             </div>
             <div className="divider" />
 
-
+            {/*
             <div className="partners">
-                [PLACEHOLDER__PARTNER][PLACEHOLDER__PARTNER][PLACEHOLDER__PARTNER]
+                <span className="intro">In close collaboration with...</span>
+                {partners && partners.map(partner => (
+                    <a className="partner" href={partner.website} target="_blank">
+                        <img src={`${sources.cdn}/partners/${trimFull(partner.name)}.webp`} />
+                    </a>
+                ))}
+                <a className="allPartnersButton">All Partners</a>
             </div>
 
             <div className="divider" />
+                */}
 
-            <div className="header">Welcome to the Oasis</div>
-            [PLACEHOLDER__NAVBAR]
+            <div className="header">Welcome to the Oasis<img src={heartsIcon} /></div>
+            <div className="linkbar">
+                <a href="https://discord.gg/cbYNypvWpn" target="_blank">
+                    <img src={discordIcon} /> Community
+                </a>
+                
+                <button>
+                    <img src={reservationIcon} /> Reservations
+                </button>
+
+                <a href="https://www.twitch.tv/cocosoasis" target="_blank">
+                    <img src={twitchIcon} /> Music Stream
+                </a>
+            </div>
+
             
-            <br /><br /><br /><br /><br /><br />
             <div className="divider" />
             <div className="venueInfo">
                 <div className="column">
