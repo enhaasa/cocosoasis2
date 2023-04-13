@@ -1,17 +1,18 @@
 @import "./../../../scss/dimensions.scss";
 @import "./../../../scss/common/styles";
 
-.staffModal {
+.infoModal {
     width: 900px;
     height: 500px;
     display: grid;
-    grid-template-columns: 2fr 3fr;
-    
+    grid-auto-flow: column;
+
 
     & .image {
         display: grid;
         justify-content: center;
         align-content: end;
+        grid-column: span 2;
 
         border-right: getBorder(solid, black);
         z-index: 101;
@@ -30,11 +31,12 @@
     }
 
     & .info {
+        grid-column: span 3;
         background: getColor(gradients, steel);
         color: white;
         text-align: center;
         padding: getPadding(large);
-        display: grid;
+        display: grid; 
         grid-template-rows: auto auto 1fr auto;
         text-shadow: getShadow(text, standard);
 
@@ -44,11 +46,11 @@
             font-family: getFont(cursive);
         }
 
-        & .positions {
+        & .underTitle {
             color: getColor(solids, light);
         }
 
-        & .bio {
+        & .body {
             display: grid;
             align-content: center;
             color: getColor(solids, light);
@@ -58,14 +60,14 @@
             }
         }
 
-        & .hiredSince {
+        & .footer {
             color: getColor(solids, light);
         }
     }
 
 }
 @media only screen and (max-width: $width) {
-    .staffModal {
+    .infoModal {
         width: 100%;
         height: auto;
     }

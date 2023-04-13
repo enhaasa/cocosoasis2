@@ -14,16 +14,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
-.staffModal {
+.infoModal {
   width: 900px;
   height: 500px;
   display: grid;
-  grid-template-columns: 2fr 3fr;
+  grid-auto-flow: column;
 }
-.staffModal .image {
+.infoModal .image {
   display: grid;
   justify-content: center;
   align-content: end;
+  grid-column: span 2;
   border-right: 1px solid black;
   z-index: 101;
   overflow-y: hidden;
@@ -33,12 +34,13 @@
   background-size: contain;
   box-shadow: inset 2px 0 8px 0 black;
 }
-.staffModal .image img {
+.infoModal .image img {
   width: 100%;
   height: 100%;
   overflow: auto;
 }
-.staffModal .info {
+.infoModal .info {
+  grid-column: span 3;
   background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
   color: white;
   text-align: center;
@@ -47,28 +49,28 @@
   grid-template-rows: auto auto 1fr auto;
   text-shadow: 0.1em 0.1em 0.2em black;
 }
-.staffModal .info .header {
+.infoModal .info .header {
   color: white;
   font-size: 2em;
   font-family: "Dancing Script";
 }
-.staffModal .info .positions {
+.infoModal .info .underTitle {
   color: rgb(196, 177, 166);
 }
-.staffModal .info .bio {
+.infoModal .info .body {
   display: grid;
   align-content: center;
   color: rgb(196, 177, 166);
 }
-.staffModal .info .bio p {
+.infoModal .info .body p {
   margin: 0 0 1em 0;
 }
-.staffModal .info .hiredSince {
+.infoModal .info .footer {
   color: rgb(196, 177, 166);
 }
 
 @media only screen and (max-width: 1100px) {
-  .staffModal {
+  .infoModal {
     width: 100%;
     height: auto;
   }

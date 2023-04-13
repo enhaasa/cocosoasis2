@@ -1,8 +1,9 @@
 import { StaffItemType } from "../../../commonTypes";
-import { capitalizeWords } from "../../../commonFunctions";
-import StaffModal from './../components/_StaffModal';
+import { capitalizeWords, getTimeSinceDate } from "../../../commonFunctions";
+import StaffModal from './InfoModal';
 import sources from "../../../sources";
 import backgroundDecor from './../../../icons/oasis-palm-shade.webp';
+import ReactHtmlParser from 'react-html-parser';
 
 type Props = {
     item: StaffItemType;
@@ -13,12 +14,24 @@ function StaffItem(props: Props) {
     const {
         name,
         positions,
+        bio,
+        hiredDate
     } = props.item;
     const {
         handleModal
     } = props;
 
-    const staffModal = <StaffModal item={props.item} handleClose={() => {handleModal(null)}}/>;
+    function trimFull(string:string):string {
+        return string.replace(/\s/g, '');
+    }
+
+    const staffModal = <StaffModal item={{
+        header: name,
+        underTitle: positions.map(p => capitalizeWords(p)).join(" & "),
+        body: ReactHtmlParser(bio),
+        footer: `Employed: ${getTimeSinceDate(hiredDate)}`,
+        image: `${sources.cdn}/characters/${trimFull(name)}.webp`
+    }}handleClose={() => {handleModal(null)}}/>;
 
     return (
         <>
