@@ -5,14 +5,13 @@ import ReactHtmlParser from 'react-html-parser';
 import sources from "../../../sources";
 
 type Props = {
-    item: {
-        header: string;
-        underTitle: string;
+    content: {
+        header: string | JSX.Element;
+        underTitle: any;
         body: any;
-        footer: string;
+        footer: any;
         image?: string;
     }
-    handleClose: () => void;
 }
 
 function InfoModal(props: Props) {
@@ -22,12 +21,12 @@ function InfoModal(props: Props) {
         body,
         footer,
         image
-    } = props.item;
+    } = props.content;
 
     return (
         <div className="infoModal">
 
-            {image && 
+            {image &&
             <div className="image">
                 <a href={image} target="_blank">
                     <img src={image} />

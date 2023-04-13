@@ -1,6 +1,6 @@
 import { StaffItemType } from "../../../commonTypes";
 import { capitalizeWords, getTimeSinceDate } from "../../../commonFunctions";
-import StaffModal from './InfoModal';
+import InfoModal from '../../common/ModalTemplates/InfoModal';
 import sources from "../../../sources";
 import backgroundDecor from './../../../icons/oasis-palm-shade.webp';
 import ReactHtmlParser from 'react-html-parser';
@@ -25,13 +25,13 @@ function StaffItem(props: Props) {
         return string.replace(/\s/g, '');
     }
 
-    const staffModal = <StaffModal item={{
+    const staffModal = <InfoModal content={{
         header: name,
         underTitle: positions.map(p => capitalizeWords(p)).join(" & "),
         body: ReactHtmlParser(bio),
         footer: `Employed: ${getTimeSinceDate(hiredDate)}`,
         image: `${sources.cdn}/characters/${trimFull(name)}.webp`
-    }}handleClose={() => {handleModal(null)}}/>;
+    }}/>;
 
     return (
         <>

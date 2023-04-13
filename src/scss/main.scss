@@ -3,6 +3,7 @@
 @import "./../components/menu/scss/Menu";
 @import "./../components/home/scss/Home";
 @import "./../components/partners/scss/Partners";
+@import "./../components/services/scss/Services";
 
 //Core Templates
 @import "./common/_styles"; 
@@ -95,6 +96,15 @@ button, select, a {
         filter: brightness(1.2) !important;
         cursor: pointer;
     }
+}
+
+.header {
+    font-size: getFontSize(header);
+    font-family: getFont(cursive);
+}
+.title {
+    font-size: getFontSize(title);
+    font-family: getFont(cursive);
 }
 
 .background {

@@ -28,7 +28,7 @@ function Staff({ handleModal }: Props) {
         <>
             <div className="intro">
                 <div className="about">
-                    <div className="header">
+                    <div className="title">
                         The basis of Oasis
                     </div>
                     <div className="divider" />
@@ -56,7 +56,7 @@ function Staff({ handleModal }: Props) {
                 />
             </div>
 
-            <div className="header">
+            <div className="title">
                 Our family
             </div>
 

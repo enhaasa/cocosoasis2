@@ -26,6 +26,10 @@ section {
             @include divider-light;
             margin: 0;
         }
+        .title, .header {
+            color: black;
+            font-weight: bold;
+        }
     }
     &:nth-child(even) {
         @include theme-dark;
@@ -39,6 +43,10 @@ section {
         }
         &:last-child > .wrapper {
             border-bottom: getBorder("double", getColor(solids, light));
+        }
+        .title, .header {
+            color: white;
+            text-shadow: getShadow(text, standard);
         }
     }
 

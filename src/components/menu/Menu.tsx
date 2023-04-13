@@ -77,6 +77,7 @@ function Menu(props:Props) {
                                 {type.title} <img className="icon" src={`${sources.cdn}/icons/${trimFull(type.name)}-white.png`}></img>
                                 <img className="decoration" src={decorRight} />
                             </div>
+                            
 
                             <div className="items">
                                 {type.items.map(item => (

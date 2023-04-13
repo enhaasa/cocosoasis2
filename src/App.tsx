@@ -3,6 +3,7 @@ import Home from './components/home/Home';
 import Menu from './components/menu/Menu';
 import About from './components/about/About';
 import Modal from './components/common/Modal';
+import Services from './components/services/Services';
 import Partners from './components/partners/Partners';
 import { useState, useEffect, useRef } from 'react';
 import getExternal from './getExternal';
@@ -45,7 +46,7 @@ function App() {
     {
       title: "Services",
       id: "services",
-      content: null
+      content: <Services handleModal={handleModal} />
     },
     {
       title: "About",
