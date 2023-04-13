@@ -12,6 +12,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 .staffModal {
   width: 900px;
   height: 500px;
@@ -333,7 +335,10 @@
 .home .logo .underTitle {
   font-size: 1.3em;
 }
-.home .header {
+.home .welcome {
+  margin: 30px 0;
+}
+.home .welcome .header {
   color: black;
   font-family: "Dancing Script";
   font-size: clamp(3rem, 4vw, 3.5rem);
@@ -346,7 +351,7 @@
   gap: 5px;
   margin: 10px 0;
 }
-.home .linkbar {
+.home .welcome .linkbar {
   display: flex;
   margin: auto;
   justify-content: center;
@@ -354,7 +359,7 @@
   margin-bottom: 10px;
   flex-wrap: wrap;
 }
-.home .linkbar a, .home .linkbar button {
+.home .welcome .linkbar a, .home .welcome .linkbar button {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -364,19 +369,19 @@
   background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
   box-shadow: 0 2px 8px black;
 }
-.home .linkbar a.twitch, .home .linkbar button.twitch {
+.home .welcome .linkbar a.twitch, .home .welcome .linkbar button.twitch {
   background: linear-gradient(to bottom right, rgb(146, 19, 146), rgb(99, 4, 99));
 }
-.home .linkbar a.discord, .home .linkbar button.discord {
+.home .welcome .linkbar a.discord, .home .welcome .linkbar button.discord {
   background: linear-gradient(to bottom right, rgb(88, 101, 242), rgb(57, 70, 209));
 }
-.home .linkbar a img, .home .linkbar button img {
+.home .welcome .linkbar a img, .home .welcome .linkbar button img {
   opacity: 0.8;
 }
-.home .linkbar a:visited, .home .linkbar button:visited {
+.home .welcome .linkbar a:visited, .home .welcome .linkbar button:visited {
   color: lightgrey;
 }
-.home .linkbar a:hover, .home .linkbar button:hover {
+.home .welcome .linkbar a:hover, .home .welcome .linkbar button:hover {
   transform: scale(1.05);
 }
 .home .partners {
@@ -423,6 +428,28 @@
   .home .header img {
     display: none;
   }
+}
+
+.partners {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
+}
+.partners .partner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  gap: 5px;
+}
+.partners .partner:visited {
+  color: white;
+}
+.partners .partner:hover {
+  transform: scale(1.05);
 }
 
 section {

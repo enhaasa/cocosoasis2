@@ -9,9 +9,7 @@ type Props = {
     handleModal: (content: any) => void;
 }
 
-function Staff(props: Props) {
-    const { handleModal } = props;
-    
+function Staff({ handleModal }: Props) {    
     const [ staffs, setStaffs ] = useState<StaffItemType[]>([]);
     const activeStaff = staffs.map(staff => (staff.isActive && <StaffItem key={staff.name} item={staff} handleModal={handleModal}/>));
 

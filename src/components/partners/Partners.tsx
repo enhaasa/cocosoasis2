@@ -14,10 +14,11 @@ type Partner = {
     level: string
 }
 
-function Partners(props: Props) {
-    const { handleModal } = props;
+function Partners({ handleModal }: Props) {
 
     const [ partners, setPartners ] = useState<Partner[]>();
+    const venuePartners = partners ? partners.filter(partner => partner.level === "venue") : [];
+    const communityPartners = partners ? partners.filter(partner => partner.level === "coommunity") : [];
 
     getExternal.db("getPartners").then(data => {
         setPartners(data);
@@ -33,6 +34,7 @@ function Partners(props: Props) {
             {partners && partners.map(partner => (
                 <a className="partner" href={partner.website} target="_blank">
                     <img src={`${sources.cdn}/partners/${trimFull(partner.name)}.webp`} />
+                    <div className="name">{partner.name}</div>
                 </a>
             ))}
         </div>

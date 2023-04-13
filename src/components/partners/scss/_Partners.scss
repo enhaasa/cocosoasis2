@@ -1,0 +1,28 @@
+@import "../../../scss/common/styles";
+@import "../../../scss/common/fonts";
+
+
+.partners {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+    gap: getMargin(standard);
+    
+    & .partner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        gap: getPadding(small);
+        
+        &:visited {
+            color: white;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}

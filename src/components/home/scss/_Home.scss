@@ -21,57 +21,60 @@
         }
     }
 
-    & .header {
-        color: black;
-        font-family: getFont(cursive);
-        font-size: clamp(3rem, 4vw, 3.5rem);
-        font-weight: bold;
-        display: flex;
-        justify-content: center;
-        justify-items: center;
-        align-items: center;
-        text-align: center;
-        gap: 5px;
-        margin: getMargin(standard) 0;
-    }
+    & .welcome {
+        margin: getMargin(larger) 0;
 
-    & .linkbar {
-        display: flex;
-        margin: auto;
-        justify-content: center;
-        gap: getMargin(standard);
-        margin-bottom: getMargin(standard);
-        flex-wrap: wrap;
-        
-        & a, & button {
+        & .header {
+            color: black;
+            font-family: getFont(cursive);
+            font-size: clamp(3rem, 4vw, 3.5rem);
+            font-weight: bold;
             display: flex;
+            justify-content: center;
+            justify-items: center;
             align-items: center;
-            gap: getMargin(small);
-            padding: 2px getPadding(standard);
-            text-decoration: none;
-            color: lightgrey;
-            background: getColor(gradients, steel);
-            box-shadow: getShadow(box, standard);
+            text-align: center;
+            gap: 5px;
+            margin: getMargin(standard) 0;
+        }
 
-            &.twitch {
-                background: getColor(gradients, twitch);
-            }
-            &.discord {
-                background: getColor(gradients, discord);
-            }
-
-            & img {
-                opacity: 0.8;
-            }
-            &:visited {
+        & .linkbar {
+            display: flex;
+            margin: auto;
+            justify-content: center;
+            gap: getMargin(standard);
+            margin-bottom: getMargin(standard);
+            flex-wrap: wrap;
+            
+            & a, & button {
+                display: flex;
+                align-items: center;
+                gap: getMargin(small);
+                padding: 2px getPadding(standard);
+                text-decoration: none;
                 color: lightgrey;
-            }
-            &:hover {
-                transform: scale(1.05);
+                background: getColor(gradients, steel);
+                box-shadow: getShadow(box, standard);
+
+                &.twitch {
+                    background: getColor(gradients, twitch);
+                }
+                &.discord {
+                    background: getColor(gradients, discord);
+                }
+
+                & img {
+                    opacity: 0.8;
+                }
+                &:visited {
+                    color: lightgrey;
+                }
+                &:hover {
+                    transform: scale(1.05);
+                }
             }
         }
     }
-
 
     & .partners {
         display: grid;

@@ -20,8 +20,7 @@ type Props = {
 
 
 
-function Home(props: Props) {
-    const { handleModal, nextOpening } = props;
+function Home({handleModal, nextOpening}: Props) {
     const [ venueGallery, setVenueGallery ] = useState<ImageType[]>([]);
 
     useEffect(() => {
@@ -38,26 +37,25 @@ function Home(props: Props) {
             </div>
             <div className="divider" />
 
+            <div className="welcome">
+                <div className="header">Welcome to the Oasis<img src={heartsIcon} /></div>
+                <div className="linkbar">
+                    
+                    <button className="reservations">
+                        <img src={reservationIcon} /> Reservations
+                    </button>
 
+                    <a className="twitch" href="https://www.twitch.tv/cocosoasis" target="_blank">
+                        <img src={twitchIcon} /> Music Stream
+                    </a>
 
-            <div className="header">Welcome to the Oasis<img src={heartsIcon} /></div>
-            <div className="linkbar">
-                
-                <button className="reservations">
-                    <img src={reservationIcon} /> Reservations
-                </button>
-
-                <a className="twitch" href="https://www.twitch.tv/cocosoasis" target="_blank">
-                    <img src={twitchIcon} /> Music Stream
-                </a>
-
-                <a className="discord" href="https://discord.gg/cbYNypvWpn" target="_blank">
-                    <img src={discordIcon} /> Community
-                </a>
-                
+                    <a className="discord" href="https://discord.gg/cbYNypvWpn" target="_blank">
+                        <img src={discordIcon} /> Community
+                    </a>
+                    
+                </div>
             </div>
 
-            
             <div className="divider" />
             <div className="venueInfo">
                 <div className="column">

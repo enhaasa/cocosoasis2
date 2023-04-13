@@ -6,8 +6,7 @@ type Props = {
     handleModal: (content: any) => void;
 }
 
-function GalleryButton(props:Props) {
-    const { images, handleModal } = props;
+function GalleryButton({ images, handleModal }:Props) {
 
     return (
         <button className="galleryButton" onClick={() => handleModal(<GalleryModal images={images}/>)}>

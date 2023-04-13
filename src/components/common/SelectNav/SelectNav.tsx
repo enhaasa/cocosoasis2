@@ -9,8 +9,7 @@ type Props = {
     activeId: number
 }
 
-function SelectNav(props: Props) {
-    const { options, activeId } = props;
+function SelectNav({ options, activeId }: Props) {
 
     return(
         <div className="selectNavWrapper">
