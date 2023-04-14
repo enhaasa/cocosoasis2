@@ -83,6 +83,12 @@ function App() {
           />
         ))}
       </main>
+
+      <footer>
+          <span>©2022-2023 Coco's Oasis All Rights Reserved</span>
+          <span>Website by Enhasa#1319</span>
+      </footer>
+
       <div className="background" />
     </>
   );

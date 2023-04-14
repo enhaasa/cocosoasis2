@@ -171,4 +171,17 @@ button, select, a {
     color: black;
 }
 
+footer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: getMargin(large);
+    background: getColor(gradients, steel);
+    color: lightgrey;
+    padding: getPadding(standard) 0;
+    box-shadow: getShadow(box, standard);
+    text-shadow: getShadow(text, standard);
+}
 

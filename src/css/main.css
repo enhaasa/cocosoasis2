@@ -986,4 +986,18 @@ button:hover, select:hover, a:hover {
   gap: 3px;
   font-weight: bold;
   color: black;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
+  color: lightgrey;
+  padding: 10px 0;
+  box-shadow: 0 2px 8px black;
+  text-shadow: 0.1em 0.1em 0.2em black;
 }/*# sourceMappingURL=main.css.map */
