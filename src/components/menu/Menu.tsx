@@ -9,12 +9,13 @@ import Title from '../common/Title';
 import decorLeft from '../../icons/decor2-white-left.png';
 import decorRight from '../../icons/decor2-white-right.png';
 import sources from '../../sources';
+import InfoModal from '../common/ModalTemplates/InfoModal';
 
 type Props = {
     handleModal: (content: any) => void;
 }
 
-function Menu(props:Props) {
+function Menu({ handleModal }:Props) {
     
     const [ menu, setMenu ] = useState<MenuTypeType[]>([]);
     const [ selectedSection, setSelectedSection ] = useState<number>(0);
@@ -38,7 +39,32 @@ function Menu(props:Props) {
                 "dessert", "herb"
             ]
         }
-    ]
+    ];
+
+    const oldMenu = menu.find(type => type.name === "legacy");
+
+    const oldMenuModal = oldMenu && <InfoModal 
+        content = {{
+            header: "Old Menu",
+            underTitle: "Our classic menu!",
+            body: 
+            <div className="oldMenu">{oldMenu.items.map(item => 
+                <div className="item">
+                    <div className="row">
+                        <span className="title">{item.name}</span> 
+                        <span className="price">{`${item.price} gil`}</span>
+                    </div>
+                    <div className="row">
+                        <div className="description">{item.description}</div>
+                    </div>
+                </div>)}
+            </div>
+        }}
+    />
+
+    function handleOldMenu() {
+        handleModal(oldMenuModal);
+    }
 
     function handleSelectSection(option:number):void {
         setSelectedSection(option);
@@ -53,8 +79,6 @@ function Menu(props:Props) {
         })
     }, []);
 
-
-
     return (
         <>
             <div className="sectionSelection">
@@ -68,7 +92,10 @@ function Menu(props:Props) {
                     ))}
                     activeId={selectedSection}
                 />
+
+                <button className="oldMenuButton" onClick={() => handleOldMenu()}>Old Menu</button>
             </div>
+            <div className="divider" />
             
             <div className="menuList">
                 {menu.map(type => (
@@ -80,7 +107,6 @@ function Menu(props:Props) {
                                 divider={false}
                             />
                             
-
                             <div className="items">
                                 {type.items.map(item => (
                                     <MenuItem item={item} key={item.id} />
@@ -91,7 +117,6 @@ function Menu(props:Props) {
             </div>
         </>
     );
-
 }
 
 export default Menu;

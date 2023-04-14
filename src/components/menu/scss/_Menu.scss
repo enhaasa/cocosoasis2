@@ -40,3 +40,30 @@
         }
     }
 }
+
+.oldMenu {
+    display : grid;
+    
+    & .item {
+        display: grid;
+
+        & .row {
+            display: flex;
+            justify-content: space-between;
+
+            & .title {
+                color: white;
+            }
+
+            & .price {
+                color: getColor(solids, gold);
+            }
+
+            & .description {
+                color: getColor(solids, light);
+                text-align: left;
+            }
+        }
+
+    }
+}

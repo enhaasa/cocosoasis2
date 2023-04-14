@@ -68,7 +68,11 @@ function App() {
       
       <div className="navbar">
           {sections.map((section: any) => (
-              <a draggable={false} href={`#${section.id}`} key={`${section.id}link`}>{capitalizeWords(section.id)}</a>
+              <a className="anchor" 
+                draggable={false} 
+                href={`#${section.id}`} 
+                key={`${section.id}link`}>{capitalizeWords(section.id)}
+              </a>
           ))}
       </div>
       
@@ -86,6 +90,7 @@ function App() {
 
       <footer>
           <span>©2022-2023 Coco's Oasis All Rights Reserved</span>
+          <span>•</span>
           <span>Website by Enhasa#1319</span>
       </footer>
 

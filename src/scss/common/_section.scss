@@ -3,6 +3,14 @@
 
 section {
     padding: getPadding(standard);
+    position: relative;
+
+    & .anchor {
+        display: block;
+        position: absolute;
+        top: -80px;
+        visibility: hidden;
+    }
 
     & .wrapper {
         padding: getPadding(large);

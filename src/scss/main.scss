@@ -90,6 +90,7 @@ body {
 }
 
 
+
 button, select, a {
     transition: getTransition(standard);
     &:hover {
@@ -158,9 +159,19 @@ button, select, a {
 
 .sectionSelection {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
     gap: 10px;
+    margin-bottom: getMargin(large);
+    flex-wrap: wrap;
+
+    & .oldMenuButton {
+        background: getColor(gradients, silver);
+        color: black;
+        padding: getPadding(small) getPadding(standard);
+        border-radius: 50px;
+        box-shadow: getShadow(box, standard);
+    }
 }
 
 .infoWithIcon {
@@ -177,7 +188,7 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: getMargin(large);
+    gap: getMargin(standard);
     background: getColor(gradients, steel);
     color: lightgrey;
     padding: getPadding(standard) 0;
