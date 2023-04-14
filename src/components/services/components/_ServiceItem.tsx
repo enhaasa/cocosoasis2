@@ -28,7 +28,7 @@ function ServiceItem(props:Props) {
 
     return (
         
-        <button className={`serviceItem ${type && type}`} onClick={() => handleModal(
+        <button draggable={false} className={`serviceItem ${type && type}`} onClick={() => handleModal(
             <InfoModal 
                 content={{
                     header: header,

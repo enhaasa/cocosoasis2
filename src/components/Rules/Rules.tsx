@@ -7,7 +7,7 @@ function Rules() {
         <>
 
             <Notice 
-                text={"Use GPose at your own risk!"}
+                text={<strong>Use GPose at your own risk!</strong>}
             />
             <p>
                 Housing items are regularly placed and removed during opening times. 

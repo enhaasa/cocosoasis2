@@ -68,7 +68,7 @@ function App() {
       
       <div className="navbar">
           {sections.map((section: any) => (
-              <a href={`#${section.id}`} key={`${section.id}link`}>{capitalizeWords(section.id)}</a>
+              <a draggable={false} href={`#${section.id}`} key={`${section.id}link`}>{capitalizeWords(section.id)}</a>
           ))}
       </div>
       

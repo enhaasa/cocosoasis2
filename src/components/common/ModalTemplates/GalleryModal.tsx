@@ -35,15 +35,15 @@ function GalleryModal(props: Props) {
     
     return (
         <div className="galleryModal">
-            <div className="image">
+            <div className="image" >
                 <nav className="topNav">
-                    <button onClick={() => handlePreviousImage()}><img className="arrow" src={arrowLeft} /></button>
-                    <button onClick={() => handleNextImage()}><img className="arrow" src={arrowRight} /></button>
+                    <button onClick={() => handlePreviousImage()}><img draggable={false} className="arrow" src={arrowLeft} /></button>
+                    <button onClick={() => handleNextImage()}><img draggable={false} className="arrow" src={arrowRight} /></button>
                 </nav>
                 <ImageModal image={{name: currentImage.name, url: currentImage.url}} />
 
             </div>
-
+        
             <nav className="bottomNav">
                 {images.map((image, index) => (
                     <button 

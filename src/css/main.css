@@ -782,6 +782,11 @@ section .bigdivider img {
   height: 100%;
   align-items: center;
   justify-content: space-between;
+  pointer-events: none;
+}
+.galleryModal .image .topNav button {
+  z-index: 100;
+  pointer-events: all;
 }
 .galleryModal .image .topNav .arrow {
   background: black;
