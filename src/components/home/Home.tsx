@@ -39,11 +39,13 @@ function Home({handleModal, nextOpening}: Props) {
                 body: 
                 <p>
                     <p>
-                        You may reserve a table by contacting Coco through Discord: Enhasa#1319.<br />
-                        Reservations are free.
+                        Reservations are not necessary to visit the Oasis, but we recommend it if you want to make sure a table is available for you and your company.
                     </p>
                     <p>
                         Your reservation will be valid to claim within the <b>first hour of our opening</b>. The booth will be available for others if you did not arrive on time.
+                    </p>
+                    <p>
+                        Reservations are free.
                     </p>
                 </p>,
                 footer: <span><img src={CallIcon} /> To make a reservation, please contact #Enhasa1319.</span>

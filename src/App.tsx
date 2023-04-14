@@ -3,6 +3,7 @@ import Home from './components/home/Home';
 import Menu from './components/menu/Menu';
 import About from './components/about/About';
 import Modal from './components/common/Modal';
+import Rules from './components/Rules/Rules';
 import Services from './components/services/Services';
 import Partners from './components/partners/Partners';
 import { useState, useEffect, useRef } from 'react';
@@ -41,7 +42,7 @@ function App() {
     {
       title: "Rules",
       id: "rules",
-      content: null
+      content: <Rules />
     },
     {
       title: "Services",
