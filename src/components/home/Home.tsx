@@ -11,14 +11,15 @@ import GalleryButton from '../common/GalleryButton/GalleryButton';
 import { useState, useEffect } from 'react';
 import format from '../../format';
 import getExternal from '../../getExternal';
+import InfoModal from '../common/ModalTemplates/InfoModal';
+
+import CallIcon from "../../icons/call-small-white.png";
 
 
 type Props = {
     handleModal: (content: any) => void;
     nextOpening: OpeningType | null;
 }
-
-
 
 function Home({handleModal, nextOpening}: Props) {
     const [ venueGallery, setVenueGallery ] = useState<ImageType[]>([]);
@@ -28,6 +29,27 @@ function Home({handleModal, nextOpening}: Props) {
             setVenueGallery(format.gallery(data));
         });
     }, []);
+
+
+    function handleReservationsButton() {
+        handleModal(<InfoModal 
+            content={{
+                header: "Reservations",
+                underTitle: "Everything you need to know",
+                body: 
+                <p>
+                    <p>
+                        You may reserve a table by contacting Coco through Discord: Enhasa#1319.<br />
+                        Reservations are free.
+                    </p>
+                    <p>
+                        Your reservation will be valid to claim within the <b>first hour of our opening</b>. The booth will be available for others if you did not arrive on time.
+                    </p>
+                </p>,
+                footer: <span><img src={CallIcon} /> To make a reservation, please contact #Enhasa1319.</span>
+            }}
+        />);
+    }
 
     return (
         <>
@@ -41,7 +63,7 @@ function Home({handleModal, nextOpening}: Props) {
                 <div className="header">Welcome to the Oasis<img src={heartsIcon} /></div>
                 <div className="linkbar">
                     
-                    <button className="reservations">
+                    <button className="reservations" onClick={() => handleReservationsButton()}>
                         <img src={reservationIcon} /> Reservations
                     </button>
 
@@ -97,10 +119,12 @@ function Home({handleModal, nextOpening}: Props) {
 
                 <div className="column">
                     <div className="galleryButtonWrapper">
-                        <GalleryButton 
+
+                        {venueGallery.length > 0 &&
+                            <GalleryButton 
                             images={venueGallery}
                             handleModal={handleModal}
-                        />
+                        />}
                     </div>
                 </div>
             </div>

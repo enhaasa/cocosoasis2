@@ -8,6 +8,7 @@
         display: flex;
         gap: getMargin(standard);
         padding: getPadding(standard) 0;
+        margin: getMargin(standard) 0;
         flex-wrap: wrap;
 
         & .serviceItem {
@@ -18,7 +19,15 @@
             padding: getPadding(small) getPadding(large);
             box-shadow: getShadow(box, standard);
             border-radius: 50px;
-            background: getColor(gradients, gold);
+            background: getColor(gradients, light);
+
+            &.included {
+                background: getColor(gradients, silver);
+            }
+
+            &.paid {
+                background: getColor(gradients, gold);
+            }
 
             & img {
                 width: 42px;

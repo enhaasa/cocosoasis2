@@ -16,7 +16,7 @@ type Partner = {
 
 function Partners({ handleModal }: Props) {
 
-    const [ partners, setPartners ] = useState<Partner[]>();
+    const [ partners, setPartners ] = useState<Partner[]>([]);
     const venuePartners = partners ? partners.filter(partner => partner.level === "venue") : [];
     const communityPartners = partners ? partners.filter(partner => partner.level === "coommunity") : [];
 

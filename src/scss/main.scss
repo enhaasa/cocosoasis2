@@ -102,9 +102,46 @@ button, select, a {
     font-size: getFontSize(header);
     font-family: getFont(cursive);
 }
+
 .title {
-    font-size: getFontSize(title);
-    font-family: getFont(cursive);
+    margin: getMargin(standard) 0;
+
+    & .header {
+        font-size: getFontSize(title);
+        font-family: getFont(cursive);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+
+        & img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        & .icon {
+            max-width: 100%;
+            height: auto;
+            overflow:hidden;
+        }
+        & .decoration {
+            height: 20px;
+            width: 80px;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        
+    }
+
+    & .underTitle {
+        text-align: center;
+    }
+
+    @media only screen and (max-width: $tinyWidth) {
+        & .decoration {
+            display: none;
+        }
+    }
 }
 
 .background {

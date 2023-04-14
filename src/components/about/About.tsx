@@ -4,6 +4,8 @@ import getExternal from '../../getExternal';
 import format from '../../format';
 import StaffItem from './components/_StaffItem';
 import GalleryButton from '../common/GalleryButton/GalleryButton';
+import Title from '../common/Title';
+import Notice from '../common/Notice';
 
 type Props = {
     handleModal: (content: any) => void;
@@ -28,10 +30,10 @@ function Staff({ handleModal }: Props) {
         <>
             <div className="intro">
                 <div className="about">
-                    <div className="title">
-                        The basis of Oasis
-                    </div>
-                    <div className="divider" />
+                    <Title 
+                        text={"The basis of Oasis"}
+                        divider={true}
+                    />
                     
                     <span className="text">
                         <p>
@@ -50,20 +52,16 @@ function Staff({ handleModal }: Props) {
                     </span>
                 </div>
 
+                {familyGallery.length > 0 && 
                 <GalleryButton 
                     images={familyGallery}
                     handleModal={handleModal}
-                />
+                />}
             </div>
 
-            <div className="title">
-                Our family
-            </div>
+            <Title text={"Our family"} divider={true}/>
 
-            <div className="divider" />
-            <p>
-                Click a portrait to read more about each member.
-            </p>
+            <Notice text={"Click a portrait to read more about each member."} />
 
             <div className="collection">
                 {activeStaff}

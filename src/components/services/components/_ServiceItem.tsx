@@ -7,9 +7,10 @@ type Props = {
     icon?: string;
     image?: string;
     header: string;
-    footer: JSX.Element | string;
+    footer?: JSX.Element | string;
     body: JSX.Element | string;
     underTitle: string;
+    type?: string;
 }
 
 function ServiceItem(props:Props) {
@@ -20,15 +21,14 @@ function ServiceItem(props:Props) {
         icon,
         image,
         footer,
-        underTitle
+        underTitle,
+        type
     } = props;
-
-    console.log(icon);
 
 
     return (
         
-        <button className="serviceItem" onClick={() => handleModal(
+        <button className={`serviceItem ${type && type}`} onClick={() => handleModal(
             <InfoModal 
                 content={{
                     header: header,

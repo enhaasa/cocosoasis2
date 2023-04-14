@@ -10,33 +10,6 @@
         margin: 4px 0 2px 0;
     }
 
-    & .header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
-        padding: getPadding(standard) 0;
-        font-size: getFontSize(title);
-        font-family: getFont(cursive);
-        color: white;
-        text-align:center;
-
-        & img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        & .decoration {
-            height: 20px;
-        }
-        @media only screen and (max-width: $tinyWidth) {
-            & .decoration {
-                display: none;
-            }
-        }
-
-    }
-
     & .menuList {
         & .category {
             display: grid;

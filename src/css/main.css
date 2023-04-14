@@ -51,6 +51,9 @@
   grid-template-rows: auto auto 1fr auto;
   text-shadow: 0.1em 0.1em 0.2em black;
 }
+.infoModal .info a {
+  color: white;
+}
 .infoModal .info .header {
   color: white;
   font-size: 2.4em;
@@ -281,29 +284,6 @@
 .menu .divider::after {
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
-.menu .header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  padding: 10px 0;
-  font-size: 2.4em;
-  font-family: "Dancing Script";
-  color: white;
-  text-align: center;
-}
-.menu .header img {
-  max-width: 100%;
-  height: auto;
-}
-.menu .header .decoration {
-  height: 20px;
-}
-@media only screen and (max-width: 363px) {
-  .menu .header .decoration {
-    display: none;
-  }
-}
 .menu .menuList .category {
   display: grid;
   margin-bottom: 30px;
@@ -462,6 +442,7 @@
   display: flex;
   gap: 10px;
   padding: 10px 0;
+  margin: 10px 0;
   flex-wrap: wrap;
 }
 .services .servicesTable .serviceItem {
@@ -472,6 +453,12 @@
   padding: 5px 20px;
   box-shadow: 0 2px 8px black;
   border-radius: 50px;
+  background: linear-gradient(to bottom right, rgb(196, 177, 166), rgb(148, 123, 107));
+}
+.services .servicesTable .serviceItem.included {
+  background: linear-gradient(to bottom right, lightgrey, grey);
+}
+.services .servicesTable .serviceItem.paid {
   background: linear-gradient(to bottom right, #D1B464, #8A6E2F);
 }
 .services .servicesTable .serviceItem img {
@@ -497,6 +484,17 @@ section {
 }
 section .wrapper {
   padding: 20px;
+}
+section .wrapper .notice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+section .wrapper .notice .icon {
+  width: 25px;
+  height: 25px;
+  background-size: contain;
 }
 section:nth-child(odd) {
   background: linear-gradient(to bottom right, rgb(196, 177, 166), rgb(148, 123, 107));
@@ -531,9 +529,24 @@ section:nth-child(odd) .divider::after {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: inset 0 0 4px rgb(136, 119, 108);
 }
+section:nth-child(odd) .notice {
+  color: black;
+}
+section:nth-child(odd) .notice .icon {
+  background-image: url("./../icons/info-black.png");
+}
 section:nth-child(odd) .title, section:nth-child(odd) .header {
   color: black;
   font-weight: bold;
+}
+section:nth-child(odd) .title .decoration.left, section:nth-child(odd) .header .decoration.left {
+  background-image: url("./../icons/decor2-black-left.png");
+}
+section:nth-child(odd) .title .decoration.right, section:nth-child(odd) .header .decoration.right {
+  background-image: url("./../icons/decor2-black-right.png");
+}
+section:nth-child(odd) .underTitle {
+  color: rgb(41, 41, 41);
 }
 section:nth-child(even) {
   background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
@@ -552,6 +565,22 @@ section:nth-child(even):last-child > .wrapper {
 section:nth-child(even) .title, section:nth-child(even) .header {
   color: white;
   text-shadow: 0.1em 0.1em 0.2em black;
+}
+section:nth-child(even) .title .decoration.left, section:nth-child(even) .header .decoration.left {
+  background-image: url("./../icons/decor2-white-left.png");
+}
+section:nth-child(even) .title .decoration.right, section:nth-child(even) .header .decoration.right {
+  background-image: url("./../icons/decor2-white-right.png");
+}
+section:nth-child(even) .underTitle {
+  color: rgb(196, 177, 166);
+}
+section:nth-child(even) .notice {
+  color: lightgrey;
+  text-shadow: 0.1em 0.1em 0.2em black;
+}
+section:nth-child(even) .notice .icon {
+  background-image: url("./../icons/info-white.png");
 }
 section .divider {
   margin: 8px 0;
@@ -898,8 +927,38 @@ button:hover, select:hover, a:hover {
 }
 
 .title {
+  margin: 10px 0;
+}
+.title .header {
   font-size: 2.4em;
   font-family: "Dancing Script";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.title .header img {
+  max-width: 100%;
+  height: auto;
+}
+.title .header .icon {
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.title .header .decoration {
+  height: 20px;
+  width: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.title .underTitle {
+  text-align: center;
+}
+@media only screen and (max-width: 363px) {
+  .title .decoration {
+    display: none;
+  }
 }
 
 .background {

@@ -4,6 +4,8 @@ import format from '../../format';
 import { MenuTypeType } from '../../commonTypes';
 import MenuItem from './components/_MenuItem';
 import SelectNav from '../common/SelectNav/SelectNav';
+import Title from '../common/Title';
+
 import decorLeft from '../../icons/decor2-white-left.png';
 import decorRight from '../../icons/decor2-white-right.png';
 import sources from '../../sources';
@@ -72,11 +74,11 @@ function Menu(props:Props) {
                 {menu.map(type => (
                     sections[selectedSection].types.includes(type.name) &&
                         <div className="category">
-                            <div className="header" key={type.name}>
-                                <img className="decoration" src={decorLeft} />
-                                {type.title} <img className="icon" src={`${sources.cdn}/icons/${trimFull(type.name)}-white.png`}></img>
-                                <img className="decoration" src={decorRight} />
-                            </div>
+                            <Title 
+                                text={type.title}
+                                icon={`${sources.cdn}/icons/${trimFull(type.name)}-white.png`}
+                                divider={false}
+                            />
                             
 
                             <div className="items">

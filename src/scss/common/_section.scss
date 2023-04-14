@@ -7,10 +7,23 @@ section {
     & .wrapper {
         padding: getPadding(large);
 
+        & .notice {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: getMargin(standard);
+
+            & .icon {
+                width: 25px;
+                height: 25px;
+                background-size: contain;
+            }
+        }
     }
 
     &:nth-child(odd) {
         @include theme-light;
+
         & > .wrapper {
             border-left: getBorder("double", getColor(solids, dark));
             border-right: getBorder("double", getColor(solids, dark));
@@ -26,9 +39,27 @@ section {
             @include divider-light;
             margin: 0;
         }
-        .title, .header {
+        & .notice {
+            color: black;
+            & .icon {
+                background-image: url("./../icons/info-black.png");
+            }
+        }
+        & .title, .header {
             color: black;
             font-weight: bold;
+
+            & .decoration {
+                &.left {
+                    background-image: url("./../icons/decor2-black-left.png");
+                }
+                &.right {
+                    background-image: url("./../icons/decor2-black-right.png");
+                }
+            }
+        }
+        & .underTitle {
+            color: getColor(solids, dark);
         }
     }
     &:nth-child(even) {
@@ -44,9 +75,28 @@ section {
         &:last-child > .wrapper {
             border-bottom: getBorder("double", getColor(solids, light));
         }
-        .title, .header {
+        & .title, .header {
             color: white;
             text-shadow: getShadow(text, standard);
+
+            & .decoration {
+                &.left {
+                    background-image: url("./../icons/decor2-white-left.png");
+                }
+                &.right {
+                    background-image: url("./../icons/decor2-white-right.png");
+                }
+            }
+        }
+        & .underTitle {
+            color: getColor(solids, light);
+        }
+        & .notice {
+            color: lightgrey;
+            text-shadow: getShadow(text, standard);
+            & .icon {
+                background-image: url("./../icons/info-white.png");
+            }
         }
     }
 

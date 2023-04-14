@@ -39,6 +39,10 @@
         grid-template-rows: auto auto 1fr auto;
         text-shadow: getShadow(text, standard);
 
+        & a {
+            color: white;
+        }
+
         & .header {
             color: white;
             font-size: getFontSize(title);

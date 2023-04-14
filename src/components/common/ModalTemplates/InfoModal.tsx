@@ -9,7 +9,7 @@ type Props = {
         header: string | JSX.Element;
         underTitle: any;
         body: any;
-        footer: any;
+        footer?: any;
         image?: string;
     }
 }
@@ -51,7 +51,7 @@ function InfoModal(props: Props) {
                 
                 <div className="footer">
                     <div className="divider" />
-                     {footer}
+                     {footer && footer}
                 </div>
             </div>
         </div>

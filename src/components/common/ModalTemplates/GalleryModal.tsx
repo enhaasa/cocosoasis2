@@ -14,7 +14,6 @@ type Props = {
 
 function GalleryModal(props: Props) {
     const { images } = props;
-
     const [ selectedIndex, setSelectedIndex ] = useState<number>(0);
     const currentImage = images[selectedIndex];
 
