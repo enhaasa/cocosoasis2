@@ -24,8 +24,7 @@ function ServiceItem(props:Props) {
         underTitle,
         type
     } = props;
-
-
+    
     return (
         
         <button draggable={false} className={`serviceItem ${type && type}`} onClick={() => handleModal(

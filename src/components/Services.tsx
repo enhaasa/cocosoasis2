@@ -9,6 +9,8 @@ import CheersIcon from "./../icons/cheers-black.png";
 import TableserviceIcon from "./../icons/tableservice-black.png";
 import TabIcon from "./../icons/invoice-black.png";
 
+import Photography from "./../images/photography.png";
+
 type Props = {
     handleModal: (content: any) => void;
 }
@@ -81,6 +83,7 @@ function Services({ handleModal }:Props) {
             header: "Photography",
             undertitle: "Capture the magical moment with your special someone",
             icon: PhotoIcon,
+            image: Photography,
             body: 
                 <span>
                     <p>
@@ -168,6 +171,7 @@ function Services({ handleModal }:Props) {
                         header={service.header}
                         underTitle={service.undertitle}
                         icon={service.icon}
+                        image={service.image}
                         footer={service.footer}
                         body={service.body}
                         handleModal={handleModal}
