@@ -52,11 +52,7 @@ button {
         font-size: getFontSize(header);
         text-decoration: none;
         text-shadow: getShadow(text, standard);
-        color: white;
-
-        &:visited {
-            color: inherit;
-        }
+        color: lightgrey;
         
         &:hover {
             color: white;

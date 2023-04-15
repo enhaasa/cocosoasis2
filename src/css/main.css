@@ -920,10 +920,7 @@ button :hover {
   font-size: 1.4em;
   text-decoration: none;
   text-shadow: 0.1em 0.1em 0.2em black;
-  color: white;
-}
-.navbar a:visited, .navbar button:visited {
-  color: inherit;
+  color: lightgrey;
 }
 .navbar a:hover, .navbar button:hover {
   color: white;

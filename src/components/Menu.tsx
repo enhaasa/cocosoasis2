@@ -5,9 +5,6 @@ import { MenuTypeType } from '../commonTypes';
 import MenuItem from './_MenuItem';
 import SelectNav from './common/SelectNav';
 import Title from './common/Title';
-
-import decorLeft from '../../icons/decor2-white-left.png';
-import decorRight from '../../icons/decor2-white-right.png';
 import sources from '../sources';
 import InfoModal from './common/ModalTemplates/InfoModal';
 

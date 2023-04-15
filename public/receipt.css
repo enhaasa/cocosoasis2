@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+
+* {
+    font-family: 'Cabin', sans-serif;
+}
+
+/* Universal Color Scheme */
+:root {
+    --universal-color-black: rgb(41, 41, 41);
+    --universal-color-beige: rgb(196, 177, 166);
+    --universal-color-red: rgb(134, 0, 0);
+    --universal-color-white: rgb(218, 218, 218);
+    --universal-color-green: rgb(0, 124, 17);
+  }
+
+body {
+    background: rgb(37, 37, 37);
+    background-image: url('receipt-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/* RECEIPTS */
+.receipt {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-auto-flow: column;
+    height: 100%;
+}
+
+.receipt-container {
+    background: var(--universal-color-beige);
+    padding: 22px;
+    box-shadow: 0 0 8px rgb(0, 0, 0);
+    transform: rotate(0deg);
+    z-index: 1;
+    margin-right: -350px;
+}
+
+    .decoration img{
+        width: 300px;
+        position: relative;
+        z-index: 0;
+        margin-right: -110px;
+    }
+    .decoration .flower {
+        transform: rotate(-145deg);
+        z-index: -1;
+        
+    }
+    .decoration .sleeve {
+        width: 400px;
+        transform: rotate(-7deg);
+    }
+
+    .text{
+        color: var(--universal-color-black);
+        text-align: center;
+    }
+
+        .cursive {
+            font-size: 22px;
+            font-family: 'Dancing Script';
+            font-weight: bold;
+        }
+
+        .title {
+            font-size: 36px;
+        }
+
+    .receipt-container h3 {
+        padding: 0;
+        margin: 0;
+    }
+    .receipt-container h3, .receipt-container .list-item-component, .receipt-container #total {
+        color: var(--universal-color-black);
+    }
+
+    .list-header {
+        color: var(--universal-color-black);
+        font-weight: bold;
+    }
+
+    .receipt-container .list-item {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: auto 1fr 1fr;
+        grid-gap: 20px;
+        font-size: 18px;
+    }
+
+    .receipt-container .list-item .list-item-component {
+        justify-self: start;
+    }
+    .receipt-container #price {
+        justify-self: end;
+    }
+
+    .receipt-container #total {
+        color: var(--universal-color-red);
+        font-weight: bold;
+        text-align: right;
+        font-size: 18px;
+    }
+
+    .receipt-container .receipt-info {
+        display: grid;
+        grid-auto-flow: column;
+        font-size: 18px;
+    }
+        .receipt-info #receipt-info-first {
+            justify-self: start;
+        }
+        .receipt-info #receipt-info-last {
+            justify-self: end;
+        }
+
+    .divider {
+        margin: 16px 0;
+        border-top: 1px solid var(--universal-color-black);
+    }
+
+
+    @media screen and (max-width: 800px) {
+
+        .receipt {
+            justify-content: normal;
+            align-content: normal;
+        }
+
+        .receipt-container {
+            margin:0;
+        }
+
+
+        .decoration {
+            display: none;
+        }
+    }
