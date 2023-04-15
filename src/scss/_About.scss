@@ -1,0 +1,154 @@
+@import "./common/_styles";
+@import "./common/_themes";
+@import "./common/_fonts";
+@import "./_InfoModal";
+@import "./common/dimensions.scss";
+
+.about {
+    margin-bottom: 20px;
+
+    & .header {
+        margin-bottom: 6px;
+    }
+
+    & .divider {
+        @include divider-light;
+        margin: 4px 0 2px 0;
+    }
+
+    & .intro {
+        margin-bottom: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        
+
+        & .about {
+
+            & .text {
+                margin: getMargin(standard) 0;
+            }
+        }
+
+    }
+    @media only screen and (max-width: $largeWidth) {
+        & .intro {
+            grid-template-columns: 1fr;
+            & .galleryButton {
+                max-width: 100%;
+                margin: getMargin(larger);
+            }
+        }
+    }
+
+    & .collection {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        grid-gap: getMargin(standard);
+        align-items: end;
+        margin-top: getMargin(large);
+
+        & .backgroundDecor {
+            position: absolute;
+            z-index: 99;
+            display: none;
+            
+        }
+    
+        & .item {
+            background: getColor(gradients, steel);
+            border-radius: getRadius(small);
+            box-shadow: getShadow(box, standard);
+            border: getBorder(solid, black);
+            transition: getTransition(standard);
+            background-image: url('./../icons/oasis-palm-shade.webp'), getColor(gradients, steel);
+            background-repeat: no-repeat;
+            background-size: contain;
+            font-family: getFont(standard);
+            
+            &:hover {
+                transform: scale(1.02);
+            }
+
+
+            & .image {
+                height: 270px;
+                display: grid;
+                align-items: end;
+                overflow-y: hidden;
+                
+                & img {
+                    width: 100%;
+                }
+            }
+            
+
+            & .text {
+                background: getColor(gradients, gold);
+                padding: getPadding(small);
+                text-align: center;
+                box-shadow: getShadow(box, standard);
+                border-radius: 0 0 getRadius(small) getRadius(small);
+                border-top: getBorder(solid, black);
+                
+
+                & .name {
+                    color: black;
+                    font-size: getFontSize(large);
+                    
+                    font-family: getFont(standard);
+                }
+                & .positions {
+                    color: getColor(solids, dark);
+                    font-size: 14px;
+                    font-family: getFont(standard);
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: $width) {
+        & .collection {
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: minmax(100px, auto);
+            & .item {
+                & .image {
+                    height: 300px;
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: $largeWidth) {
+        & .collection {
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: minmax(100px, auto);
+            & .item {
+                & .image {
+                    height: 320px;
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: $mediumWidth) {
+        & .collection {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 30px;
+            & .item {
+                & .image {
+                    height: 380px;
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: $smallWidth) {
+        & .collection {
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 30px;
+            & .item {
+                & .image {
+                    height: 100%;
+                }
+            }
+        }
+    }
+} 

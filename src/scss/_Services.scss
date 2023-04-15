@@ -1,0 +1,55 @@
+@import "./common/styles";
+@import "./common/fonts";
+
+
+.services {
+
+    & .servicesTable {
+        display: flex;
+        gap: getMargin(standard);
+        padding: getPadding(standard) 0;
+        margin: getMargin(standard) 0;
+        flex-wrap: wrap;
+
+        & .serviceItem {
+            display: flex;
+            justify-items: center;
+            align-items: center;
+            gap: getMargin(standard);
+            padding: getPadding(small) getPadding(large);
+            box-shadow: getShadow(box, standard);
+            border-radius: 50px;
+            background: getColor(gradients, light);
+
+            &.included {
+                background: getColor(gradients, silver);
+            }
+
+            &.paid {
+                background: getColor(gradients, gold);
+            }
+
+            & img {
+                width: 42px;
+            }
+            
+            & .divider {
+                margin: 3px 0;
+            }
+
+            & .header {
+                color: black;
+                text-shadow: none;
+                font-weight: bold;
+            }
+
+            & .underTitle {
+                color: getColor(solids, dark);
+            }
+
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
+    }
+}

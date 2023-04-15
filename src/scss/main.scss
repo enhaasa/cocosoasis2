@@ -1,9 +1,9 @@
 //Sections
-@import "./../components/about/scss/About";
-@import "./../components/menu/scss/Menu";
-@import "./../components/home/scss/Home";
-@import "./../components/partners/scss/Partners";
-@import "./../components/services/scss/Services";
+@import "./About";
+@import "./Menu";
+@import "./Home";
+@import "./Partners";
+@import "./Services";
 
 //Core Templates
 @import "./common/_styles"; 
@@ -11,14 +11,14 @@
 @import "./common/_themes";
 @import "./common/_section";
 @import "./common/_modal";
+@import './common/dimensions.scss';
 
-//TSX Components
-@import "./../components/common/SelectNav/scss/SelectNav";
-@import './../components/common/ModalTemplates/scss/ImageModal';
-@import './../components/common/ModalTemplates/scss/GalleryModal';
-@import './../components/common/GalleryButton/scss/GalleryButton';
+//TSX Components 
+@import "./SelectNav";
+@import './ImageModal';
+@import './GalleryModal';
+@import './GalleryButton';
 
-@import './dimensions.scss';
 
 button {
     all: unset;
@@ -77,10 +77,16 @@ body {
 @media only screen and (max-width: $width) {
     main {
       width: 100%;
-      margin: 0;
+      margin-top: 40px;
     }
     .navbar {
-        display: none;
+        //display: none;
+        font-size: getFontSize(standard);
+    }
+}
+@media only screen and (max-width: $tinyWidth) {
+    main {
+      margin-top: 80px;
     }
 }
 

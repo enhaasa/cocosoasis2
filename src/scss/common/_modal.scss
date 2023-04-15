@@ -1,9 +1,10 @@
 @import "./_styles"; 
 @import "./_themes"; 
-@import "./../../components/common/ModalTemplates/scss/ImageModal.scss";
+@import "./../ImageModal.scss";
 
 .modal {
     max-width: 100vw;
+    max-height: 100%;
     position: fixed;
     top: 0;
     left: 0;
@@ -29,6 +30,8 @@
         box-shadow: getShadow(box, exaggerated);
         border: getBorder(double, getColor(solids, light));
         z-index: 100;
+        overflow: auto;
+        
 
         & .titleBar {
             color: white;

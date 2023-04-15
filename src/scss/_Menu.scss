@@ -1,0 +1,69 @@
+@import "_MenuItem";
+@import "./common/_styles"; 
+@import "./common/_fonts"; 
+@import "./common/_themes"; 
+
+.menu {
+    max-width: 100%;
+    & .divider {
+        @include divider-dark;
+        margin: 4px 0 2px 0;
+    }
+
+    & .menuList {
+        & .category {
+            display: grid;
+            margin-bottom: getMargin(larger);
+
+            & .header {
+                & .icon {
+                    height: 50px;
+                }
+            }
+
+            & .items {
+                display: grid;
+                grid-gap: getMargin(standard) getMargin(large);
+                grid-template-columns: 1fr 1fr;
+            }
+
+            @media only screen and (max-width: $smallWidth) {
+                & .items {
+                    grid-template-columns: 1fr;
+                }
+                & .header {
+                    & .icon {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.oldMenu {
+    display : grid;
+    
+    & .item {
+        display: grid;
+
+        & .row {
+            display: flex;
+            justify-content: space-between;
+
+            & .title {
+                color: white;
+            }
+
+            & .price {
+                color: getColor(solids, gold);
+            }
+
+            & .description {
+                color: getColor(solids, light);
+                text-align: left;
+            }
+        }
+
+    }
+}

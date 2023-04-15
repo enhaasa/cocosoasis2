@@ -86,6 +86,11 @@
     height: auto;
   }
 }
+@media only screen and (max-width: 550px) {
+  .infoModal .image {
+    display: none;
+  }
+}
 .about {
   margin-bottom: 20px;
 }
@@ -701,6 +706,7 @@ section .bigdivider img {
 
 .modal {
   max-width: 100vw;
+  max-height: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -724,6 +730,7 @@ section .bigdivider img {
   box-shadow: 0 4px 8px 0 black;
   border: 4px double rgb(196, 177, 166);
   z-index: 100;
+  overflow: auto;
 }
 .modal .content .titleBar {
   color: white;
@@ -935,10 +942,15 @@ body {
 @media only screen and (max-width: 1100px) {
   main {
     width: 100%;
-    margin: 0;
+    margin-top: 40px;
   }
   .navbar {
-    display: none;
+    font-size: 1em;
+  }
+}
+@media only screen and (max-width: 363px) {
+  main {
+    margin-top: 80px;
   }
 }
 * {
