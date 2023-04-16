@@ -1,6 +1,3 @@
-import decorLeft from '../../icons/decor2-white-left.png';
-import decorRight from '../../icons/decor2-white-right.png';
-
 type Props = {
     text: string | JSX.Element;
     icon?: string;

@@ -9,7 +9,7 @@ import CheersIcon from "./../icons/cheers-black.png";
 import TableserviceIcon from "./../icons/tableservice-black.png";
 import TabIcon from "./../icons/invoice-black.png";
 
-import Photography from "./../images/photography.png";
+import Photography from "./../images/photography.webp";
 
 type Props = {
     handleModal: (content: any) => void;
@@ -145,7 +145,7 @@ function Services({ handleModal }:Props) {
 
 
             <div className="servicesTable">
-                {includedSerivces.map(service => (
+                {includedSerivces.map((service, index) => (
                     <ServiceItem 
                         header={service.header}
                         underTitle={service.undertitle}
@@ -154,6 +154,7 @@ function Services({ handleModal }:Props) {
                         body={service.body}
                         handleModal={handleModal}
                         type={service.type}
+                        key={`includedService${service.type}${index}`}
                     />
                 ))}
             </div>
@@ -166,7 +167,7 @@ function Services({ handleModal }:Props) {
 
 
             <div className="servicesTable">
-                {paidServices.map(service => (
+                {paidServices.map((service, index) => (
                     <ServiceItem 
                         header={service.header}
                         underTitle={service.undertitle}
@@ -176,6 +177,7 @@ function Services({ handleModal }:Props) {
                         body={service.body}
                         handleModal={handleModal}
                         type={service.type}
+                        key={`includedService${service.type}${index}`}
                     />
                 ))}
             </div>

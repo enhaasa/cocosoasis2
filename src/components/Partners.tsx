@@ -12,6 +12,7 @@ type Partner = {
     website: string,
     discord: string,
     level: string
+    id: string;
 }
 
 function Partners({ handleModal }: Props) {
@@ -32,7 +33,7 @@ function Partners({ handleModal }: Props) {
     return (
         <div className="partners">
             {partners && partners.map(partner => (
-                <a className="partner" href={partner.website} target="_blank">
+                <a className="partner" href={partner.website} target="_blank" rel="noreferrer" key={partner.id}>
                     <img src={`${sources.cdn}/partners/${trimFull(partner.name)}.webp`} />
                     <div className="name">{partner.name}</div>
                 </a>

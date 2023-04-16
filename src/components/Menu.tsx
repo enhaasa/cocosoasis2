@@ -46,7 +46,7 @@ function Menu({ handleModal }:Props) {
             underTitle: "Our classic menu!",
             body: 
             <div className="oldMenu">{oldMenu.items.map(item => 
-                <div className="item">
+                <div className="item" key={`menuSection${item.name}`}>
                     <div className="row">
                         <span className="title">{item.name}</span> 
                         <span className="price">{`${item.price} gil`}</span>
@@ -102,6 +102,7 @@ function Menu({ handleModal }:Props) {
                                 text={type.title}
                                 icon={`${sources.cdn}/icons/${trimFull(type.name)}-white.png`}
                                 divider={false}
+                                key={type.title}
                             />
                             
                             <div className="items">

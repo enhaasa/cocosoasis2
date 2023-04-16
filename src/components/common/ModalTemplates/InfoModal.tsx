@@ -1,9 +1,3 @@
-import { StaffItemType } from "../../../commonTypes";
-import { getTimeSinceDate } from "../../../commonFunctions";
-import { capitalizeWords } from "../../../commonFunctions"
-import ReactHtmlParser from 'react-html-parser';
-import sources from "../../../sources";
-
 type Props = {
     content: {
         header: string | JSX.Element;

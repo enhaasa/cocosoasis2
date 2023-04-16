@@ -5,7 +5,6 @@ function Rules() {
 
     return (
         <>
-
             <Notice 
                 text={<strong>Use GPose at your own risk!</strong>}
             />
@@ -21,7 +20,7 @@ function Rules() {
             />
             <p>
                 The Oasis is a fully SFW venue, which means we do not tolerate public messages promoting anything NSFW. <br />
-                See the full SFW rulelist <a href="https://affiliates.silvervalkyrie.events/#vetolist" target="_blank"><u>here</u></a>.
+                See the full SFW rulelist <a href="https://affiliates.silvervalkyrie.events/#vetolist" target="_blank" rel="noreferrer"><u>here</u></a>.
             </p>
 
             <Title 
@@ -29,13 +28,12 @@ function Rules() {
                 divider={true}
             />
             <strong>General Rules</strong>
-            <p>
-                <ul>
-                    <li>Hide your weapon.</li>
-                    <li>Dismiss your minion.</li>
-                    <li>Do not use Shout or Yell chat. These are reserved for employees.</li>
-                </ul>
-            </p>
+            <ul>
+                <li>Hide your weapon.</li>
+                <li>Dismiss your minion.</li>
+                <li>Do not use Shout or Yell chat. These are reserved for employees.</li>
+            </ul>
+
             
             <strong>Search Info</strong>
             <p>

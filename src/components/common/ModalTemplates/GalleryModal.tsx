@@ -47,6 +47,7 @@ function GalleryModal(props: Props) {
             <nav className="bottomNav">
                 {images.map((image, index) => (
                     <button 
+                        key={image.url}
                         onClick={() => {setSelectedIndex(index)}} 
                         className={`dot ${index === selectedIndex && "active"}`}>&bull;</button>
                 ))}
