@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import getExternal from '../getExternal';
 import format from '../format';
-import { MenuTypeType } from '../commonTypes';
+import { MenuItemType, MenuTypeType } from '../commonTypes';
 import MenuItem from './_MenuItem';
 import SelectNav from './common/SelectNav';
 import Title from './common/Title';
@@ -12,20 +12,27 @@ type Props = {
     handleModal: (content: any) => void;
 }
 
+
+
 function Menu({ handleModal }:Props) {
     
     const [ menu, setMenu ] = useState<MenuTypeType[]>([]);
+    const [ specialCocktail, setSpecialCocktail ] = useState("2zEDSWoSOv");
+    const [ specialMeal, setSpecialMeal ] = useState("jg=Eg%KgL");
+
     const [ selectedSection, setSelectedSection ] = useState<number>(0);
 
     const sections = [
         {
             name: "Drinks",
+            specialItem: findMenuItemById(specialCocktail),
             types: [
                 "drink", "cocktail"
             ]
         },
         {
             name: "Meals",
+            specialItem: findMenuItemById(specialMeal),
             types: [
                 "meal", "luxe"
             ]
@@ -33,13 +40,23 @@ function Menu({ handleModal }:Props) {
         {
             name: "Desserts",
             types: [
-                "dessert", "herb"
+                "dessert"
+            ]
+        },
+        {
+            name: "Herbs",
+            types: [
+                "herb"
             ]
         }
     ];
 
-    const oldMenu = menu.find(type => type.name === "legacy");
 
+    /**
+     * Old menu
+     */
+
+    const oldMenu = menu.find(type => type.name === "legacy");
     const oldMenuModal = oldMenu && <InfoModal 
         content = {{
             header: "Old Menu",
@@ -59,6 +76,16 @@ function Menu({ handleModal }:Props) {
         }}
     />
 
+    function findMenuItemById(id:string) {
+        const foundMenuType = menu.find(menuType => {
+          const foundItemIndex = menuType.items.findIndex(item => item.id === id);
+          return foundItemIndex !== -1;
+        });
+        
+        return foundMenuType ? foundMenuType.items.find(item => item.id === id) : undefined;
+    }
+
+
     function handleOldMenu() {
         handleModal(oldMenuModal);
     }
@@ -75,6 +102,8 @@ function Menu({ handleModal }:Props) {
             setMenu(format.menu(data));
         })
     }, []);
+
+    
 
     return (
         <>
@@ -95,6 +124,8 @@ function Menu({ handleModal }:Props) {
             <div className="divider" />
             
             <div className="menuList">
+
+
                 {menu.map(type => (
                     sections[selectedSection].types.includes(type.name) &&
                         <div className="category">
