@@ -49,7 +49,7 @@ button {
 
     & a, & button {
         font-family: getFont(cursive);
-        font-size: getFontSize(header);
+        font-size: getFontSize(larger);
         text-decoration: none;
         text-shadow: getShadow(text, standard);
         color: lightgrey;

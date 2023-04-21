@@ -16,6 +16,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 .infoModal {
   width: 900px;
   height: 500px;
@@ -271,6 +273,82 @@
 .menuItem .ingredients {
   margin-top: 5px;
   color: grey;
+}
+
+.specialMenuSection {
+  margin-top: -4px;
+  background: linear-gradient(to bottom right, #D1B464, #8A6E2F);
+  color: rgb(41, 41, 41);
+  padding: 10px;
+  box-shadow: 0 2px 8px black;
+}
+
+.menuItemSpecial {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: auto 1fr;
+  transition: all ease 200ms;
+  border: 4px double black;
+  padding: 10px;
+}
+.menuItemSpecial .column {
+  display: grid;
+  align-content: start;
+}
+.menuItemSpecial .column .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.menuItemSpecial .column .image {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.menuItemSpecial .column .image img {
+  width: 200px;
+}
+.menuItemSpecial .label {
+  font-size: clamp(3rem, 4vw, 3.5rem);
+  font-family: "Dancing Script";
+  text-align: left;
+  background: black;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.menuItemSpecial .name {
+  font-size: 1.6em;
+  text-shadow: 0.1em 0.1em 0.2em black;
+  color: white;
+  font-weight: bold;
+}
+.menuItemSpecial .description {
+  margin-top: 5px;
+}
+.menuItemSpecial .priceSection {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  white-space: nowrap;
+}
+.menuItemSpecial .price {
+  color: lightgrey;
+  text-shadow: 0.1em 0.1em 0.2em black;
+  font-size: 1em;
+  text-decoration: line-through;
+}
+.menuItemSpecial .discountPrice {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0.1em 0.1em 0.2em black;
+}
+.menuItemSpecial .ingredients {
+  margin-top: 5px;
+  color: lightgrey;
+  text-shadow: 0.1em 0.1em 0.2em black;
 }
 
 .menu {
@@ -811,6 +889,7 @@ section .bigdivider img {
 
 .galleryModal {
   max-height: 100vh;
+  overflow: hidden;
 }
 .galleryModal .image {
   position: relative;
@@ -909,7 +988,7 @@ button :hover {
   justify-content: center;
   gap: 20px;
   font-family: "Dancing Script";
-  font-size: 1.4em;
+  font-size: 1.6em;
   color: lightgrey;
   position: fixed;
   background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
@@ -922,7 +1001,7 @@ button :hover {
 }
 .navbar a, .navbar button {
   font-family: "Dancing Script";
-  font-size: 1.4em;
+  font-size: 1.3em;
   text-decoration: none;
   text-shadow: 0.1em 0.1em 0.2em black;
   color: lightgrey;
@@ -969,7 +1048,7 @@ button:hover, select:hover, a:hover {
 }
 
 .header {
-  font-size: 1.4em;
+  font-size: 1.6em;
   font-family: "Dancing Script";
 }
 

@@ -3,6 +3,7 @@ import getExternal from '../getExternal';
 import format from '../format';
 import { MenuItemType, MenuTypeType } from '../commonTypes';
 import MenuItem from './_MenuItem';
+import MenuItemSpecial from './_MenuItemSpecial';
 import SelectNav from './common/SelectNav';
 import Title from './common/Title';
 import sources from '../sources';
@@ -11,8 +12,6 @@ import InfoModal from './common/ModalTemplates/InfoModal';
 type Props = {
     handleModal: (content: any) => void;
 }
-
-
 
 function Menu({ handleModal }:Props) {
     
@@ -50,6 +49,7 @@ function Menu({ handleModal }:Props) {
             ]
         }
     ];
+
 
 
     /**
@@ -124,7 +124,13 @@ function Menu({ handleModal }:Props) {
             <div className="divider" />
             
             <div className="menuList">
-
+                {
+                    sections[selectedSection].specialItem &&
+                        <div className="specialMenuSection">
+                            <MenuItemSpecial item={sections[selectedSection].specialItem!} key={`${sections[selectedSection].specialItem!.id}`} />
+                        </div>
+                        
+                }
 
                 {menu.map(type => (
                     sections[selectedSection].types.includes(type.name) &&
@@ -138,7 +144,7 @@ function Menu({ handleModal }:Props) {
                             
                             <div className="items">
                                 {type.items.map(item => (
-                                    <MenuItem item={item} key={item.id} />
+                                    <MenuItem item={item!} key={item.id} />
                                 ))}
                             </div>
                         </div>

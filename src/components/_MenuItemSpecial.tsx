@@ -1,18 +1,19 @@
 import { MenuItemType } from "../commonTypes";
-import { formatStringAsPrice } from "../commonFunctions";
+import { formatStringAsPrice, capitalizeWords } from "../commonFunctions";
 import sources from "../sources";
 
 type Props = {
     item: MenuItemType
 }
 
-function MenuItem(props: Props) {
+function MenuItemSpecial(props: Props) {
     const { 
         name,
         price,
         ingredients,
         description,
-        hasImage
+        hasImage,
+        type
     } = props.item;
 
     function trimFull(string:string):string {
@@ -24,7 +25,7 @@ function MenuItem(props: Props) {
     const imgName = cdn + trimFull(name) + imgFormat;
 
     return (
-        <div className={`menuItem`} key={name}>
+        <div className={`menuItemSpecial`} key={name}>
             {hasImage &&
             <span className="column">
                 {hasImage === "1" && 
@@ -37,10 +38,20 @@ function MenuItem(props: Props) {
 
             <span className="column" >
                 <div className="row">
-                    <span className="name">{name}</span>
-                    <span className="price">{formatStringAsPrice(price.toString())} gil</span>
+                        <span className="label">{`${capitalizeWords(type)} of the week`}</span>
+
+
                 </div>
-                <div className="divider" />
+                <div className="row">
+                    <span className="name">{name}</span>
+                    <span className="priceSection">
+                            <span className="price">{`${price} gil`}</span>
+                            <span className="discountPrice">{`${price/2} gil`}
+                        </span>
+                    </span>
+                </div>
+
+
                 
                 <div className="row">
                     <span className="description">{description}</span>
@@ -54,4 +65,4 @@ function MenuItem(props: Props) {
     );
 }
 
-export default MenuItem;
+export default MenuItemSpecial;

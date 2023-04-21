@@ -12,7 +12,8 @@ $colors: (
         light: linear-gradient(to bottom right,rgb(196, 177, 166), rgb(148, 123, 107)),
         wine: linear-gradient(to bottom right, rgb(194, 34, 34), rgb(107, 0, 0)),
         twitch: linear-gradient(to bottom right, rgb(146, 19, 146), rgb(99, 4, 99)),
-        discord: linear-gradient(to bottom right, rgb(88, 101, 242), rgb(57, 70, 209))
+        discord: linear-gradient(to bottom right, rgb(88, 101, 242), rgb(57, 70, 209)),
+        special: linear-gradient(to bottom right, rgb(231, 166, 166), rgb(252, 150, 110)),
     )
 );
 @function getColor($category, $key) {

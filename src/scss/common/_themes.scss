@@ -10,6 +10,11 @@
     color: getColor(solids, light);
 }
 
+@mixin theme-gold {
+    background: getColor(gradients, gold);
+    color: getColor(solids, dark);
+}
+
 @mixin section-light {
     @include theme-light;
     & > .wrapper {
