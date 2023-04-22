@@ -1,8 +1,8 @@
-import { StaffItemType } from "../commonTypes";
-import { capitalizeWords, getTimeSinceDate } from "../commonFunctions";
-import InfoModal from './common/ModalTemplates/InfoModal';
-import sources from "../sources";
-import backgroundDecor from './../icons/oasis-palm-shade.webp';
+import { StaffItemType } from "../../commonTypes";
+import { capitalizeWords, getTimeSinceDate } from "../../commonFunctions";
+import InfoModal from '../common/ModalTemplates/InfoModal';
+import sources from "../../sources";
+import backgroundDecor from './../../icons/oasis-palm-shade.webp';
 import ReactHtmlParser from 'react-html-parser';
 
 type Props = {

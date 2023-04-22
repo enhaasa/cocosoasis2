@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import getExternal from '../getExternal';
 import format from '../format';
 import { MenuItemType, MenuTypeType } from '../commonTypes';
-import MenuItem from './_MenuItem';
-import MenuItemSpecial from './_MenuItemSpecial';
+import MenuItem from './components/_MenuItem';
+import MenuItemSpecial from './components/_MenuItemSpecial';
 import SelectNav from './common/SelectNav';
 import Title from './common/Title';
 import sources from '../sources';
@@ -25,28 +25,20 @@ function Menu({ handleModal }:Props) {
         {
             name: "Drinks",
             specialItem: findMenuItemById(specialCocktail),
-            types: [
-                "drink", "cocktail"
-            ]
+            types: ["drink", "cocktail"]
         },
         {
             name: "Meals",
             specialItem: findMenuItemById(specialMeal),
-            types: [
-                "meal", "luxe"
-            ]
+            types: ["meal", "luxe"]
         },
         {
             name: "Desserts",
-            types: [
-                "dessert"
-            ]
+            types: ["dessert"]
         },
         {
             name: "Herbs",
-            types: [
-                "herb"
-            ]
+            types: ["herb"]
         }
     ];
 
@@ -98,8 +90,14 @@ function Menu({ handleModal }:Props) {
     }
 
     useEffect(() => {
-        getExternal.db("getMenu").then(data => {    
+        getExternal.db("menu").then(data => {    
             setMenu(format.menu(data));
+        })
+        getExternal.weekly("meal").then(res => {
+            setSpecialMeal(res.id);
+        })
+        getExternal.weekly("cocktail").then(res => {
+            setSpecialCocktail(res.id);
         })
     }, []);
 

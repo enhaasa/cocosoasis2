@@ -3,7 +3,10 @@ import sources from "./sources";
 const api = sources.api;
 const getExternal = {
     db: async function(query: string) {
-        return await this.query(query, "/dbQuery.php?query=");
+        return await this.query(query, "/db/get.php?table=");
+    },
+    weekly: async function(type: string) {
+        return await this.query(type, "/db/getMenuWeekly.php?type=");
     },
     files: async function(query: string) {
         return await this.query(query, "/fileQuery.php?query=");

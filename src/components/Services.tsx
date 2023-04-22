@@ -1,4 +1,4 @@
-import ServiceItem from "./_ServiceItem";
+import ServiceItem from "./components/_ServiceItem";
 import Notice from "./common/Notice";
 import Title from "./common/Title";
 

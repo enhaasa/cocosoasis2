@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { StaffItemType, ImageType } from '../commonTypes';
 import getExternal from '../getExternal';
 import format from '../format';
-import StaffItem from './_StaffItem';
+import StaffItem from './components/_StaffItem';
 import GalleryButton from './common/GalleryButton';
 import Title from './common/Title';
 import Notice from './common/Notice';
@@ -18,7 +18,7 @@ function Staff({ handleModal }: Props) {
     const [ familyGallery, setFamilyGallery ] = useState<ImageType[]>([]);
 
     useEffect(() => {
-        getExternal.db("getStaff").then(data => {
+        getExternal.db("staff").then(data => {
             setStaffs(format.staff(data));
         });
         getExternal.files("family").then(data => {

@@ -1,4 +1,4 @@
-import InfoModal from "./common/ModalTemplates/InfoModal";
+import InfoModal from "./../common/ModalTemplates/InfoModal";
 
 
 
