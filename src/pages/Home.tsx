@@ -20,7 +20,7 @@ function Home() {
 
   const [ nextOpening, setNextOpening ] = useState<OpeningType | null>(null);
   useEffect(() => {
-    getExternal.db("getOpenings").then((data: OpeningType[]) => {
+    getExternal.db("openings").then((data: OpeningType[]) => {
       setNextOpening(getNextOpening(data));
   })
   }, [])
