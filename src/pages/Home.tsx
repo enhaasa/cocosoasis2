@@ -13,15 +13,31 @@ import { OpeningType } from '../commonTypes';
 import { capitalizeWords } from '../commonFunctions';
 
 function Home() {
-    const [ modal, setModal ] = useState<any | null>(null);
+  const [ modal, setModal ] = useState<any | null>(null);
   function handleModal(content: any | null):void {
       setModal(content);  
+  }
+
+  function scrollToAnchor() {
+    const { hash } = window.location;
+  
+    if (hash) {
+      const target = document.querySelector(hash);
+  
+      if (target) {
+        target.scrollIntoView();
+      }
+    }
   }
 
   const [ nextOpening, setNextOpening ] = useState<OpeningType | null>(null);
   useEffect(() => {
     getExternal.db("openings").then((data: OpeningType[]) => {
-      setNextOpening(getNextOpening(data));
+    setNextOpening(getNextOpening(data));
+
+    setTimeout(() => {
+      scrollToAnchor();
+    }, 500)
   })
   }, [])
 
