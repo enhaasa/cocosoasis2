@@ -14,7 +14,6 @@ type Props = {
 }
 
 function Menu({ handleModal }:Props) {
-    
     const [ menu, setMenu ] = useState<MenuTypeType[]>([]);
     const [ weeklySpecials, setWeeklySpecials ] = useState<any>([]);
     const [ selectedSection, setSelectedSection ] = useState<number>(0);
@@ -41,7 +40,6 @@ function Menu({ handleModal }:Props) {
     ];
 
 
-
     /**
      * Old menu
      */
@@ -66,15 +64,6 @@ function Menu({ handleModal }:Props) {
         }}
     />
 
-    function findMenuItemById(id:string) {
-        const foundMenuType = menu.find(menuType => {
-          const foundItemIndex = menuType.items.findIndex(item => item.id === id);
-          return foundItemIndex !== -1;
-        });
-        
-        return foundMenuType ? foundMenuType.items.find(item => item.id === id) : undefined;
-    }
-
     function handleOldMenu() {
         handleModal(oldMenuModal);
     }
@@ -89,6 +78,11 @@ function Menu({ handleModal }:Props) {
     useEffect(() => {
         (async () => {
             let menu = await getExternal.db("menu");
+            
+            setMenu(format.menu(menu)); //To be removed when below code is taken live
+
+            /*
+
 
             //Filter out only the sections which should show a weekly item
             const specialSections = sections.filter(section => section.weekly && section.weekly);
@@ -104,6 +98,10 @@ function Menu({ handleModal }:Props) {
             //Render specials
             const specials = specialItems.map((item, index) => ({name: specialSections[index].weekly, item: item}));
             setWeeklySpecials(specials);
+            
+            */
+            
+
         })();
     }, []);
 

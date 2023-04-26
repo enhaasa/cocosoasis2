@@ -44,6 +44,12 @@ export function getCurrentDateTimeGMT(): string {
     return isoString.slice(0, 19).replace('T', ' ');
 }
 
+export function getCurrentDateGMT(): string {
+    const now = new Date();
+    const isoString = now.toISOString();
+    return isoString.slice(0, 10);
+}
+
 export function getCurrentDate(): string {
     const date = new Date();
 
@@ -59,8 +65,8 @@ export function getCurrentDate(): string {
 }
 
 export function getNextOpening(openings: OpeningType[]): OpeningType | null {
-    const currentDate = getCurrentDateTimeGMT();
-    const nextOpening = openings.find(opening => opening.date > currentDate && opening.active !== "0");
+    const currentDate = getCurrentDateGMT();
+    const nextOpening = openings.find(opening => opening.date >= currentDate && opening.active !== "0");
     return nextOpening ? nextOpening : null;
 }
   

@@ -82,7 +82,6 @@ function Home() {
       <div className="navbar">
           {sections.map((section: any) => (
               <a 
-                
                 className="anchor" 
                 draggable={false} 
                 href={`#${section.id}`} 

@@ -58,7 +58,7 @@ function Home({handleModal, nextOpening}: Props) {
         <>
             <div className="logo">
                 <img src={logo} />
-                <div className="underTitle">Restaurant & Bar</div>
+                <div className="underTitle">Thavnairian Restaurant & Bar</div>
             </div>
             <div className="divider" />
 
@@ -95,6 +95,7 @@ function Home({handleModal, nextOpening}: Props) {
                             <img src={dateIcon} />
                             Next opening: <br />
                             {nextOpening ? nextOpening.date : "No openings currently scheduled."}
+                            
                         </span>
 
                         <span className="infoWithIcon">
