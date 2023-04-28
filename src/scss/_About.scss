@@ -71,6 +71,32 @@
                 transform: scale(1.02);
             }
 
+            & .banner {
+                background: getColor(gradients, gold);
+                border-radius: getRadius(small) getRadius(small) 0 0;
+                border-bottom: getBorder(solid, black);
+                color: black;
+                padding: getPadding(small);
+
+                &.owner{
+                    background: getColor(gradients, wine);
+                    color: lightgrey;
+                    text-shadow: getShadow(text, standard);
+                }
+                &.assistant{
+                    background: getColor(gradients, grape);
+                    color: lightgrey;
+                    text-shadow: getShadow(text, standard);
+                }
+
+                & .specialPosition {
+                    text-align: center;
+                    font-family: getFont(cursive);
+                    font-size: getFontSize(larger);
+                }
+            }
+            
+
 
             & .image {
                 height: 270px;
@@ -96,7 +122,7 @@
                 & .name {
                     color: black;
                     font-size: getFontSize(large);
-                    
+                    font-weight: bold;
                     font-family: getFont(standard);
                 }
                 & .positions {

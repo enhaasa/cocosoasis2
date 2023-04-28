@@ -1,23 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+@font-face {
+  font-family: "Cabin";
+  src: url("./../fonts/cabin/Cabin-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Cabin";
+  src: url("./../fonts/cabin/Cabin-Bold.ttf") format("truetype");
+  font-weight: bold;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
 .infoModal {
   width: 900px;
   height: 500px;
@@ -168,6 +170,28 @@
 .about .collection .item:hover {
   transform: scale(1.02);
 }
+.about .collection .item .banner {
+  background: linear-gradient(to bottom right, #D1B464, #8A6E2F);
+  border-radius: 15px 15px 0 0;
+  border-bottom: 1px solid black;
+  color: black;
+  padding: 5px;
+}
+.about .collection .item .banner.owner {
+  background: linear-gradient(to bottom right, rgb(107, 0, 0), rgb(49, 0, 0));
+  color: lightgrey;
+  text-shadow: 0.1em 0.1em 0.2em black;
+}
+.about .collection .item .banner.assistant {
+  background: linear-gradient(to bottom right, #712E5F, #35122b);
+  color: lightgrey;
+  text-shadow: 0.1em 0.1em 0.2em black;
+}
+.about .collection .item .banner .specialPosition {
+  text-align: center;
+  font-family: "Dancing Script";
+  font-size: 1.3em;
+}
 .about .collection .item .image {
   height: 270px;
   display: grid;
@@ -188,6 +212,7 @@
 .about .collection .item .text .name {
   color: black;
   font-size: 1.2em;
+  font-weight: bold;
   font-family: "Cabin";
 }
 .about .collection .item .text .positions {
@@ -232,6 +257,18 @@
   }
 }
 
+@font-face {
+  font-family: "Cabin";
+  src: url("./../fonts/cabin/Cabin-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Cabin";
+  src: url("./../fonts/cabin/Cabin-Bold.ttf") format("truetype");
+  font-weight: bold;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
 .menuItem {
   display: grid;
   grid-auto-flow: column;
@@ -275,6 +312,18 @@
   color: grey;
 }
 
+@font-face {
+  font-family: "Cabin";
+  src: url("./../fonts/cabin/Cabin-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Cabin";
+  src: url("./../fonts/cabin/Cabin-Bold.ttf") format("truetype");
+  font-weight: bold;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
 .specialMenuSection {
   margin-top: -4px;
   background: linear-gradient(to bottom right, #D1B464, #8A6E2F);
@@ -352,6 +401,18 @@
   text-shadow: 0.1em 0.1em 0.2em black;
 }
 
+@font-face {
+  font-family: "Cabin";
+  src: url("./../fonts/cabin/Cabin-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Cabin";
+  src: url("./../fonts/cabin/Cabin-Bold.ttf") format("truetype");
+  font-weight: bold;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
 .menu {
   max-width: 100%;
 }
@@ -415,6 +476,18 @@
   text-align: left;
 }
 
+@font-face {
+  font-family: "Cabin";
+  src: url("./../fonts/cabin/Cabin-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Cabin";
+  src: url("./../fonts/cabin/Cabin-Bold.ttf") format("truetype");
+  font-weight: bold;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
 .home {
   display: grid;
   gap: 5px;
@@ -526,6 +599,18 @@
   }
 }
 
+@font-face {
+  font-family: "Cabin";
+  src: url("./../fonts/cabin/Cabin-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Cabin";
+  src: url("./../fonts/cabin/Cabin-Bold.ttf") format("truetype");
+  font-weight: bold;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
 .partners {
   display: flex;
   flex-wrap: wrap;
@@ -548,6 +633,18 @@
   transform: scale(1.05);
 }
 
+@font-face {
+  font-family: "Cabin";
+  src: url("./../fonts/cabin/Cabin-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Cabin";
+  src: url("./../fonts/cabin/Cabin-Bold.ttf") format("truetype");
+  font-weight: bold;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
 .services .servicesTable {
   display: flex;
   gap: 10px;
@@ -589,6 +686,30 @@
   transform: scale(1.02);
 }
 
+@font-face {
+  font-family: "Cabin";
+  src: url("./../fonts/cabin/Cabin-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Cabin";
+  src: url("./../fonts/cabin/Cabin-Bold.ttf") format("truetype");
+  font-weight: bold;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: "Cabin";
+  src: url("./../fonts/cabin/Cabin-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Cabin";
+  src: url("./../fonts/cabin/Cabin-Bold.ttf") format("truetype");
+  font-weight: bold;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
 section {
   padding: 10px;
   position: relative;
@@ -846,6 +967,18 @@ section .bigdivider img {
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
+@font-face {
+  font-family: "Cabin";
+  src: url("./../fonts/cabin/Cabin-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Cabin";
+  src: url("./../fonts/cabin/Cabin-Bold.ttf") format("truetype");
+  font-weight: bold;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
 .selectNavWrapper {
   display: flex;
 }

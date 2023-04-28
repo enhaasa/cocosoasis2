@@ -79,11 +79,9 @@ function Menu({ handleModal }:Props) {
         (async () => {
             let menu = await getExternal.db("menu");
             
-            setMenu(format.menu(menu)); //To be removed when below code is taken live
+            //setMenu(format.menu(menu)); //To be removed when below code is taken live
 
-            /*
-
-
+            
             //Filter out only the sections which should show a weekly item
             const specialSections = sections.filter(section => section.weekly && section.weekly);
 
@@ -98,8 +96,6 @@ function Menu({ handleModal }:Props) {
             //Render specials
             const specials = specialItems.map((item, index) => ({name: specialSections[index].weekly, item: item}));
             setWeeklySpecials(specials);
-            
-            */
             
 
         })();

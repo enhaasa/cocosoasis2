@@ -1,5 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+@font-face {
+    font-family: 'Cabin';
+    src: url('./../fonts/cabin/Cabin-Regular.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Cabin';
+    src: url('./../fonts/cabin/Cabin-Bold.ttf') format('truetype');
+    font-weight: bold;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
 
 $fonts: (
     cursive: 'Dancing Script',

@@ -15,7 +15,8 @@ function StaffItem(props: Props) {
         name,
         positions,
         bio,
-        hiredDate
+        hiredDate,
+        title
     } = props.item;
     const {
         handleModal
@@ -37,9 +38,16 @@ function StaffItem(props: Props) {
         <>
             <button className="item" key={name} onClick={() => {handleModal(staffModal)}}>
                 <img className="backgroundDecor" src={backgroundDecor}/>
+
+                {title &&
+                    <div className={`banner ${title}`}>
+                        <div className="specialPosition">{capitalizeWords(title)}</div>
+                    </div>}
+
                 <div className="image">
                     <img src={`${sources.cdn}/characters/${name.replace(" ", "")}.webp`} loading="lazy"></img>
                 </div>
+
                 <div className="text">
                     <div className="name">{name}</div>
                     <div className="positions">

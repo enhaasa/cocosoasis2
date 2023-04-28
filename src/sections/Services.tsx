@@ -5,9 +5,13 @@ import Title from "./common/Title";
 import CallIcon from "./../icons/call-small-white.png";
 import PhotoIcon from "./../icons/camera-black.png";
 import CarriageIcon from "./../icons/carriage-black.png";
-import CheersIcon from "./../icons/cheers-black.png";
+import DrinksIcon from "./../icons/drinks-black.png";
 import TableserviceIcon from "./../icons/tableservice-black.png";
 import TabIcon from "./../icons/invoice-black.png";
+import TabletopIcon from "./../icons/tabletops-black.png";
+import LivemusicIcon from "./../icons/harp-black.png";
+import PrivateBoothIcon from "./../icons/dating-black.png";
+import MusicIcon from "./../icons/music-black.png";
 
 import Photography from "./../images/photography.webp";
 
@@ -21,7 +25,7 @@ function Services({ handleModal }:Props) {
         {
             header: "Private Booths",
             undertitle: "Enjoy a cozy and intimate dining experience",
-            icon: CheersIcon,
+            icon: PrivateBoothIcon,
             body: 
                 <span>
                     <p>
@@ -76,6 +80,77 @@ function Services({ handleModal }:Props) {
                 </span>,
             type: "included"
         },
+        {
+            header: "Real Tabletops",
+            undertitle: "A truly immersive dining experience",
+            icon: TabletopIcon,
+            body: 
+                <span>
+                    <p>
+                        The Oasis takes immersion to the next level by offering a visual treat.
+                    </p>
+                    <p>
+                        Each meal (and some drinks) have a unique tabletop item representing it. 
+                        This will be placed on your table when you have made an order, instead of trading consumable items, if you are seated at a table in the restaurant.
+                    </p>
+                </span>,
+            type: "included"
+        },
+        {
+            header: "Relaxing Music Stream",
+            undertitle: "Personally currated romantic songs on Twitch",
+            icon: MusicIcon,
+            body: 
+                <span>
+                    <p>
+                        We value your evening at the Oasis and want and want to help set the tone for comfort and romance.
+                    </p>
+                    <p>
+                        That's why our stream has multiple, personally currated playlists with everything from acoustic guitar, piano and beautiful Bossa Nova covers of many well-known songs.
+                        The tracks are often accompanied by soft background-noises of dripping rain, ocean breezes, or crackles from a warm fireplace.
+                    </p>
+                    <p>
+                        Get comfy and listen along with us during opening times!
+                    </p>
+                    <p>
+                        Stream link: <a href="https://www.twitch.tv/cocosoasis" target="_blank"><u>https://www.twitch.tv/cocosoasis</u></a>
+                    </p>
+
+                </span>,
+            type: "included"
+        },
+        {
+            header: "Bar Services",
+            undertitle: "For more lighthearted roleplay",
+            icon: DrinksIcon,
+            body: 
+                <span>
+                    <p>
+                        You will find our bar on the groundfloor, right infront of the entrance.
+                    </p>
+                    <p>
+                        The Oasis bar offers drinks and cocktails mostly in the form of consumable items, served by our lovely bartenders.
+                        This is a great place if you are not ready for the fully fledged restaurant service, or just want to have a drink in peace after a long day.
+                        Regardless of the reason, our bartenders are here for you!
+                    </p>
+                </span>,
+            type: "included"
+        },
+        {
+            header: "Live Music",
+            undertitle: "Enjoy tunes by a live playing bard",
+            icon: LivemusicIcon,
+            body: 
+                <span>
+                    <p>
+                        Our house bard, Welgar, is here during our openings to offer relaxing live music in the estate.
+                        You will find her playing either on the ground floor or downstairs. 
+                    </p>
+
+                </span>,
+            type: "included"
+        },
+        
     ]
 
     const paidServices = [

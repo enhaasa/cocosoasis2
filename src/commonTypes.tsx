@@ -27,6 +27,7 @@ export type StaffItemType = {
     bio: string;
     hiredDate: string;
     gender: string;
+    title: string;
 }
 
 export type ImageType = {
