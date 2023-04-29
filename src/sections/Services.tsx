@@ -1,7 +1,9 @@
+//Import components
 import ServiceItem from "./components/_ServiceItem";
 import Notice from "./common/Notice";
 import Title from "./common/Title";
 
+//Import icons
 import CallIcon from "./../icons/call-small-white.png";
 import PhotoIcon from "./../icons/camera-black.png";
 import CarriageIcon from "./../icons/carriage-black.png";
@@ -13,11 +15,19 @@ import LivemusicIcon from "./../icons/harp-black.png";
 import PrivateBoothIcon from "./../icons/dating-black.png";
 import MusicIcon from "./../icons/music-black.png";
 
-import Photography from "./../images/photography.webp";
+//Import images
+import Photography from "./../images/Photography.webp";
+import Carriage from "./../images/CarriageRide.webp";
+import Livemusic from "./../images/LiveMusic.webp";
+import Barservices from "./../images/BarServices.webp";
+import Tableservice from "./../images/TableService.webp";
+import Tabletop from "./../images/RealTabletops.webp";
+
 
 type Props = {
     handleModal: (content: any) => void;
 }
+
 
 function Services({ handleModal }:Props) {
 
@@ -43,6 +53,7 @@ function Services({ handleModal }:Props) {
             header: "Table Service",
             undertitle: "Relax and let us take care of you",
             icon: TableserviceIcon,
+            image: Tableservice,
             body: 
                 <span>
                     <p>
@@ -84,6 +95,7 @@ function Services({ handleModal }:Props) {
             header: "Real Tabletops",
             undertitle: "A truly immersive dining experience",
             icon: TabletopIcon,
+            image: Tabletop,
             body: 
                 <span>
                     <p>
@@ -123,6 +135,7 @@ function Services({ handleModal }:Props) {
             header: "Bar Services",
             undertitle: "For more lighthearted roleplay",
             icon: DrinksIcon,
+            image: Barservices,
             body: 
                 <span>
                     <p>
@@ -140,6 +153,7 @@ function Services({ handleModal }:Props) {
             header: "Live Music",
             undertitle: "Enjoy tunes by a live playing bard",
             icon: LivemusicIcon,
+            image: Livemusic,
             body: 
                 <span>
                     <p>
@@ -185,6 +199,7 @@ function Services({ handleModal }:Props) {
             header: "Carriage Ride",
             undertitle: "Arrive to the venue in unrivaled style",
             icon: CarriageIcon,
+            image: Carriage,
             body: 
                 <span>
                     <p>
@@ -210,20 +225,18 @@ function Services({ handleModal }:Props) {
         <>
             <Notice text={"Click a service to read more."}/>
 
-
             <Title 
                 text={"Included Services"} 
                 underTitle={"Enjoy our complimentary offerings to enhance your dining experience at our restaurant."} 
                 divider={true}
             />
 
-
-
             <div className="servicesTable">
                 {includedSerivces.map((service, index) => (
                     <ServiceItem 
                         header={service.header}
                         underTitle={service.undertitle}
+                        image={service.image}
                         icon={service.icon}
                         footer={service.footer}
                         body={service.body}
