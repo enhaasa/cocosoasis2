@@ -27,15 +27,15 @@ function Menu({ handleModal }:Props) {
         {
             name: "Meals",
             weekly: "meal",
-            types: ["meal", "luxe"]
+            types: ["meal"]
         },
         {
             name: "Desserts",
             types: ["dessert"]
         },
         {
-            name: "Herbs",
-            types: ["herb"]
+            name: "Luxe",
+            types: ["luxe"]
         }
     ];
 

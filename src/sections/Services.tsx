@@ -28,7 +28,6 @@ type Props = {
     handleModal: (content: any) => void;
 }
 
-
 function Services({ handleModal }:Props) {
 
     const includedSerivces = [
@@ -252,7 +251,6 @@ function Services({ handleModal }:Props) {
                 underTitle={"Indulge in our premium offerings to take your dining experience to the next level. From transportation to photography, our paid services provide an extra touch of luxury for a truly unforgettable evening."} 
                 divider={true}
             />
-
 
             <div className="servicesTable">
                 {paidServices.map((service, index) => (
