@@ -16,6 +16,10 @@ function MenuItemSpecial(props: Props) {
         type
     } = props.item;
 
+    function addDiscount(price: number): number {
+        return price / 2;
+    }
+
     function trimFull(string:string):string {
         return string.replace(/\s/g, '');
     }
@@ -45,8 +49,8 @@ function MenuItemSpecial(props: Props) {
                 <div className="row">
                     <span className="name">{name}</span>
                     <span className="priceSection">
-                            <span className="price">{`${price} gil`}</span>
-                            <span className="discountPrice">{`${price/2} gil`}
+                            <span className="price">{`${formatStringAsPrice(price.toString())} gil`}</span>
+                            <span className="discountPrice">{`${formatStringAsPrice(addDiscount(price).toString())} gil`}
                         </span>
                     </span>
                 </div>

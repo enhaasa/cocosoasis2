@@ -77,11 +77,9 @@ function Menu({ handleModal }:Props) {
 
     useEffect(() => {
         (async () => {
-            let menu = await getExternal.db("menu");
-            
+            let menu = await getExternal.db("menu");        
             //setMenu(format.menu(menu)); //To be removed when below code is taken live
 
-            
             //Filter out only the sections which should show a weekly item
             const specialSections = sections.filter(section => section.weekly && section.weekly);
 
