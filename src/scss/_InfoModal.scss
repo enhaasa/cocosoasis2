@@ -3,7 +3,7 @@
 
 .infoModal {
     width: 900px;
-    height: 500px;
+    height: 560px;
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: 2fr 3fr;
@@ -76,18 +76,23 @@
     }
 
 }
-@media only screen and (max-width: $width) {
+@media only screen and (max-width: $largerWidth) {
     .infoModal {
         width: 100%;
-        height: auto;
+
         & .image {
             justify-content: center;
             align-items: center;
             overflow: hidden;
+
+            & img {
+                display: absolute;
+            }
+            
         }
     }
 }
-@media only screen and (max-width: $smallWidth) {
+@media only screen and (max-width: $largeWidth) {
     .infoModal {
         & .image {
             display: none;

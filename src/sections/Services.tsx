@@ -22,6 +22,7 @@ import Livemusic from "./../images/LiveMusic.webp";
 import Barservices from "./../images/BarServices.webp";
 import Tableservice from "./../images/TableService.webp";
 import Tabletop from "./../images/RealTabletops.webp";
+import Privatebooths from "./../images/PrivateBooths.webp";
 
 
 type Props = {
@@ -35,6 +36,7 @@ function Services({ handleModal }:Props) {
             header: "Private Booths",
             undertitle: "Enjoy a cozy and intimate dining experience",
             icon: PrivateBoothIcon,
+            image: Privatebooths,
             body: 
                 <span>
                     <p>
