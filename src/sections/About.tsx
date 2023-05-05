@@ -19,7 +19,40 @@ function Staff({ handleModal }: Props) {
 
     useEffect(() => {
         getExternal.db("staff").then(data => {
-            setStaffs(format.staff(data));
+            function sortByHireDate(staff: StaffItemType[]): StaffItemType[] {
+                return staff.sort((a: StaffItemType, b: StaffItemType) => {
+                  if (a.hiredDate < b.hiredDate) {
+                    return -1;
+                  }
+                  if (b.hiredDate < a.hiredDate) {
+                    return 1;
+                  }
+                  return 0;
+                });
+            }
+
+
+              function sortByTitle(staff: StaffItemType[]): StaffItemType[] {
+                const titles = ["owner", "assistant", "event-planner"];
+                const titleOrder: { [title: string]: number } = {};
+                titles.forEach((title, index) => titleOrder[title] = index);
+              
+                const sortedByTitle = staff.filter(item => item.title !== null)
+                  .sort((a, b) => {
+                    const titleA = a.title ?? '';
+                    const titleB = b.title ?? '';
+                    const indexA = titleOrder[titleA] ?? Infinity;
+                    const indexB = titleOrder[titleB] ?? Infinity;
+                    return indexA - indexB;
+                  });
+              
+                const sorted = sortedByTitle.concat(staff.filter(item => item.title === null));
+                return sorted;
+              }
+              
+              
+
+            setStaffs(sortByTitle(sortByHireDate(format.staff(data))));
         });
         getExternal.files("family").then(data => {
             setFamilyGallery(format.gallery(data));

@@ -1,22 +1,34 @@
 import { OpeningType } from "./commonTypes";
 
-export function getTimeSinceDate(dateStr: string): string {
-    const [day, month, year] = dateStr.split('.').map((str) => parseInt(str, 10));
+export function getTimeSinceDate(dateString: string): string {
+    const currentDate = new Date();
+    const hireDate = new Date(dateString);
   
-    const now = new Date();
-    const then = new Date(year, month - 1, day);
+    const yearDiff = currentDate.getFullYear() - hireDate.getFullYear();
+    const monthDiff = currentDate.getMonth() - hireDate.getMonth();
+    const weekDiff = Math.floor((currentDate.getTime() - hireDate.getTime()) / (1000 * 60 * 60 * 24 * 7));
   
-    const diffTime = now.getTime() - then.getTime();
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  
-    if (diffDays >= 30) {
-        const months = Math.floor(diffDays / 30);
-        return `${months} ${months === 1 ? 'month' : 'months'}`;
-    } else if (diffDays >= 7) {
-        const weeks = Math.floor(diffDays / 7);
-        return `${weeks} ${weeks === 1 ? 'week' : 'weeks'}`;
+    if (yearDiff > 1) {
+      if (monthDiff < 0) {
+        return `${yearDiff - 1} year${yearDiff > 2 ? 's' : ''}`;
+      } else {
+        return `${yearDiff} year${yearDiff > 1 ? 's' : ''} and ${monthDiff} month${monthDiff !== 1 ? 's' : ''}`;
+      }
+    } else if (yearDiff === 1) {
+      if (monthDiff < 0) {
+        const monthsRemaining = 12 - hireDate.getMonth() + currentDate.getMonth();
+        return `${monthsRemaining} month${monthsRemaining !== 1 ? 's' : ''}`;
+      } else if (monthDiff === 0) {
+        return '1 year';
+      } else {
+        return `1 year and ${monthDiff} month${monthDiff !== 1 ? 's' : ''}`;
+      }
     } else {
-        return `${diffDays} ${diffDays === 1 ? 'day' : 'days'}`;
+      if (monthDiff === 0 && weekDiff > 0) {
+        return `${weekDiff} week${weekDiff !== 1 ? 's' : ''}`;
+      } else {
+        return `${monthDiff} month${monthDiff !== 1 ? 's' : ''}`;
+      }
     }
 }
 

@@ -88,6 +88,11 @@
                     color: lightgrey;
                     text-shadow: getShadow(text, standard);
                 }
+                &.event-manager{
+                    background: getColor(gradients, dark-grape);
+                    color: lightgrey;
+                    text-shadow: getShadow(text, standard);
+                }
 
                 & .specialPosition {
                     text-align: center;

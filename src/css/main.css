@@ -185,7 +185,12 @@
   text-shadow: 0.1em 0.1em 0.2em black;
 }
 .about .collection .item .banner.assistant {
-  background: linear-gradient(to bottom right, #712E5F, #35122b);
+  background: linear-gradient(to bottom right, #712E5F, #290d21);
+  color: lightgrey;
+  text-shadow: 0.1em 0.1em 0.2em black;
+}
+.about .collection .item .banner.event-manager {
+  background: linear-gradient(to bottom right, #803A5C, #27121c);
   color: lightgrey;
   text-shadow: 0.1em 0.1em 0.2em black;
 }

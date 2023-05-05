@@ -14,7 +14,9 @@ $colors: (
         twitch: linear-gradient(to bottom right, rgb(146, 19, 146), rgb(99, 4, 99)),
         discord: linear-gradient(to bottom right, rgb(88, 101, 242), rgb(57, 70, 209)),
         special: linear-gradient(to bottom right, rgb(231, 166, 166), rgb(252, 150, 110)),
-        grape: linear-gradient(to bottom right, #712E5F, #35122b)
+        grape: linear-gradient(to bottom right, #712E5F, #290d21),
+        dark-grape: linear-gradient(to bottom right, #803A5C, #27121c),
+        leaf: linear-gradient(to bottom right, #336b3f, #20200c),
     )
 );
 @function getColor($category, $key) {

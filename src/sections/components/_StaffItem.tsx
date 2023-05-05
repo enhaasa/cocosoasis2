@@ -26,6 +26,10 @@ function StaffItem(props: Props) {
         return string.replace(/\s/g, '');
     }
 
+    function formatSpecialTitle(title:string):string {
+        return capitalizeWords(title.replaceAll("-", " "));
+    }
+
     const staffModal = <InfoModal content={{
         header: name,
         underTitle: positions.map(p => capitalizeWords(p)).join(" & "),
@@ -41,7 +45,7 @@ function StaffItem(props: Props) {
 
                 {title &&
                     <div className={`banner ${title}`}>
-                        <div className="specialPosition">{capitalizeWords(title)}</div>
+                        <div className="specialPosition">{formatSpecialTitle(title)}</div>
                     </div>}
 
                 <div className="image">
