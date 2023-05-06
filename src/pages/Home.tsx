@@ -37,7 +37,7 @@ function Home() {
 
     setTimeout(() => {
       scrollToAnchor();
-    }, 200)
+    }, 400)
   })
   }, [])
 

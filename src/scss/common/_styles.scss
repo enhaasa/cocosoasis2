@@ -17,6 +17,7 @@ $colors: (
         grape: linear-gradient(to bottom right, #712E5F, #290d21),
         dark-grape: linear-gradient(to bottom right, #803A5C, #27121c),
         leaf: linear-gradient(to bottom right, #336b3f, #20200c),
+        blueberry: linear-gradient(to bottom right, #3d378d, #121035)
     )
 );
 @function getColor($category, $key) {

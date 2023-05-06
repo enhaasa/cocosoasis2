@@ -194,6 +194,11 @@
   color: lightgrey;
   text-shadow: 0.1em 0.1em 0.2em black;
 }
+.about .collection .item .banner.marketing-manager {
+  background: linear-gradient(to bottom right, #3d378d, #121035);
+  color: lightgrey;
+  text-shadow: 0.1em 0.1em 0.2em black;
+}
 .about .collection .item .banner .specialPosition {
   text-align: center;
   font-family: "Dancing Script";

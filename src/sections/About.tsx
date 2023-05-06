@@ -31,27 +31,24 @@ function Staff({ handleModal }: Props) {
                 });
             }
 
-
-              function sortByTitle(staff: StaffItemType[]): StaffItemType[] {
-                const titles = ["owner", "assistant", "event-planner"];
-                const titleOrder: { [title: string]: number } = {};
-                titles.forEach((title, index) => titleOrder[title] = index);
+            function sortByTitle(staff: StaffItemType[]): StaffItemType[] {
+            const titles = ["owner", "assistant", "event-planner"];
+            const titleOrder: { [title: string]: number } = {};
+            titles.forEach((title, index) => titleOrder[title] = index);
+            
+            const sortedByTitle = staff.filter(item => item.title !== null)
+                .sort((a, b) => {
+                const titleA = a.title ?? '';
+                const titleB = b.title ?? '';
+                const indexA = titleOrder[titleA] ?? Infinity;
+                const indexB = titleOrder[titleB] ?? Infinity;
+                return indexA - indexB;
+                });
+            
+            const sorted = sortedByTitle.concat(staff.filter(item => item.title === null));
+            return sorted;
+            }
               
-                const sortedByTitle = staff.filter(item => item.title !== null)
-                  .sort((a, b) => {
-                    const titleA = a.title ?? '';
-                    const titleB = b.title ?? '';
-                    const indexA = titleOrder[titleA] ?? Infinity;
-                    const indexB = titleOrder[titleB] ?? Infinity;
-                    return indexA - indexB;
-                  });
-              
-                const sorted = sortedByTitle.concat(staff.filter(item => item.title === null));
-                return sorted;
-              }
-              
-              
-
             setStaffs(sortByTitle(sortByHireDate(format.staff(data))));
         });
         getExternal.files("family").then(data => {
@@ -71,7 +68,7 @@ function Staff({ handleModal }: Props) {
                     <span className="text">
                         <p>
                             Coco's Oasis first opened its doors on the 27th of March, 2022 as a small restaurant in the Lavender Beds, consisting of four spirited members:
-                            Coco, Strixxi, Gorberljin and Welgar. It offered a mix of far- and near eastern cuisine, massage services and tabletop items.
+                            Coco, Strixxi, Gorbeljin and Welgar. It offered a mix of far- and near eastern cuisine, massage services and tabletop items.
                         </p>
                         <p>
                             The little venue has grown over time into the proud restaurant it is today, with a plethora of lovely additions to the staff. 

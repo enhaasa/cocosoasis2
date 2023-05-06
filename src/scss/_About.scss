@@ -78,18 +78,23 @@
                 color: black;
                 padding: getPadding(small);
 
-                &.owner{
+                &.owner {
                     background: getColor(gradients, wine);
                     color: lightgrey;
                     text-shadow: getShadow(text, standard);
                 }
-                &.assistant{
+                &.assistant {
                     background: getColor(gradients, grape);
                     color: lightgrey;
                     text-shadow: getShadow(text, standard);
                 }
-                &.event-manager{
+                &.event-manager {
                     background: getColor(gradients, dark-grape);
+                    color: lightgrey;
+                    text-shadow: getShadow(text, standard);
+                }
+                &.marketing-manager {
+                    background: getColor(gradients, blueberry);
                     color: lightgrey;
                     text-shadow: getShadow(text, standard);
                 }
