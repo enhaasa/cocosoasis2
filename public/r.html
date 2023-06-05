@@ -69,7 +69,9 @@
                         list: document.getElementById('list')
                     }
                     
-                    receiptInfo.first.innerHTML = `Table: ${table +1}`;
+                    const channel = table ? `Table: ${table +1}` : "Bar";
+                    receiptInfo.first.innerHTML = channel;
+
                     if (date) {
                         receiptInfo.last.innerHTML = `${date}`;
                     }
