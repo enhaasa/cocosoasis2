@@ -52,40 +52,55 @@
                     const session = params.get('id');
                     
                     const orders = sortArchivedArray(allOrders.filter(order => order.session === session));
-                    const {
-                        table,
-                        floor,
-                        date,
-                    } = orders[0];
-                    let total = 0;
-                    orders.forEach(order => {total += parseInt(order.total)})
-
-                    const receiptInfo = {
-                        first: document.getElementById('receipt-info-first'),
-                        last: document.getElementById('receipt-info-last'),
-                    }
-                    const element = {
-                        total: document.getElementById('total'),
-                        list: document.getElementById('list')
-                    }
                     
-                    const channel = table ? `Table: ${table +1}` : "Bar";
-                    receiptInfo.first.innerHTML = channel;
+                    if (orders.length === 0) {
+                        const receiptSection = document.getElementById("receipt");
 
-                    if (date) {
-                        receiptInfo.last.innerHTML = `${date}`;
+                        receiptSection.innerHTML = `
+                            <div class="receipt-404-container">
+                                <img class="receipt-404" src="receipt-404.webp" />
+                                <div class="error-container">
+                                    <div class="error">404: Receipt Not Found</div>
+                                    <div class="message">Strixxi, we have a problem.</div>
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        const {
+                            table,
+                            floor,
+                            date,
+                        } = orders[0];
+                        let total = 0;
+                        orders.forEach(order => {total += parseInt(order.total)})
+
+                        const receiptInfo = {
+                            first: document.getElementById('receipt-info-first'),
+                            last: document.getElementById('receipt-info-last'),
+                        }
+                        const element = {
+                            total: document.getElementById('total'),
+                            list: document.getElementById('list')
+                        }
+                        
+                        const channel = table ? `Table: ${table +1}` : "Bar";
+                        receiptInfo.first.innerHTML = channel;
+
+                        if (date) {
+                            receiptInfo.last.innerHTML = `${date}`;
+                        }
+                        element.total.innerHTML = `Total: ${total.toLocaleString("en-US")} gil`
+
+                        orders.forEach(order => {
+                            element.list.innerHTML += `
+                            <div class="list-item">
+                                <div class="list-item-component" id="amount"> ${order.amount} </div>
+                                <div class="list-item-component" id="name"> ${order.name} </div>
+                                <div class="list-item-component" id="price"> ${order.price.toLocaleString("en-US")} gil</div>
+                            </div>
+                            `
+                        })
                     }
-                    element.total.innerHTML = `Total: ${total.toLocaleString("en-US")} gil`
-
-                    orders.forEach(order => {
-                        element.list.innerHTML += `
-                        <div class="list-item">
-                            <div class="list-item-component" id="amount"> ${order.amount} </div>
-                            <div class="list-item-component" id="name"> ${order.name} </div>
-                            <div class="list-item-component" id="price"> ${order.price.toLocaleString("en-US")} gil</div>
-                        </div>
-                        `
-                    })
                 });
         });
     </script> 
@@ -98,7 +113,7 @@
     </head>
     
     <body>
-        <section class="receipt">
+        <section class="receipt" id="receipt">
             <section class="receipt-container">
                 <div class="text title cursive">
                     Coco&apos;s Oasis
