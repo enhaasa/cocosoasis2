@@ -18,7 +18,7 @@ function Staff({ handleModal }: Props) {
     const [ familyGallery, setFamilyGallery ] = useState<ImageType[]>([]);
 
     useEffect(() => {
-        getExternal.db("staff").then(data => {
+        getExternal.db_cache("staff").then(data => {
             function sortByHireDate(staff: StaffItemType[]): StaffItemType[] {
                 return staff.sort((a: StaffItemType, b: StaffItemType) => {
                   if (a.hiredDate < b.hiredDate) {

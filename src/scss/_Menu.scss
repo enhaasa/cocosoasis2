@@ -24,7 +24,7 @@
 
             & .items {
                 display: grid;
-                grid-gap: getMargin(standard) getMargin(large);
+                grid-gap: getMargin(larger) getMargin(larger);
                 grid-template-columns: 1fr 1fr;
             }
 

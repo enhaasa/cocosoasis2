@@ -21,7 +21,7 @@ function Partners({ handleModal }: Props) {
     const venuePartners = partners ? partners.filter(partner => partner.level === "venue") : [];
     const communityPartners = partners ? partners.filter(partner => partner.level === "community") : [];
 
-    getExternal.db("partners").then(data => {
+    getExternal.db_cache("partners").then(data => {
         setPartners(data);
     });
 

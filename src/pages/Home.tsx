@@ -32,7 +32,7 @@ function Home() {
 
   const [ nextOpening, setNextOpening ] = useState<OpeningType | null>(null);
   useEffect(() => {
-    getExternal.db("openings").then((data: OpeningType[]) => {
+    getExternal.db_cache("openings").then((data: OpeningType[]) => {
     setNextOpening(getNextOpening(data));
 
     setTimeout(() => {

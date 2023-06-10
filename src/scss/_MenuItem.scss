@@ -14,6 +14,7 @@
         display: grid;
         align-content: start;
         width: 100%;
+        
         & .row {
             display: flex;
             justify-content: space-between;
@@ -24,9 +25,15 @@
             display: flex;
             align-items: center;
             margin-right: 10px;
+            
 
             & img {
                 width: 120px;
+                -webkit-box-reflect: below 2px linear-gradient(to bottom, 
+                rgba(0, 0, 0, 0),
+                 rgba(0, 0, 0, 0),
+                  rgba(0, 0, 0, 0.1), 
+                  rgba(0, 0, 0, 0.2));
             }
         }
     }

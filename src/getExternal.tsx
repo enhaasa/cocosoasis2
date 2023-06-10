@@ -5,6 +5,9 @@ const getExternal = {
     db: async function(query: string) {
         return await this.query(query, "/db/get.php?table=");
     },
+    db_cache: async function(query: string) {
+        return JSON.parse(await this.query(query, "/db_cache/get.php?table="));
+    },
     weekly: async function(type: string) {
         return await this.query(type, "/db/getMenuWeekly.php?type=");
     },
