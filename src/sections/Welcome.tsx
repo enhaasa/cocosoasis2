@@ -74,7 +74,7 @@ function Home({handleModal, nextOpening}: Props) {
                         <img src={twitchIcon} /> Music Stream
                     </a>
 
-                    <a className="discord" href="https://discord.gg/fwynmCteqU" target="_blank">
+                    <a className="discord" href="https://discord.gg/bYPdneVf9P" target="_blank">
                         <img src={discordIcon} /> Community
                     </a>
                     
