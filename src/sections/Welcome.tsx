@@ -49,7 +49,7 @@ function Home({handleModal, nextOpening}: Props) {
                         Reservations are free.
                     </p>
                 </p>,
-                footer: <span><img src={CallIcon} /> To make a reservation, please contact Enhasa#1319.</span>
+                footer: <span><img src={CallIcon} /> To make a reservation, please contact _enhasa.</span>
             }}
         />);
     }

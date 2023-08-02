@@ -47,7 +47,7 @@ function Services({ handleModal }:Props) {
                         The intimate setting of the booths is perfect for any occasion, from a romantic dinner for two to a gathering with friends and family.
                     </p>
                 </span>,
-            footer: <span><img src={CallIcon} /> To make a reservation, please contact Enhasa#1319.</span>,
+            footer: <span><img src={CallIcon} /> To make a reservation, please contact _enhasa.</span>,
             type: "included"
         },
         {
@@ -216,7 +216,7 @@ function Services({ handleModal }:Props) {
                         Payment is made directly to the carriage driver.
                     </p>
                 </span>,
-            footer: <span><img src={CallIcon} /> To book a ride, please message Coco (Enhasa#1319) beforehand.</span>,
+            footer: <span><img src={CallIcon} /> To book a ride, please message Coco (_enhasa) beforehand.</span>,
             type: "paid"
         },
     ]
