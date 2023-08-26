@@ -4,25 +4,37 @@
 
 .partners {
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    justify-content: center;
-    gap: getMargin(standard);
-    
-    & .partner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-decoration: none;
-        color: white;
-        gap: getPadding(small);
-        
-        &:visited {
-            color: white;
-        }
+    flex-direction: column;
+    gap: getPadding(small);
 
-        &:hover {
-            transform: scale(1.05);
+    & .title {
+        text-align: center;
+
+        color: rgb(158, 158, 158) !important;
+        text-shadow: none !important;
+    }
+
+    & .items {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        gap: getPadding(small);
+        flex-wrap: wrap;
+
+        & .item {
+            text-decoration: none;
+            color: white;
+            gap: getPadding(small);
+            text-align: center;
+            flex-basis: 15%;
+            
+            &:visited {
+                color: white;
+            }
+    
+            &:hover {
+                transform: scale(1.05);
+            }
         }
     }
 }
