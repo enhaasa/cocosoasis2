@@ -20,6 +20,32 @@
             box-shadow: getShadow(box, standard);
             border-radius: 50px;
             background: getColor(gradients, light);
+            position: relative;
+
+            &.unavailable {
+                &:hover {
+                    transform: none;
+                    filter: none !important;
+                }
+            }
+
+            & .unavailable-overlay {
+                background: rgba(0, 0, 0, 0.5);
+                width: 100%;
+                height: 100%;
+                border-radius: 50px;
+                left: 0;
+                top: 0;
+                position: absolute;
+                
+            }
+
+            & .unavailable-text {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                color: white;
+            }
 
             &.included {
                 background: getColor(gradients, silver);

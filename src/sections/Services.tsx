@@ -47,8 +47,9 @@ function Services({ handleModal }:Props) {
                         The intimate setting of the booths is perfect for any occasion, from a romantic dinner for two to a gathering with friends and family.
                     </p>
                 </span>,
-            footer: <span><img src={CallIcon} /> To make a reservation, please contact _enhasa.</span>,
-            type: "included"
+            footer: <span><img src={CallIcon} alt='Call Icon' /> To make a reservation, please contact _enhasa.</span>,
+            type: "included",
+            available: true,
         },
         {
             header: "Table Service",
@@ -70,7 +71,8 @@ function Services({ handleModal }:Props) {
                         Sit back, relax and let us take care of the rest.
                     </p>
                 </span>,
-            type: "included"
+            type: "included",
+            available: true,
         },
         {
             header: "Pay by Tab",
@@ -90,7 +92,8 @@ function Services({ handleModal }:Props) {
                         Our pay by tab option provides added convenience and flexibility for our guests, allowing you to focus on enjoying your dining experience without any interruptions. 
                     </p>
                 </span>,
-            type: "included"
+            type: "included",
+            available: true,
         },
         {
             header: "Real Tabletops",
@@ -107,7 +110,8 @@ function Services({ handleModal }:Props) {
                         This will be placed on your table when you have made an order, instead of trading consumable items, if you are seated at a table in the restaurant.
                     </p>
                 </span>,
-            type: "included"
+            type: "included",
+            available: true,
         },
         {
             header: "Relaxing Music Stream",
@@ -130,7 +134,8 @@ function Services({ handleModal }:Props) {
                     </p>
 
                 </span>,
-            type: "included"
+            type: "included",
+            available: true,
         },
         {
             header: "Bar Services",
@@ -148,7 +153,8 @@ function Services({ handleModal }:Props) {
                         Regardless of the reason, our bartenders are here for you!
                     </p>
                 </span>,
-            type: "included"
+            type: "included",
+            available: true,
         },
         {
             header: "Live Music",
@@ -163,9 +169,9 @@ function Services({ handleModal }:Props) {
                     </p>
 
                 </span>,
-            type: "included"
+            type: "included",
+            available: true,
         },
-        
     ]
 
     const paidServices = [
@@ -194,7 +200,8 @@ function Services({ handleModal }:Props) {
                     </p>
                 </span>,
             footer: <span><img src={CallIcon} /> To book a photo, please message Coco, Nessie, or Rotta at the venue.</span>,
-            type: "paid"
+            type: "paid",
+            available: false,
         },
         {
             header: "Carriage Ride",
@@ -217,7 +224,8 @@ function Services({ handleModal }:Props) {
                     </p>
                 </span>,
             footer: <span><img src={CallIcon} /> To book a ride, please message Coco (_enhasa) beforehand.</span>,
-            type: "paid"
+            type: "paid",
+            available: true,
         },
     ]
 
@@ -244,6 +252,7 @@ function Services({ handleModal }:Props) {
                         handleModal={handleModal}
                         type={service.type}
                         key={`includedService${service.type}${index}`}
+                        available={service.available}
                     />
                 ))}
             </div>
@@ -266,6 +275,7 @@ function Services({ handleModal }:Props) {
                         handleModal={handleModal}
                         type={service.type}
                         key={`includedService${service.type}${index}`}
+                        available={service.available}
                     />
                 ))}
             </div>

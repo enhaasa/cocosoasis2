@@ -11,6 +11,7 @@ type Props = {
     body: JSX.Element | string;
     underTitle: string;
     type?: string;
+    available: boolean;
 }
 
 function ServiceItem(props:Props) {
@@ -22,12 +23,16 @@ function ServiceItem(props:Props) {
         image,
         footer,
         underTitle,
-        type
+        type,
+        available,
     } = props;
     
     return (
-        
-        <button draggable={false} className={`serviceItem ${type && type}`} onClick={() => handleModal(
+        <button 
+            draggable={false} 
+            className={`serviceItem ${type && type} ${!available && 'unavailable'}`}
+            disabled={!available} 
+            onClick={() => handleModal(
             <InfoModal 
                 content={{
                     header: header,
@@ -38,10 +43,17 @@ function ServiceItem(props:Props) {
                 }}
             />
         )}>
+            {
+                !available &&
+                <>
+                    <div className='unavailable-overlay' />
+                    <div className='unavailable-text'>Currently unavailable</div>
+                </>
+            }
 
             {
             <div className="column">
-                <img className="icon" src={icon} />
+                <img className="icon" src={icon} alt='Service Icon'/>
             </div>
             }
 
