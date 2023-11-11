@@ -1,159 +1,34 @@
+<!DOCTYPE html>
 <html>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-
-                const api = "https://enhasa.dev/cocosoasis/api";
-                const endpoint = "/dbQuery.php?query=";
-                const query = "getArchived_orders";
-
-                async function getArchived_orders() {
-                    return fetch(api + endpoint + encodeURIComponent(query))
-                    .then(response => response.json())
-                    .then(data => data);
-                }
-
-                    getArchived_orders().then(allOrders => {
-
-                        function sortArchivedArray (array) {
-                            let sortedArray = [];
-
-                            array.forEach((arrayItem, index) => {
-
-                                let duplicate = false;
-                                let duplicateIndex = 0;
-
-
-
-                                arrayItem.price = parseInt(arrayItem.price);
-                                arrayItem.table = parseInt(arrayItem.table);
-                                
-                                sortedArray.forEach((sortedItem, index) => {
-                                    if(sortedItem.name === arrayItem.name
-                                    && sortedItem.price === arrayItem.price) {
-                                        duplicate = true;
-                                        duplicateIndex = index;
-                                    }
-                                })
-
-                                if (!duplicate) {
-                                    sortedArray.push({...arrayItem, amount: 1, ids: [arrayItem], total: arrayItem.price});
-                                } else {
-                                    sortedArray[duplicateIndex].amount ++;
-                                    sortedArray[duplicateIndex].ids.push(arrayItem.id);
-                                    sortedArray[duplicateIndex].total += arrayItem.price;
-                                }
-                                
-                            });
-
-                        return sortedArray;
-                    }
-
-                    const params = new URLSearchParams(window.location.search);
-                    const session = params.get('id');
-                    
-                    const orders = sortArchivedArray(allOrders.filter(order => order.session === session));
-                    
-                    if (orders.length === 0) {
-                        const receiptSection = document.getElementById("receipt");
-
-                        receiptSection.innerHTML = `
-                            <div class="receipt-404-container">
-                                <img class="receipt-404" src="receipt-404.webp" />
-                                <div class="error-container">
-                                    <div class="error">404: Receipt Not Found</div>
-                                    <div class="message">Strixxi, we have a problem.</div>
-                                </div>
-                            </div>
-                        `;
-                    } else {
-                        const {
-                            table,
-                            floor,
-                            date,
-                        } = orders[0];
-                        let total = 0;
-                        orders.forEach(order => {total += parseInt(order.total)})
-
-                        const receiptInfo = {
-                            first: document.getElementById('receipt-info-first'),
-                            last: document.getElementById('receipt-info-last'),
-                        }
-                        const element = {
-                            total: document.getElementById('total'),
-                            list: document.getElementById('list')
-                        }
-                        
-                        const channel = table ? `Table: ${table +1}` : "Bar";
-                        receiptInfo.first.innerHTML = channel;
-
-                        if (date) {
-                            receiptInfo.last.innerHTML = `${date}`;
-                        }
-                        element.total.innerHTML = `Total: ${total.toLocaleString("en-US")} gil`
-
-                        orders.forEach(order => {
-                            element.list.innerHTML += `
-                            <div class="list-item">
-                                <div class="list-item-component" id="amount"> ${order.amount} </div>
-                                <div class="list-item-component" id="name"> ${order.name} </div>
-                                <div class="list-item-component" id="price"> ${order.price.toLocaleString("en-US")} gil</div>
-                            </div>
-                            `
-                        })
-                    }
-                });
-        });
-    </script> 
-
     <head>
-        <link rel="stylesheet" href="receipt.css">
+        <link rel="stylesheet" href="receipts/receipt-viewer.css">
+        <link rel="stylesheet" href="receipts/_decoration.css">
+        <link rel="stylesheet" href="receipts/_error.css">
+        <link rel="stylesheet" href="receipts/_receipt.css">
         <meta charset="UTF-8">
         <title>Coco's Oasis Receipt</title>
         <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <script src="receipts/receipt.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', async () => {
+                build();
+            });
+        </script> 
     </head>
     
     <body>
-        <section class="receipt" id="receipt">
-            <section class="receipt-container">
-                <div class="text title cursive">
-                    Coco&apos;s Oasis
-                </div>
+        <div class="wrapper">
 
-                <div class="text">
-                    [Alpha] The Goblet, Ward 2, Plot 8<br>
-                    Odin, Light Data Center
-                </div>
-                <div class="divider"></div>
-        
-                <div class="receipt-info">
-                    <div id="receipt-info-first"></div>
-                    <div id="receipt-info-last"></div>
-                </div>
-                <div class="divider"></div>
+            <section class="receipt">
 
-                <div class="list" id="list">
-                    <div class="list-item">
-                        <div class="list-item-component list-header" id="amount">QTY</div>
-                        <div class="list-item-component list-header" id="name">ITEM</div>
-                        <div class="list-item-component list-header" id="price">à PRICE</div>
-                    </div>
-                </div>
-                <div class="divider"></div>
-
-                <div id="total"></div>
-                <div class="divider"></div>
-
-                <div class="text cursive">
-                    Thank you for staying at the Oasis~~<br>
-                    We hope to see you again ♥
-                </div>   
+  
             </section>
 
             <div class="decoration">
-                <img class="sleeve" src="sleeve.png">
-                <img class="flower" src="flowers.png">
+                <img class="sleeve" src="./receipts/assets/sleeve.png">
+                <img class="flower" src="./receipts/assets/flowers.png">
             </div>
-        </section>
+        </div>
     </body>
 </html>
 

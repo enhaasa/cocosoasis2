@@ -1,0 +1,21 @@
+.decoration img{
+    width: 300px;
+    position: relative;
+    margin-right: -110px;
+}
+.decoration .flower {
+    transform: rotate(-145deg);
+    z-index: 0;
+    
+}
+.decoration .sleeve {
+    width: 400px;
+    transform: rotate(-7deg);
+    z-index: 1;
+}
+
+@media screen and (max-width: 800px) {
+    .decoration {
+        display: none;
+    }
+}

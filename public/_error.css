@@ -1,0 +1,27 @@
+.error-container {
+    z-index: 99;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 20%;
+
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+}
+
+.error-container .error {
+    font-size: 24px;
+    color: rgba(211, 211, 211, 0.7);
+}
+
+.error-container .message {
+    font-size: 72px;
+    color: rgba(211, 211, 211, 1);
+}
+
+.receipt-404-container .receipt-404 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

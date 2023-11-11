@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+
+* {
+    font-family: 'Cabin', sans-serif;
+}
+
+/* Universal Color Scheme */
+:root {
+    --black: rgb(41, 41, 41);
+    --beige: rgb(196, 177, 166);
+    --red: rgb(134, 0, 0);
+    --white: rgb(218, 218, 218);
+    --green: rgb(0, 124, 17);
+  }
+
+body {
+    background: rgb(37, 37, 37);
+    background-image: url('./assets/receipt-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+}
+
+.receipt-404-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Receipts */
+.wrapper {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-auto-flow: column;
+    height: 100%;
+}

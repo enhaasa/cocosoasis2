@@ -1,0 +1,16 @@
+.receipt {
+    background: var(--beige);
+    padding: 22px;
+    box-shadow: 0 0 8px rgb(0, 0, 0);
+    transform: rotate(0deg);
+    z-index: 1;
+    margin-right: -350px;
+    z-index: 2;
+}
+
+@media screen and (max-width: 800px) {
+    .receipt {
+        justify-content: normal;
+        align-content: normal;
+    }
+}

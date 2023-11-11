@@ -31,7 +31,6 @@ function Home({handleModal, nextOpening}: Props) {
         });
     }, []);
 
-
     function handleReservationsButton() {
         handleModal(<InfoModal 
             content={{
@@ -74,7 +73,7 @@ function Home({handleModal, nextOpening}: Props) {
                         <img src={twitchIcon} /> Music Stream
                     </a>
 
-                    <a className="discord" href="https://discord.gg/bYPdneVf9P" target="_blank">
+                    <a className="discord" href="https://discord.gg/eQsz8h3Gmm" target="_blank">
                         <img src={discordIcon} /> Community
                     </a>
                     
@@ -101,7 +100,7 @@ function Home({handleModal, nextOpening}: Props) {
                         <span className="infoWithIcon">
                             <img src={timeIcon} />
                             Opening times: <br />
-                            6pm to 9pm ST
+                            7pm to 10pm ST
                         </span>
                     </div>
                     <div className="divider" />
