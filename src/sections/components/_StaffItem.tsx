@@ -12,10 +12,11 @@ type Props = {
 
 function StaffItem(props: Props) {
     const {
+        id,
         name,
         positions,
         bio,
-        hiredDate,
+        hired_date,
         title
     } = props.item;
     const {
@@ -34,22 +35,22 @@ function StaffItem(props: Props) {
         header: name,
         underTitle: positions.map(p => capitalizeWords(p)).join(" & "),
         body: ReactHtmlParser(bio),
-        footer: `Employed: ${getTimeSinceDate(hiredDate)}`,
-        image: `${sources.cdn}/characters/${trimFull(name)}.webp`
+        footer: `Employed: ${getTimeSinceDate(hired_date)}`,
+        image: `${sources.cdn}/oasis/characters/${id}.webp`
     }}/>;
 
     return (
         <>
             <button className="item" key={name} onClick={() => {handleModal(staffModal)}}>
-                <img className="backgroundDecor" src={backgroundDecor}/>
+                <img className="backgroundDecor" src={backgroundDecor} alt='Staff Background Decor'/>
 
-                {title &&
+                {title !== 'staff' &&
                     <div className={`banner ${title}`}>
                         <div className="specialPosition">{formatSpecialTitle(title)}</div>
                     </div>}
 
                 <div className="image">
-                    <img src={`${sources.cdn}/characters/${name.replace(" ", "")}.webp`} loading="lazy"></img>
+                    <img src={`${sources.cdn}/oasis/characters/${id}.webp`} loading="lazy" alt='Staff'></img>
                 </div>
 
                 <div className="text">

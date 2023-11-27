@@ -15,8 +15,6 @@ import format from '../format';
 import getExternal from '../getExternal';
 import InfoModal from './common/ModalTemplates/InfoModal';
 
-
-
 type Props = {
     handleModal: (content: any) => void;
     nextOpening: OpeningType | null;
@@ -48,7 +46,7 @@ function Home({handleModal, nextOpening}: Props) {
                         Reservations are free.
                     </p>
                 </p>,
-                footer: <span><img src={CallIcon} /> To make a reservation, please contact _enhasa.</span>
+                footer: <span><img src={CallIcon} alt='Phone' /> To make a reservation, please contact _enhasa.</span>
             }}
         />);
     }
@@ -56,25 +54,25 @@ function Home({handleModal, nextOpening}: Props) {
     return (
         <>
             <div className="logo">
-                <img src={logo} />
+                <img src={logo} alt='Logo' />
                 <div className="underTitle">Thavnairian Restaurant & Bar</div>
             </div>
             <div className="divider" />
 
             <div className="welcome">
-                <div className="header">Welcome to the Oasis<img src={heartsIcon} /></div>
+                <div className="header">Welcome to the Oasis<img src={heartsIcon} alt='Hearts' /></div>
                 <div className="linkbar">
                     
                     <button className="reservations" onClick={() => handleReservationsButton()}>
-                        <img src={reservationIcon} /> Reservations
+                        <img src={reservationIcon} alt='Reservation' /> Reservations
                     </button>
 
-                    <a className="twitch" href="https://www.twitch.tv/cocosoasis" target="_blank">
-                        <img src={twitchIcon} /> Music Stream
+                    <a className="twitch" href="https://www.twitch.tv/cocosoasis" target="_blank" rel="noreferrer">
+                        <img src={twitchIcon} alt='Twitch' /> Music Stream
                     </a>
 
-                    <a className="discord" href="https://discord.gg/eQsz8h3Gmm" target="_blank">
-                        <img src={discordIcon} /> Community
+                    <a className="discord" href="https://discord.gg/eQsz8h3Gmm" target="_blank" rel="noreferrer">
+                        <img src={discordIcon} alt='Discord' /> Community
                     </a>
                     
                 </div>
@@ -85,20 +83,19 @@ function Home({handleModal, nextOpening}: Props) {
                 <div className="column">
                     <div className="row">
                         <span className="infoWithIcon">
-                            <img src={locationIcon} />
+                            <img src={locationIcon} alt='Location' />
                             [Alpha] The Goblet<br />
                             Ward 2, Plot 8
                         </span>
 
                         <span className="infoWithIcon">
-                            <img src={dateIcon} />
+                            <img src={dateIcon} alt='Date'/>
                             Next opening: <br />
                             {nextOpening ? nextOpening.date : "No openings currently scheduled."}
-                            
                         </span>
 
                         <span className="infoWithIcon">
-                            <img src={timeIcon} />
+                            <img src={timeIcon} alt='Time'/>
                             Opening times: <br />
                             7pm to 10pm ST
                         </span>

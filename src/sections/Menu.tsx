@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import getExternal from '../getExternal';
+import db_cache from '../db_cache';
 import format from '../format';
 import { MenuItemType, MenuTypeType } from '../commonTypes';
 import MenuItem from './components/_MenuItem';
 import MenuItemSpecial from './components/_MenuItemSpecial';
 import SelectNav from './common/SelectNav';
 import Title from './common/Title';
-import sources from '../sources';
 import InfoModal from './common/ModalTemplates/InfoModal';
 
 type Props = {
@@ -39,11 +39,6 @@ function Menu({ handleModal }:Props) {
         }
     ];
 
-
-    /**
-     * Old menu
-     */
-
     const oldMenu = menu.find(type => type.name === "legacy");
     const oldMenuModal = oldMenu && <InfoModal 
         content = {{
@@ -71,34 +66,38 @@ function Menu({ handleModal }:Props) {
     function handleSelectSection(option:number):void {
         setSelectedSection(option);
     }
-    function trimFull(string:string):string {
-        return string.replace(/\s/g, '');
-    }
 
     useEffect(() => {
         (async () => {
-            let menu = await getExternal.db_cache("menu");        
-            //setMenu(format.menu(menu)); //To be removed when below code is taken live
-
-            //Filter out only the sections which should show a weekly item
-            const specialSections = sections.filter(section => section.weekly && section.weekly);
-
-            //Group all promises and await all at once
-            const promises = specialSections.map(section => getExternal.weekly(section.weekly!));
-            const specialItems = await Promise.all(promises);
-
-            //Filter out weekly items from the regular menu
-            menu = menu.filter((item:any) => !specialItems.find(specialItem => specialItem.id === item.id));
-            setMenu(format.menu(menu))
-
-            //Render specials
-            const specials = specialItems.map((item, index) => ({name: specialSections[index].weekly, item: item}));
-            setWeeklySpecials(specials);
-            
-
+            try {
+                let menu = await db_cache.get('menu_items');
+    
+                // Filter out only the sections which should show a weekly item
+                const specialSections = sections.filter(section => section.weekly && section.weekly);
+    
+                // Group all promises and await all at once
+                const promises = specialSections.map(section => getExternal.weekly(section.weekly!));
+    
+                const results = await Promise.allSettled(promises);
+    
+                // Process the results, filtering out any that failed
+                const successfulResults = results.filter(result => result.status === 'fulfilled').map(result => (result as PromiseFulfilledResult<MenuItemType>).value);
+    
+                // Filter out weekly items from the regular menu
+                
+                menu = menu.filter((item: MenuItemType) => !successfulResults.find(specialItem => specialItem.id === item.id));
+                setMenu(format.menu(menu));
+    
+                // Render specials, only including the successful ones
+                const specials = successfulResults.map((item, index) => ({ name: specialSections[index].weekly, item: item }));
+                setWeeklySpecials(specials);
+            } catch (error) {
+                console.error('Failed to fetch weekly specials:', error);
+                // If there is an error, do not display specials
+                setWeeklySpecials([]);
+            }
         })();
     }, []);
-
 
     const currentSpecial = weeklySpecials.find((s:any) => s.name === sections[selectedSection].weekly);
     return (
@@ -133,7 +132,7 @@ function Menu({ handleModal }:Props) {
                         <div className="category">
                             <Title 
                                 text={type.title}
-                                icon={`${sources.cdn}/icons/${trimFull(type.name)}-white.png`}
+                                icon={`images/icons/${type.name}.png`}
                                 divider={false}
                                 key={type.title}
                             />

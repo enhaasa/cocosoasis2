@@ -1,6 +1,6 @@
-import getExternal from '../getExternal';
 import { useState, useEffect } from 'react';
 import sources from '../sources';
+import db_cache from '../db_cache';
 
 type Props = {
     handleModal: (content: any) => void
@@ -22,14 +22,10 @@ function Partners({ handleModal }: Props) {
     const communityPartners = partners ? partners.filter(partner => partner.level === "community") : [];
 
     useEffect(() => {
-        getExternal.db_cache("partners").then(data => {
+        db_cache.get("partners").then(data => {
             setPartners(data);
         });
     }, []);
-
-    function trimFull(string:string):string {
-        return string.replace(/\s/g, '');
-    }
 
     return (
         <div className='partners'>
@@ -37,7 +33,7 @@ function Partners({ handleModal }: Props) {
             <div className="items">
                 {venuePartners && venuePartners.map(partner => (
                     <a className="item" href={partner.website} target="_blank" rel="noreferrer">
-                        <img src={`${sources.cdn}/partners/${trimFull(partner.name)}.webp`} alt={partner.name}/>
+                        <img src={`${sources.cdn}/oasis/partners/${partner.id}.webp`} alt={partner.name}/>
                         <div className="name">{partner.name}</div>
                     </a>
                 ))}
@@ -47,7 +43,7 @@ function Partners({ handleModal }: Props) {
             <div className="items">
                 {communityPartners && communityPartners.map(partner => (
                     <a className="item" href={partner.website} target="_blank" rel="noreferrer">
-                        <img src={`${sources.cdn}/partners/${trimFull(partner.name)}.webp`} alt={partner.name}/>
+                        <img src={`${sources.cdn}/oasis/partners/${partner.id}.webp`} alt={partner.name}/>
                         <div className="name">{partner.name}</div>
                     </a>
                 ))}

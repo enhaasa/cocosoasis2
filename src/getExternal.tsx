@@ -9,10 +9,12 @@ const getExternal = {
         return JSON.parse(await this.query(query, "/db_cache/get.php?table="));
     },
     weekly: async function(type: string) {
-        return await this.query(type, "/db/getMenuWeekly.php?type=");
+        return fetch(`https://kiwi-live-ff816c7efb64.herokuapp.com/api/special_menu_item?type='${type}'`)
+            .then(res => res.json())
+            .then(data => data);
     },
     files: async function(query: string) {
-        return await this.query(query, "/fileQuery.php?query=");
+        return await this.query(query, "/get_files.php?query=");
     },
     query: async function(query: string, endpoint: string) {
         return await fetch(api + endpoint + encodeURIComponent(query))

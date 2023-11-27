@@ -7,7 +7,7 @@ import Rules from '../sections/Rules';
 import Services from '../sections/Services';
 import Partners from '../sections/Partners';
 import { useState, useEffect } from 'react';
-import getExternal from '../getExternal';
+import db_cache from '../db_cache';
 import { getNextOpening } from '../commonFunctions';
 import { OpeningType } from '../commonTypes';
 import { capitalizeWords } from '../commonFunctions';
@@ -30,15 +30,33 @@ function Home() {
     }
   }
 
+  function convertDateFormat(datetimeString: any) {
+    const date = new Date(datetimeString);
+    const year = date.getFullYear();
+    const month = ('0' + (date.getMonth() + 1)).slice(-2);
+    const day = ('0' + date.getDate()).slice(-2);
+    const hours = ('0' + date.getHours()).slice(-2);
+    const minutes = ('0' + date.getMinutes()).slice(-2);
+    const seconds = ('0' + date.getSeconds()).slice(-2);
+    return `${year}-${month}-${day}`;
+  }
+
   const [ nextOpening, setNextOpening ] = useState<OpeningType | null>(null);
   useEffect(() => {
-    getExternal.db_cache("openings").then((data: OpeningType[]) => {
-    setNextOpening(getNextOpening(data));
+    db_cache.get('openings')
+    .then((data: OpeningType[]) => {
 
-    setTimeout(() => {
-      scrollToAnchor();
-    }, 400)
-  })
+      const nextOpening = getNextOpening(data);
+      if (nextOpening) {
+        nextOpening.date = convertDateFormat(nextOpening.date)
+      }
+
+      setNextOpening(getNextOpening(data));
+
+      setTimeout(() => {
+        scrollToAnchor();
+      }, 400);
+    })
   }, [])
 
   const sections = [

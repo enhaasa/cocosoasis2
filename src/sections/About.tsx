@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { StaffItemType, ImageType } from '../commonTypes';
 import getExternal from '../getExternal';
+import db_cache from '../db_cache';
 import format from '../format';
 import StaffItem from './components/_StaffItem';
 import GalleryButton from './common/GalleryButton';
@@ -13,22 +14,23 @@ type Props = {
 
 function Staff({ handleModal }: Props) {    
     const [ staffs, setStaffs ] = useState<StaffItemType[]>([]);
-    const activeStaff = staffs.map(staff => (staff.isActive && <StaffItem key={staff.name} item={staff} handleModal={handleModal}/>));
+    const activeStaff = staffs.map(staff => (staff.is_active && <StaffItem key={staff.name} item={staff} handleModal={handleModal}/>));
 
     const [ familyGallery, setFamilyGallery ] = useState<ImageType[]>([]);
 
     useEffect(() => {
-        getExternal.db_cache("staff").then(data => {
-            function sortByHireDate(staff: StaffItemType[]): StaffItemType[] {
-                return staff.sort((a: StaffItemType, b: StaffItemType) => {
-                  if (a.hiredDate < b.hiredDate) {
-                    return -1;
-                  }
-                  if (b.hiredDate < a.hiredDate) {
-                    return 1;
-                  }
-                  return 0;
-                });
+        db_cache.get('staff')
+            .then(data => {
+                function sortByHireDate(staff: StaffItemType[]): StaffItemType[] {
+                    return staff.sort((a: StaffItemType, b: StaffItemType) => {
+                    if (a.hired_date < b.hired_date) {
+                        return -1;
+                    }
+                    if (b.hired_date < a.hired_date) {
+                        return 1;
+                    }
+                    return 0;
+                    });
             }
 
             function sortByTitle(staff: StaffItemType[]): StaffItemType[] {
@@ -47,7 +49,7 @@ function Staff({ handleModal }: Props) {
             
             const sorted = sortedByTitle.concat(staff.filter(item => item.title === null));
             return sorted;
-            }
+        }
               
             setStaffs(sortByTitle(sortByHireDate(format.staff(data))));
         });

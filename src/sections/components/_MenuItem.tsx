@@ -8,31 +8,28 @@ type Props = {
 
 function MenuItem(props: Props) {
     const { 
+        id,
         name,
         price,
         ingredients,
         description,
-        hasImage
+        type
     } = props.item;
 
-    function trimFull(string:string):string {
-        return string.replace(/\s/g, '');
-    }
+    const typesWithImages = ['meal', 'luxe', 'dessert'];
 
-    const cdn = sources.cdn + "/items/";
+    const cdn = sources.cdn + "/oasis/dining_items/";
     const imgFormat = ".webp";
-    const imgName = cdn + trimFull(name) + imgFormat;
+    const imgName = cdn + id + imgFormat;
 
     return (
         <div className={`menuItem`} key={name}>
-            {hasImage &&
+            {typesWithImages.includes(type) &&
             <span className="column">
-                {hasImage === "1" && 
                     <span className="image">
-                    <img src={imgName} loading="lazy">
+                    <img src={imgName} alt='Menu Item' loading="lazy">
                     </img>
                 </span>
-                }
             </span>}
 
             <span className="column" >

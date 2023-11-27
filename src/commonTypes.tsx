@@ -2,6 +2,7 @@ export type MenuItemType = {
     name: string;
     type: string;
     price: number;
+    original_price?: number;
     ingredients: string;
     description: string;
     pairings: string;
@@ -9,8 +10,8 @@ export type MenuItemType = {
     size: string;
     id: string;
     item: string;
-    available: string | boolean;
-    hasImage: string | boolean;
+    is_available: string | boolean;
+    image_url: string | boolean;
 }
 
 export type MenuTypeType = {
@@ -20,12 +21,13 @@ export type MenuTypeType = {
 }
 
 export type StaffItemType = {
+    id: number;
     name: string;
     positions: string[];
     admin: boolean;
-    isActive: boolean;
+    is_active: boolean;
     bio: string;
-    hiredDate: string;
+    hired_date: string;
     gender: string;
     title: string;
 }

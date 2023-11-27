@@ -3,14 +3,13 @@ import sources from "./sources";
 
 function stringToBoolean(str: string): boolean | null {
     if (str === '0') {
-      return false;
+        return false;
     } else if (str === '1') {
-      return true;
+        return true;
     } else {
-      return null;
+        return null;
     }
-  }
-
+}
 
 const format = {
     menu: function(list: MenuItemType[]) {
@@ -43,7 +42,7 @@ const format = {
             menu.push({
                 name: type,
                 title: convertType(type),
-                items: list.filter(item => type === item.type && item.available === "1" && item)
+                items: list.filter(item => type === item.type && item.is_available === true && item)
             });
         })
 
@@ -79,7 +78,6 @@ const format = {
         )))
     },
     gallery: function(list: any[]): ImageType[] {
-
         const formattedList = list.map(item => ({
             ...item,
             url: `${sources.cdn}/${item.url}`
