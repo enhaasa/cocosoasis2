@@ -1,0 +1,65 @@
+.serviceItem {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: getMargin(standard);
+    padding: getPadding(small) getPadding(large);
+    box-shadow: getShadow(box, standard);
+    border-radius: 50px;
+    background: getColor(gradients, light);
+    position: relative;
+
+    &.unavailable {
+        &:hover {
+            transform: none;
+            filter: none !important;
+        }
+    }
+
+    & .unavailable-overlay {
+        background: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100%;
+        border-radius: 50px;
+        left: 0;
+        top: 0;
+        position: absolute;
+    }
+
+    & .unavailable-text {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+    }
+
+    &.included {
+        background: getColor(gradients, silver);
+    }
+
+    &.paid {
+        background: getColor(gradients, gold);
+    }
+
+    & img {
+        width: 42px;
+    }
+    
+    & .divider {
+        margin: 3px 0;
+    }
+
+    & .header {
+        color: black;
+        text-shadow: none;
+        font-weight: bold;
+    }
+
+    & .underTitle {
+        color: getColor(solids, dark);
+    }
+
+    &:hover {
+        transform: scale(1.02);
+    }
+}

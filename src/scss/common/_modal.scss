@@ -1,6 +1,6 @@
-@import "./_styles"; 
-@import "./_themes"; 
-@import "./../ImageModal.scss";
+@use "./dimensions" as dimensions;
+@use "./styles" as styles; 
+@use "./themes" as themes; 
 
 .modal {
     max-width: 100%;
@@ -25,19 +25,15 @@
         place-content: center;
     }
     
-
     & .content {
-        box-shadow: getShadow(box, exaggerated);
-        border: getBorder(double, getColor(solids, light));
+        box-shadow: styles.getShadow(box, exaggerated);
+        border: styles.getBorder(double, styles.getColor(solids, light));
         z-index: 100;
         position: relative;
 
-
-        
-
         & .titleBar {
             color: white;
-            background: getColor(gradients, steel);
+            background: styles.getColor(gradients, steel);
             border-bottom: 1px solid black;
             display: flex;
             justify-content: flex-end;
@@ -45,16 +41,16 @@
             padding: 3px 3px 0 3px;
 
             & .closeButton {
-                box-shadow: getShadow(box, standard);
+                box-shadow: styles.getShadow(box, standard);
             }
         }
 
         .divider {
-            @include divider-dark;
+            @include themes.divider-dark;
         }
         
     }
-    @media only screen and (max-width: $largerWidth) {
+    @media only screen and (max-width: dimensions.$largerWidth) {
         .content {
             width: auto;
         }

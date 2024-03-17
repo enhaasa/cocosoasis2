@@ -11,10 +11,8 @@ const db_cache = {
         const hostname = window.location.hostname;
         const port = window.location.port ? `:${window.location.port}` : '';
         const stagePath = ENVIRONMENT === "stage" ? '/stage' : '';
-
-        console.log(ENVIRONMENT)
         
-        return `${protocol}//${hostname}${port}${stagePath}/cocosoasis`;
+        return `${protocol}//${hostname}${port}`;
     },
     get: async function(query: string) { 
         return fetch(`${this.getBaseUrl()}/db_data/${query}.json`) 

@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
-import getExternal from '../getExternal';
-import db_cache from '../db_cache';
-import format from '../format';
-import { MenuItemType, MenuTypeType } from '../commonTypes';
-import MenuItem from './components/_MenuItem';
-import MenuItemSpecial from './components/_MenuItemSpecial';
-import SelectNav from './common/SelectNav';
-import Title from './common/Title';
-import InfoModal from './common/ModalTemplates/InfoModal';
+import getExternal from '../../getExternal';
+import db_cache from '../../db_cache';
+import format from '../../format';
+import { MenuItemType, MenuTypeType } from '../../commonTypes';
+import MenuItem from '../../components/MenuItem/_MenuItem';
+import MenuItemSpecial from '../../components/MenuItemSpecial/_MenuItemSpecial';
+import SelectNav from '../../components/common/SelectNav';
+import Title from '../../components/common/Title';
+import InfoModal from '../../components/common/Modals/InfoModal/InfoModal';
 
 type Props = {
     handleModal: (content: any) => void;

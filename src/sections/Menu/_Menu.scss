@@ -1,13 +1,9 @@
-@import "_MenuItem";
-@import "_MenuItemSpecial";
-@import "./common/_styles"; 
-@import "./common/_fonts"; 
-@import "./common/_themes"; 
+@use "./../../scss/common/common" as common; 
 
 .menu {
     max-width: 100%;
     & .divider {
-        @include divider-dark;
+        @include common.divider-dark;
         margin: 4px 0 2px 0;
     }
 
@@ -28,7 +24,7 @@
                 grid-template-columns: 1fr 1fr;
             }
 
-            @media only screen and (max-width: $smallWidth) {
+            @media only screen and (max-width: common.$smallWidth) {
                 & .items {
                     grid-template-columns: 1fr;
                 }

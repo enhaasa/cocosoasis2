@@ -1,5 +1,5 @@
 import { ImageType } from "../../commonTypes";
-import GalleryModal from "./ModalTemplates/GalleryModal";
+import GalleryModal from "./Modals/GalleryModal/GalleryModal";
 
 type Props = {
     images:ImageType[];

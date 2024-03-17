@@ -1,7 +1,6 @@
-@import "./common/_styles"; 
-@import "./common/_fonts"; 
-@import "./common/_themes"; 
-
+@import "./../../scss/common/styles"; 
+@import "./../../scss/common/fonts"; 
+@import "./../../scss/common/themes"; 
 
 .menuItem {
     display: grid;

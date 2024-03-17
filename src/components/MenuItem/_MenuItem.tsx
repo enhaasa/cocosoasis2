@@ -1,6 +1,6 @@
-import { MenuItemType } from "./../../commonTypes";
-import { formatStringAsPrice } from "./../../commonFunctions";
-import sources from "./../../sources";
+import { MenuItemType } from "../../commonTypes";
+import { formatStringAsPrice } from "../../commonFunctions";
+import sources from "../../sources";
 
 type Props = {
     item: MenuItemType

@@ -9,11 +9,18 @@ import discordIcon from './../icons/discord-white.png';
 import reservationIcon from './../icons/reservation-white.png';
 
 import { ImageType, OpeningType } from '../commonTypes';
-import GalleryButton from './common/GalleryButton';
+import GalleryButton from './../components/common/GalleryButton';
 import { useState, useEffect } from 'react';
 import format from '../format';
 import getExternal from '../getExternal';
-import InfoModal from './common/ModalTemplates/InfoModal';
+import InfoModal from '../components/common/Modals/InfoModal/InfoModal';
+import ImageButton from './../components/common/ImageButton';
+import Title from './../components/common/Title';
+
+import Valentines2024Image from './../images/valentines2024laura.webp';
+import ValentinesComFan2024 from './../images/communityfavourite2024.webp';
+import Valentines2023Image from './../images/valentines2023.webp';
+import Halloween2023WinnerImage from './../images/halloween2023winner.webp';
 
 type Props = {
     handleModal: (content: any) => void;
@@ -71,7 +78,7 @@ function Home({handleModal, nextOpening}: Props) {
                         <img src={twitchIcon} alt='Twitch' /> Music Stream
                     </a>
 
-                    <a className="discord" href="https://discord.gg/eQsz8h3Gmm" target="_blank" rel="noreferrer">
+                    <a className="discord" href="https://discord.gg/B5PP9FBDRS" target="_blank" rel="noreferrer">
                         <img src={discordIcon} alt='Discord' /> Community
                     </a>
                     
@@ -131,6 +138,77 @@ function Home({handleModal, nextOpening}: Props) {
                 </div>
             </div>
 
+            <div className="divider" />
+
+            <div className="hall-of-fame">
+                <Title
+                    text={"Hall of Fame"} 
+                    divider={false}
+                />
+                
+                <div className="main">
+                    <div className="title">
+                        Valentines 2024 Photo Contest Winner
+                    </div>
+                    <div className="description">
+                        by Laura Sykurwyn  
+                    </div>
+                    <div className="image">
+                        <ImageButton
+                            image={{name: "Valentines 2024 Winner", url: Valentines2024Image}}
+                            handleModal={handleModal}
+                        />
+                    </div>
+                </div>
+
+                <div className="gallery">
+                    <div className="item">
+                        <div className="title">
+                            Valentines 2024 Community Favourite
+                        </div>
+                        <div className="description">
+                            by Livia Nightbelt
+                        </div>
+                        <div className="image">
+                            <ImageButton
+                                image={{name: "Valentines 2024 Community Favourite", url: ValentinesComFan2024}}
+                                handleModal={handleModal}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="item">
+                        <div className="title">
+                            Halloween 2023 Photo Contest Winner
+                        </div>
+                        <div className="description">
+                            by Misa Ki
+                        </div>
+                        <div className="image">
+                            <ImageButton
+                                image={{name: "Halloween 2023 Wiinner", url: Halloween2023WinnerImage}}
+                                handleModal={handleModal}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="item">
+                        <div className="title">
+                            Valentines 2023 Photo Contest Winner
+                        </div>
+                        <div className="description">
+                            by Vestar
+                        </div>
+                        <div className="image">
+                            <ImageButton
+                                image={{name: "Valentines 2023 Wiinner", url: Valentines2023Image}}
+                                handleModal={handleModal}
+                            />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </>
     );
 }

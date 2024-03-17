@@ -1,6 +1,4 @@
-import InfoModal from "./../common/ModalTemplates/InfoModal";
-
-
+import InfoModal from "../common/Modals/InfoModal/InfoModal";
 
 type Props = {
     handleModal: (content: any) => void;

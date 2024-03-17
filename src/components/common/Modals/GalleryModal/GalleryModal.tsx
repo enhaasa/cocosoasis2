@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import ImageModal from './ImageModal';
-import arrowRight from './../../../icons/arrow-white-right.webp';
-import arrowLeft from './../../../icons/arrow-white-left.webp';
+import ImageModal from '../ImageModal/ImageModal';
+import arrowRight from './../../../../icons/arrow-white-right.webp';
+import arrowLeft from './../../../../icons/arrow-white-left.webp';
 
 type Image = {
     name: string

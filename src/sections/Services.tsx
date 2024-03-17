@@ -1,7 +1,7 @@
 //Import components
-import ServiceItem from "./components/_ServiceItem";
-import Notice from "./common/Notice";
-import Title from "./common/Title";
+import ServiceItem from "../components/ServiceItem/_ServiceItem";
+import Notice from "./../components/common/Notice";
+import Title from "./../components/common/Title";
 
 //Import icons
 import CallIcon from "./../icons/call-small-white.png";
@@ -23,7 +23,6 @@ import Barservices from "./../images/BarServices.webp";
 import Tableservice from "./../images/TableService.webp";
 import Tabletop from "./../images/RealTabletops.webp";
 import Privatebooths from "./../images/PrivateBooths.webp";
-
 
 type Props = {
     handleModal: (content: any) => void;
@@ -172,7 +171,7 @@ function Services({ handleModal }:Props) {
             type: "included",
             available: true,
         },
-    ]
+    ];
 
     const paidServices = [
         {
@@ -187,8 +186,7 @@ function Services({ handleModal }:Props) {
                         Our professional photographer will capture the special moments of your evening, so you can cherish them forever.
                     </p>
                     <p>
-                        Our photoghaphy services are done in our private rooms, by Rotta Toullie.<br />
-                        Check out his portfolio here: <a href="https://rtgallery.carrd.co/" target="_blank"><u>https://rtgallery.carrd.co/</u></a>
+                        Our photoghaphy services are done in our private rooms, by Nova Cassiopeia.<br />
                     </p>
                     <p>
                         <u>Prices:</u>
@@ -199,9 +197,9 @@ function Services({ handleModal }:Props) {
                     Each commission includes two angles.
                     </p>
                 </span>,
-            footer: <span><img src={CallIcon} /> To book a photo, please message Coco, Nessie, or Rotta at the venue.</span>,
+            footer: <span><img src={CallIcon} /> To book a photo, please message Coco, Nessie or Nova.</span>,
             type: "paid",
-            available: false,
+            available: true,
         },
         {
             header: "Carriage Ride",
@@ -227,8 +225,7 @@ function Services({ handleModal }:Props) {
             type: "paid",
             available: true,
         },
-    ]
-
+    ];
 
     return (
         <>
@@ -279,7 +276,6 @@ function Services({ handleModal }:Props) {
                     />
                 ))}
             </div>
-
         </>
     );
 }

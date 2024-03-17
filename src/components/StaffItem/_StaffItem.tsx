@@ -1,7 +1,6 @@
 import { StaffItemType } from "../../commonTypes";
 import { capitalizeWords, getTimeSinceDate } from "../../commonFunctions";
-import InfoModal from '../common/ModalTemplates/InfoModal';
-import sources from "../../sources";
+import InfoModal from '../common/Modals/InfoModal/InfoModal';
 import backgroundDecor from './../../icons/oasis-palm-shade.webp';
 import ReactHtmlParser from 'react-html-parser';
 
@@ -12,20 +11,16 @@ type Props = {
 
 function StaffItem(props: Props) {
     const {
-        id,
         name,
         positions,
         bio,
         hired_date,
+        image_url,
         title
     } = props.item;
     const {
         handleModal
     } = props;
-
-    function trimFull(string:string):string {
-        return string.replace(/\s/g, '');
-    }
 
     function formatSpecialTitle(title:string):string {
         return capitalizeWords(title.replaceAll("-", " "));
@@ -36,7 +31,7 @@ function StaffItem(props: Props) {
         underTitle: positions.map(p => capitalizeWords(p)).join(" & "),
         body: ReactHtmlParser(bio),
         footer: `Employed: ${getTimeSinceDate(hired_date)}`,
-        image: `${sources.cdn}/oasis/characters/${id}.webp`
+        image: image_url ? image_url : undefined
     }}/>;
 
     return (
@@ -50,7 +45,7 @@ function StaffItem(props: Props) {
                     </div>}
 
                 <div className="image">
-                    <img src={`${sources.cdn}/oasis/characters/${id}.webp`} loading="lazy" alt='Staff'></img>
+                    <img src={image_url ? image_url : undefined} loading="lazy" alt='Staff'></img>
                 </div>
 
                 <div className="text">

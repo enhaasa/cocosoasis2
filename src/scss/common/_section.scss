@@ -1,8 +1,9 @@
-@import "./styles";
-@import "./fonts";
+@use "./styles" as styles;
+@use "./fonts" as fonts;
+@use "./themes" as themes;
 
 section {
-    padding: getPadding(standard);
+    padding: styles.getPadding(standard);
     position: relative;
 
     & .anchor {
@@ -13,13 +14,13 @@ section {
     }
 
     & .wrapper {
-        padding: getPadding(large);
+        padding: styles.getPadding(large);
 
         & .notice {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: getMargin(standard);
+            gap: styles.getMargin(standard);
 
             & .icon {
                 width: 25px;
@@ -30,21 +31,21 @@ section {
     }
 
     &:nth-child(odd) {
-        @include theme-light;
+        @include themes.theme-light;
 
         & > .wrapper {
-            border-left: getBorder("double", getColor(solids, dark));
-            border-right: getBorder("double", getColor(solids, dark));
+            border-left: styles.getBorder("double", styles.getColor(solids, dark));
+            border-right: styles.getBorder("double", styles.getColor(solids, dark));
         }
         &:first-child > .wrapper {
-            border-top: getBorder("double", getColor(solids, dark));
+            border-top: styles.getBorder("double", styles.getColor(solids, dark));
         }
         &:last-child > .wrapper {
-            border-bottom: getBorder("double", getColor(solids, dark));
+            border-bottom: styles.getBorder("double", styles.getColor(solids, dark));
         }
 
         & .divider {
-            @include divider-light;
+            @include themes.divider-light;
             margin: 0;
         }
         & .notice {
@@ -67,25 +68,25 @@ section {
             }
         }
         & .underTitle {
-            color: getColor(solids, dark);
+            color: styles.getColor(solids, dark);
         }
     }
     &:nth-child(even) {
-        @include theme-dark;
+        @include themes.theme-dark;
         & > .wrapper {
-            border-left: getBorder("double", getColor(solids, light));
-            border-right: getBorder("double", getColor(solids, light));
+            border-left: styles.getBorder("double", styles.getColor(solids, light));
+            border-right: styles.getBorder("double", styles.getColor(solids, light));
         }
 
         &:first-child > .wrapper {
-            border-top: getBorder("double", getColor(solids, light));
+            border-top: styles.getBorder("double", styles.getColor(solids, light));
         }
         &:last-child > .wrapper {
-            border-bottom: getBorder("double", getColor(solids, light));
+            border-bottom: styles.getBorder("double", styles.getColor(solids, light));
         }
         & .title, .header {
             color: white;
-            text-shadow: getShadow(text, standard);
+            text-shadow: styles.getShadow(text, standard);
 
             & .decoration {
                 &.left {
@@ -97,11 +98,11 @@ section {
             }
         }
         & .underTitle {
-            color: getColor(solids, light);
+            color: styles.getColor(solids, light);
         }
         & .notice {
             color: lightgrey;
-            text-shadow: getShadow(text, standard);
+            text-shadow: styles.getShadow(text, standard);
             & .icon {
                 background-image: url("./../icons/info-white.png");
             }
@@ -109,7 +110,7 @@ section {
     }
 
     & .divider {
-        @include divider-dark;
+        @include themes.divider-dark;
         margin: 0;
     }
 
@@ -158,7 +159,7 @@ section {
         left: 50%;
         margin-left: -60px;
         border-radius: 100%;
-        color: getColor(solids, dark);
+        color: styles.getColor(solids, dark);
         box-shadow: 0 2px 4px black;
         background: white;
     
@@ -169,11 +170,11 @@ section {
             left: 4px;
             right: 4px;
             border-radius: 100%;
-            border: 1px dashed getColor(solids, dark);
+            border: 1px dashed styles.getColor(solids, dark);
             text-align: center;
             line-height: 50px;
             font-style: normal;
-            font-family: getFont(cursive);
+            font-family: fonts.getFont(cursive);
             font-size: 22px;
             font-weight: bold;
         }

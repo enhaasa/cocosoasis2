@@ -1,5 +1,5 @@
-import Notice from "./common/Notice";
-import Title from "./common/Title";
+import Notice from "./../components/common/Notice";
+import Title from "./../components/common/Title";
 
 function Rules() {
 

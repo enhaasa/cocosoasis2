@@ -7,12 +7,10 @@ type Props = {
 function Modal(props: Props & { children?: React.ReactNode}) {
     const { handleClose } = props;
 
-
     return (
         <div className="modal">
             <button className="background" onClick={() => handleClose()}/>
             
-
             <div className="content">
                 <div className="titleBar">
                     <button className="closeButton" onClick={() => handleClose()}>
@@ -20,7 +18,6 @@ function Modal(props: Props & { children?: React.ReactNode}) {
                     </button>
                 </div>
                 
-
                 {props.children}
             </div>
         </div>

@@ -1,5 +1,4 @@
-@import "./common/styles";
-@import "./common/fonts";
+@use "./common/common" as common;
 
 .home {
     display: grid;
@@ -9,7 +8,6 @@
     & .logo {
         text-align: center;
         
-
         & img {
             max-width: 80%;
             height: auto;
@@ -112,7 +110,72 @@
             }
         }
     }
-    @media only screen and (max-width: $largeWidth) {
+
+    & .hall-of-fame {
+
+        & .main {
+            margin-bottom: 10px;
+
+            & .title, & .description {
+                margin: 0;
+                text-align: center;
+            }
+
+            & .description {
+                margin-bottom: 5px;
+            }
+
+            & .image {
+                display: flex;
+                justify-content: center;
+                
+                & .imageButton {         
+                    width: 100%;
+                    border: 10px solid getColor(solids, dark);
+                    box-shadow: getShadow(box, standard);
+                    padding-bottom: 5px;
+                    margin: 0;
+                    margin-bottom: 10px;
+
+                    & img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        & .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            & .item {
+                margin: 10px;
+                word-break: normal;
+                
+                & .title {
+                    margin: 0;
+                    text-align: center;
+                    font-weight: bold;
+                }
+
+                & .description {
+                    text-align: center;
+                    margin-bottom: 5px;
+                }
+
+                & .image {
+                    & .imageButton {
+                        margin: 0;
+                        border: 5px solid getColor(solids, dark);
+                        box-shadow: getShadow(box, standard);
+                    }
+                }
+            }
+            
+        }
+    }
+
+    @media only screen and (max-width: common.$largeWidth) {
         & .venueInfo {
             grid-template-columns: 1fr;
 
@@ -122,7 +185,7 @@
             }
         }
     }
-    @media only screen and (max-width: $smallWidth) {
+    @media only screen and (max-width: common.$smallWidth) {
         & .header { 
             & img {
                 display: none;

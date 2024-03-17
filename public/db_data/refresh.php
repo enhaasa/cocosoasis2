@@ -32,7 +32,7 @@ if (isset($_GET['q'])) {
         if ($result !== null) {
             $endpoint = $result[1]; 
 
-            $data = file_get_contents('https://kiwi-live-ff816c7efb64.herokuapp.com/api/' . $endpoint);
+            $data = file_get_contents('https://littlekiwi.app/api/' . $endpoint);
             if ($data === false) {
                 echo "Could not retrieve data.";
                 exit;

@@ -2,34 +2,35 @@ import { OpeningType } from "./commonTypes";
 
 export function getTimeSinceDate(dateString: string): string {
     const currentDate = new Date();
-    const hireDate = new Date(dateString);
+    const pastDate = new Date(dateString);
   
-    const yearDiff = currentDate.getFullYear() - hireDate.getFullYear();
-    const monthDiff = currentDate.getMonth() - hireDate.getMonth();
-    const weekDiff = Math.floor((currentDate.getTime() - hireDate.getTime()) / (1000 * 60 * 60 * 24 * 7));
+    let yearDiff = currentDate.getFullYear() - pastDate.getFullYear();
+    let monthDiff = currentDate.getMonth() - pastDate.getMonth();
+    let dayDiff = currentDate.getDate() - pastDate.getDate();
   
-    if (yearDiff > 1) {
-      if (monthDiff < 0) {
-        return `${yearDiff - 1} year${yearDiff > 2 ? 's' : ''}`;
-      } else {
-        return `${yearDiff} year${yearDiff > 1 ? 's' : ''} and ${monthDiff} month${monthDiff !== 1 ? 's' : ''}`;
-      }
-    } else if (yearDiff === 1) {
-      if (monthDiff < 0) {
-        const monthsRemaining = 12 - hireDate.getMonth() + currentDate.getMonth();
-        return `${monthsRemaining} month${monthsRemaining !== 1 ? 's' : ''}`;
-      } else if (monthDiff === 0) {
-        return '1 year';
-      } else {
-        return `1 year and ${monthDiff} month${monthDiff !== 1 ? 's' : ''}`;
-      }
-    } else {
-      if (monthDiff === 0 && weekDiff > 0) {
-        return `${weekDiff} week${weekDiff !== 1 ? 's' : ''}`;
-      } else {
-        return `${monthDiff} month${monthDiff !== 1 ? 's' : ''}`;
-      }
+    // Adjust for month and day differences
+    if (dayDiff < 0) {
+      monthDiff--;
+      const daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate();
+      dayDiff += daysInMonth;
     }
+  
+    if (monthDiff < 0) {
+      yearDiff--;
+      monthDiff += 12;
+    }
+  
+    // Pluralization helper
+    const pluralize = (count: number, noun: string) => `${count} ${noun}${count !== 1 ? 's' : ''}`;
+  
+    // Construct the time difference string with only two values
+    let timeDiffParts = [];
+    if (yearDiff > 0) timeDiffParts.push(pluralize(yearDiff, 'year'));
+    if (monthDiff > 0) timeDiffParts.push(pluralize(monthDiff, 'month'));
+    if (dayDiff > 0 && timeDiffParts.length < 2) timeDiffParts.push(pluralize(dayDiff, 'day'));
+  
+    // Ensure only two components are included
+    return timeDiffParts.slice(0, 2).join(' ') || '0 days';
 }
 
 export function capitalizeFirstLetter(string: string): string {
@@ -78,7 +79,14 @@ export function getCurrentDate(): string {
 
 export function getNextOpening(openings: OpeningType[]): OpeningType | null {
     const currentDate = getCurrentDateGMT();
-    const nextOpening = openings.find(opening => opening.date >= currentDate && opening.active !== "0");
+
+    const sortedOpenings = [...openings].sort((a, b) => {
+        const dateA = new Date(a.date).getTime();
+        const dateB = new Date(b.date).getTime();
+        return dateA - dateB;
+      });
+
+    const nextOpening = sortedOpenings.find(opening => opening.date >= currentDate && opening.active !== "0");
     return nextOpening ? nextOpening : null;
 }
   

@@ -1,23 +1,20 @@
-//Sections
-@import "./About";
-@import "./Menu";
+// Sections
+@import './../sections/sections';
 @import "./Home";
 @import "./Partners";
 @import "./Services";
 
-//Core Templates
-@import "./common/_styles"; 
-@import "./common/_fonts"; 
-@import "./common/_themes";
-@import "./common/_section";
-@import "./common/_modal";
+// Core Templates
+@import "./common/section";
+@import "./common/modal";
 @import './common/dimensions.scss';
 
-//TSX Components 
+// Components 
 @import "./SelectNav";
-@import './ImageModal';
-@import './GalleryModal';
 @import './GalleryButton';
+@import './ImageButton';
+
+@import './../components/components';
 
 
 button {

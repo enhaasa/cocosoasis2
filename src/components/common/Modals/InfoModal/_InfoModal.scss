@@ -1,5 +1,4 @@
-@import "./common/dimensions.scss";
-@import "./common/styles";
+@use "./../../../../scss/common/common" as common;
 
 .infoModal {
     width: 900px;
@@ -13,11 +12,11 @@
         justify-content: center;
         align-content: end;
         
-        border-right: getBorder(solid, black);
+        border-right: common.getBorder(solid, black);
         z-index: 101;
         overflow-y: hidden;
-        padding-top: getPadding(standard);
-        background-image: url('./../icons/oasis-palm-shade.webp'), getColor(gradients, gold);
+        padding-top: common.getPadding(standard);
+        background-image: url('./../icons/oasis-palm-shade.webp'), common.getColor(gradients, gold);
         background-repeat: no-repeat;
         background-size: contain;
         box-shadow: inset 2px 0 8px 0 black;
@@ -31,44 +30,48 @@
 
     & .info {
         grid-column: span 3;
-        background: getColor(gradients, steel);
+        background: common.getColor(gradients, steel);
         color: white;
         text-align: center;
-        padding: getPadding(large);
+        padding: common.getPadding(large);
         display: grid; 
         grid-template-rows: auto auto 1fr auto;
-        text-shadow: getShadow(text, standard);
-        
-
-        & a {
-            color: white;
-        }
+        text-shadow: common.getShadow(text, standard);
+        overflow: auto;
 
         & .header {
             color: white;
-            font-size: getFontSize(title);
-            font-family: getFont(cursive);
+            font-size: common.getFontSize(title);
+            font-family: common.getFont(cursive);
         }
 
         & .underTitle {
-            color: getColor(solids, light);
+            color: common.getColor(solids, light);
         }
 
-        & .body {
+        & .wrapper {
+            overflow: auto;
             display: grid;
-            align-content: center;
-            color: lightgrey;
-            
-            p {
-                margin: 0 0 1em 0;
+            align-items: center;
+
+            & a {
+                color: white;
+            }
+    
+            & .body {
+                color: lightgrey;
+                
+                p {
+                    margin: 0 0 1em 0;
+                }
             }
         }
 
         & .footer {
-            color: getColor(solids, light);
+            color: common.getColor(solids, light);
             span {
                 justify-content: center;
-                gap: getPadding(standard);
+                gap: common.getPadding(standard);
                 display: flex;
                 align-items: center;
             }
@@ -76,7 +79,7 @@
     }
 
 }
-@media only screen and (max-width: $largerWidth) {
+@media only screen and (max-width: common.$largerWidth) {
     .infoModal {
         width: 100%;
 
@@ -92,7 +95,7 @@
         }
     }
 }
-@media only screen and (max-width: $largeWidth) {
+@media only screen and (max-width: common.$largeWidth) {
     .infoModal {
         & .image {
             display: none;

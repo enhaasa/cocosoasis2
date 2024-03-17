@@ -1,8 +1,4 @@
-@import "./common/_styles";
-@import "./common/_themes";
-@import "./common/_fonts";
-@import "./_InfoModal";
-@import "./common/dimensions.scss";
+@use "./../../scss/common/common" as common;
 
 .about {
     margin-bottom: 20px;
@@ -12,7 +8,7 @@
     }
 
     & .divider {
-        @include divider-light;
+        @include common.divider-light;
         margin: 4px 0 2px 0;
     }
 
@@ -31,7 +27,7 @@
         }
 
     }
-    @media only screen and (max-width: $largeWidth) {
+    @media only screen and (max-width: common.$largeWidth) {
         & .intro {
             grid-template-columns: 1fr;
             & .galleryButton {
@@ -45,69 +41,66 @@
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-auto-rows: minmax(100px, auto);
-        grid-gap: getMargin(standard);
+        grid-gap: common.getMargin(standard);
         align-items: end;
-        margin-top: getMargin(large);
+        margin-top: common.getMargin(large);
 
         & .backgroundDecor {
             position: absolute;
             z-index: 99;
             display: none;
-            
         }
     
         & .item {
-            background: getColor(gradients, steel);
-            border-radius: getRadius(small);
-            box-shadow: getShadow(box, standard);
-            border: getBorder(solid, black);
-            transition: getTransition(standard);
-            background-image: url('./../icons/oasis-palm-shade.webp'), getColor(gradients, steel);
+            background: common.getColor(gradients, steel);
+            border-radius: common.getRadius(small);
+            box-shadow: common.getShadow(box, standard);
+            border: common.getBorder(solid, black);
+            transition: common.getTransition(standard);
+            background-image: url('./../icons/oasis-palm-shade.webp'), common.getColor(gradients, steel);
             background-repeat: no-repeat;
             background-size: contain;
-            font-family: getFont(standard);
+            font-family: common.getFont(standard);
             
             &:hover {
                 transform: scale(1.02);
             }
 
             & .banner {
-                background: getColor(gradients, gold);
-                border-radius: getRadius(small) getRadius(small) 0 0;
-                border-bottom: getBorder(solid, black);
+                background: common.getColor(gradients, gold);
+                border-radius: common.getRadius(small) common.getRadius(small) 0 0;
+                border-bottom: common.getBorder(solid, black);
                 color: black;
-                padding: getPadding(small);
+                padding: common.getPadding(small);
 
                 &.owner {
-                    background: getColor(gradients, wine);
+                    background: common.getColor(gradients, wine);
                     color: lightgrey;
-                    text-shadow: getShadow(text, standard);
+                    text-shadow: common.getShadow(text, standard);
                 }
                 &.assistant {
-                    background: getColor(gradients, grape);
+                    background: common.getColor(gradients, grape);
                     color: lightgrey;
-                    text-shadow: getShadow(text, standard);
+                    text-shadow: common.getShadow(text, standard);
                 }
                 &.event-manager {
-                    background: getColor(gradients, dark-grape);
+                    background: common.getColor(gradients, dark-grape);
                     color: lightgrey;
-                    text-shadow: getShadow(text, standard);
+                    text-shadow: common.getShadow(text, standard);
                 }
                 &.marketing-manager {
-                    background: getColor(gradients, blueberry);
+                    background: common.getColor(gradients, blueberry);
                     color: lightgrey;
-                    text-shadow: getShadow(text, standard);
+                    text-shadow: common.getShadow(text, standard);
                 }
 
                 & .specialPosition {
                     text-align: center;
-                    font-family: getFont(cursive);
-                    font-size: getFontSize(larger);
+                    font-family: common.getFont(cursive);
+                    font-size: common.getFontSize(larger);
                 }
             }
             
-
-
             & .image {
                 height: 270px;
                 display: grid;
@@ -118,32 +111,30 @@
                     width: 100%;
                 }
             }
-            
 
             & .text {
-                background: getColor(gradients, gold);
-                padding: getPadding(small);
+                background: common.getColor(gradients, gold);
+                padding: common.getPadding(small);
                 text-align: center;
-                box-shadow: getShadow(box, standard);
-                border-radius: 0 0 getRadius(small) getRadius(small);
-                border-top: getBorder(solid, black);
-                
+                box-shadow: common.getShadow(box, standard);
+                border-radius: 0 0 common.getRadius(small) common.getRadius(small);
+                border-top: common.getBorder(solid, black);
 
                 & .name {
                     color: black;
-                    font-size: getFontSize(large);
+                    font-size: common.getFontSize(large);
                     font-weight: bold;
-                    font-family: getFont(standard);
+                    font-family: common.getFont(standard);
                 }
                 & .positions {
-                    color: getColor(solids, dark);
+                    color: common.getColor(solids, dark);
                     font-size: 14px;
-                    font-family: getFont(standard);
+                    font-family: common.getFont(standard);
                 }
             }
         }
     }
-    @media only screen and (max-width: $width) {
+    @media only screen and (max-width: common.$width) {
         & .collection {
             grid-template-columns: repeat(4, 1fr);
             grid-auto-rows: minmax(100px, auto);
@@ -154,7 +145,7 @@
             }
         }
     }
-    @media only screen and (max-width: $largeWidth) {
+    @media only screen and (max-width: common.$largeWidth) {
         & .collection {
             grid-template-columns: repeat(3, 1fr);
             grid-auto-rows: minmax(100px, auto);
@@ -165,7 +156,7 @@
             }
         }
     }
-    @media only screen and (max-width: $mediumWidth) {
+    @media only screen and (max-width: common.$mediumWidth) {
         & .collection {
             grid-template-columns: repeat(2, 1fr);
             grid-gap: 30px;
@@ -176,7 +167,7 @@
             }
         }
     }
-    @media only screen and (max-width: $smallWidth) {
+    @media only screen and (max-width: common.$smallWidth) {
         & .collection {
             grid-template-columns: repeat(1, 1fr);
             grid-gap: 30px;

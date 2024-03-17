@@ -22,8 +22,8 @@ function InfoModal(props: Props) {
 
             {image &&
             <div className="image">
-                <a href={image} target="_blank">
-                    <img src={image} />
+                <a href={image} rel='noreferrer' target="_blank">
+                    <img src={image} alt=''/>
                 </a>
                 
             </div>
@@ -31,7 +31,7 @@ function InfoModal(props: Props) {
 
             <div className="info">
                 <div className="header">
-                    {header}
+                        {header}
                 </div>
 
                 <div className="underTitle">
@@ -39,14 +39,19 @@ function InfoModal(props: Props) {
                     <div className="divider" />
                 </div>
 
-                <div className="body">
-                    {body}
-                </div>
+                <div className='wrapper'>
+
+                    <div className="body">
+                        
+                        {body}
+                    </div>
                 
+                </div>
                 <div className="footer">
                     <div className="divider" />
-                     {footer && footer}
+                    {footer && footer}
                 </div>
+    
             </div>
         </div>
     );

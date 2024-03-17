@@ -25,17 +25,19 @@ export type StaffItemType = {
     name: string;
     positions: string[];
     admin: boolean;
-    is_active: boolean;
+    is_enabled: boolean;
+    is_deleted: boolean;
     bio: string;
     hired_date: string;
     gender: string;
     title: string;
+    image_url: null | string;
 }
 
 export type ImageType = {
     name: string,
     url: string,
-    format: string
+    format?: string
 }
 
 export type OpeningType = {

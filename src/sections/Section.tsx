@@ -4,7 +4,6 @@ type Props = {
     content: JSX.Element | null;
 };
 
-
 function Section(props: Props) {
     const { title, id, content } = props;
 

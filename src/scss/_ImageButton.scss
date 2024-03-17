@@ -1,0 +1,47 @@
+.imageButton {
+    max-width: 100%;
+    margin: getMargin(large);
+
+    & .image {
+        max-width: inherit;
+        position: relative;
+
+        & img {
+            max-width: inherit;
+            margin-bottom: -5px;
+            top: 0;
+            left: 0;
+            box-shadow: getShadow(box, exaggerated);
+        }
+
+        & img + img {
+            position: absolute;
+        } 
+
+        & .topImage {
+            transform: rotate(-1deg);
+        }
+        
+        & .bottomImage {
+            transition: all ease 200ms;
+            filter: brightness(0.3);
+            transform: rotate(4deg);
+        }
+    }
+    
+    &:hover {
+        transform: scale(1.05) rotate(-1deg);
+        & .bottomImage {
+            transform: rotate(5deg);
+        }
+    }
+}
+
+/*
+@media only screen and (max-width: $largeWidth) {
+    .imageButton {
+        max-width: 100%;
+        margin: getMargin(larger);
+    }
+}
+*/

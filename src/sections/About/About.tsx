@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import { StaffItemType, ImageType } from '../commonTypes';
-import getExternal from '../getExternal';
-import db_cache from '../db_cache';
-import format from '../format';
-import StaffItem from './components/_StaffItem';
-import GalleryButton from './common/GalleryButton';
-import Title from './common/Title';
-import Notice from './common/Notice';
+import { StaffItemType, ImageType } from '../../commonTypes';
+import getExternal from '../../getExternal';
+import db_cache from '../../db_cache';
+import format from '../../format';
+import StaffItem from '../../components/StaffItem/_StaffItem';
+import GalleryButton from '../../components/common/GalleryButton';
+import Title from '../../components/common/Title';
+import Notice from '../../components/common/Notice';
 
 type Props = {
     handleModal: (content: any) => void;
@@ -14,7 +14,7 @@ type Props = {
 
 function Staff({ handleModal }: Props) {    
     const [ staffs, setStaffs ] = useState<StaffItemType[]>([]);
-    const activeStaff = staffs.map(staff => (staff.is_active && <StaffItem key={staff.name} item={staff} handleModal={handleModal}/>));
+    const activeStaff = staffs.map(staff => (staff.is_enabled && <StaffItem key={staff.name} item={staff} handleModal={handleModal}/>));
 
     const [ familyGallery, setFamilyGallery ] = useState<ImageType[]>([]);
 
