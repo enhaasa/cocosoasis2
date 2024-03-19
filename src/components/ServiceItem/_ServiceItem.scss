@@ -1,12 +1,14 @@
+@use "./../../scss/common/common" as common;
+
 .serviceItem {
     display: flex;
     justify-items: center;
     align-items: center;
-    gap: getMargin(standard);
-    padding: getPadding(small) getPadding(large);
-    box-shadow: getShadow(box, standard);
+    gap: common.getMargin(standard);
+    padding: common.getPadding(small) common.getPadding(large);
+    box-shadow: common.getShadow(box, standard);
     border-radius: 50px;
-    background: getColor(gradients, light);
+    background: common.getColor(gradients, light);
     position: relative;
 
     &.unavailable {
@@ -34,11 +36,11 @@
     }
 
     &.included {
-        background: getColor(gradients, silver);
+        background: common.getColor(gradients, silver);
     }
 
     &.paid {
-        background: getColor(gradients, gold);
+        background: common.getColor(gradients, gold);
     }
 
     & img {
@@ -50,13 +52,13 @@
     }
 
     & .header {
-        color: black;
-        text-shadow: none;
+        color: black !important;
+        text-shadow: none !important;
         font-weight: bold;
     }
 
     & .underTitle {
-        color: getColor(solids, dark);
+        color: common.getColor(solids, dark) !important;
     }
 
     &:hover {

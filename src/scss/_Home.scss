@@ -15,16 +15,16 @@
         }
         
         & .underTitle {
-            font-size: getFontSize(larger);
+            font-size: common.getFontSize(larger);
         }
     }
 
     & .welcome {
-        margin: getMargin(larger) 0;
+        margin: common.getMargin(larger) 0;
 
         & .header {
             color: black;
-            font-family: getFont(cursive);
+            font-family: common.getFont(cursive);
             font-size: clamp(3rem, 4vw, 3.5rem);
             font-weight: bold;
             display: flex;
@@ -33,32 +33,32 @@
             align-items: center;
             text-align: center;
             gap: 5px;
-            margin: getMargin(standard) 0;
+            margin: common.getMargin(standard) 0;
         }
 
         & .linkbar {
             display: flex;
             margin: auto;
             justify-content: center;
-            gap: getMargin(standard);
-            margin-bottom: getMargin(standard);
+            gap: common.getMargin(standard);
+            margin-bottom: common.getMargin(standard);
             flex-wrap: wrap;
             
             & a, & button {
                 display: flex;
                 align-items: center;
-                gap: getMargin(small);
-                padding: 2px getPadding(standard);
+                gap: common.getMargin(small);
+                padding: 2px common.getPadding(standard);
                 text-decoration: none;
                 color: lightgrey;
-                background: getColor(gradients, steel);
-                box-shadow: getShadow(box, standard);
+                background: common.getColor(gradients, steel);
+                box-shadow: common.getShadow(box, standard);
 
                 &.twitch {
-                    background: getColor(gradients, twitch);
+                    background: common.getColor(gradients, twitch);
                 }
                 &.discord {
-                    background: getColor(gradients, discord);
+                    background: common.getColor(gradients, discord);
                 }
 
                 & img {
@@ -94,7 +94,7 @@
     & .venueInfo {
         display: grid;
         grid-template-columns: 1fr auto;
-        font-size: getFontSize(large) auto;
+        font-size: common.getFontSize(large) auto;
         color: black;
         
         & .column {
@@ -131,8 +131,8 @@
                 
                 & .imageButton {         
                     width: 100%;
-                    border: 10px solid getColor(solids, dark);
-                    box-shadow: getShadow(box, standard);
+                    border: 10px solid common.getColor(solids, dark);
+                    box-shadow: common.getShadow(box, standard);
                     padding-bottom: 5px;
                     margin: 0;
                     margin-bottom: 10px;
@@ -166,8 +166,8 @@
                 & .image {
                     & .imageButton {
                         margin: 0;
-                        border: 5px solid getColor(solids, dark);
-                        box-shadow: getShadow(box, standard);
+                        border: 5px solid common.getColor(solids, dark);
+                        box-shadow: common.getShadow(box, standard);
                     }
                 }
             }
