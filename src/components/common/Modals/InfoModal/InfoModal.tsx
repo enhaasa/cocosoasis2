@@ -21,12 +21,12 @@ function InfoModal(props: Props) {
         <div className="infoModal">
 
             {image &&
-            <div className="image">
-                <a href={image} rel='noreferrer' target="_blank">
-                    <img src={image} alt=''/>
-                </a>
-                
-            </div>
+                <div className="image">
+                    <a href={image} rel='noreferrer' target="_blank">
+                        <img src={image} alt=''/>
+                    </a>
+                    
+                </div>
             }
 
             <div className="info">

@@ -10,7 +10,7 @@
     & .menuList {
         & .category {
             display: grid;
-            margin-bottom: getMargin(larger);
+            margin-bottom: common.getMargin(larger);
 
             & .header {
                 & .icon {
@@ -20,7 +20,7 @@
 
             & .items {
                 display: grid;
-                grid-gap: getMargin(larger) getMargin(larger);
+                grid-gap: common.getMargin(larger) common.getMargin(larger);
                 grid-template-columns: 1fr 1fr;
             }
 
@@ -37,11 +37,6 @@
         }
     }
 }
-
-
-
-
-
 
 .oldMenu {
     display : grid;

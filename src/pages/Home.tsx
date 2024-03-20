@@ -4,7 +4,7 @@ import Menu from '../sections/Menu/Menu';
 import About from '../sections/About/About';
 import Modal from '../components/common/Modal';
 import Rules from '../sections/Rules';
-import Services from '../sections/Services';
+import Services from '../sections/Services/Services';
 import Partners from '../sections/Partners';
 import { useState, useEffect } from 'react';
 import db_cache from '../db_cache';

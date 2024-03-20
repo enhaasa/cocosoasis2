@@ -22,6 +22,7 @@
   text-rendering: optimizeLegibility;
 }
 .modal {
+  display: grid;
   max-width: 100%;
   max-height: 100%;
   position: fixed;
@@ -29,19 +30,19 @@
   left: 0;
   width: 100%;
   height: 100%;
-  display: grid;
   place-content: center;
   z-index: 99;
 }
 
 .modal .background {
+  display: grid;
   position: inherit;
   left: inherit;
   top: inherit;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  display: grid;
+  opacity: 0;
   place-content: center;
 }
 
@@ -50,6 +51,7 @@
   border: 4px double rgb(196, 177, 166);
   z-index: 100;
   position: relative;
+  opacity: 0;
 }
 
 .modal .content .titleBar {
@@ -496,6 +498,7 @@ section .bigdivider img {
   text-rendering: optimizeLegibility;
 }
 .modal {
+  display: grid;
   max-width: 100%;
   max-height: 100%;
   position: fixed;
@@ -503,19 +506,19 @@ section .bigdivider img {
   left: 0;
   width: 100%;
   height: 100%;
-  display: grid;
   place-content: center;
   z-index: 99;
 }
 
 .modal .background {
+  display: grid;
   position: inherit;
   left: inherit;
   top: inherit;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  display: grid;
+  opacity: 0;
   place-content: center;
 }
 
@@ -524,6 +527,7 @@ section .bigdivider img {
   border: 4px double rgb(196, 177, 166);
   z-index: 100;
   position: relative;
+  opacity: 0;
 }
 
 .modal .content .titleBar {
@@ -813,14 +817,14 @@ section .bigdivider img {
 }
 .menu .menuList .category {
   display: grid;
-  margin-bottom: getMargin(larger);
+  margin-bottom: 30px;
 }
 .menu .menuList .category .header .icon {
   height: 50px;
 }
 .menu .menuList .category .items {
   display: grid;
-  grid-gap: getMargin(larger) getMargin(larger);
+  grid-gap: 30px 30px;
   grid-template-columns: 1fr 1fr;
 }
 @media only screen and (max-width: 550px) {
@@ -865,7 +869,28 @@ section .bigdivider img {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
+.services .servicesTable {
+  display: flex;
+  gap: 10px;
+  padding: 10px 0;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+@font-face {
+  font-family: "Cabin";
+  src: url("./../fonts/cabin/Cabin-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Cabin";
+  src: url("./../fonts/cabin/Cabin-Bold.ttf") format("truetype");
+  font-weight: bold;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
 .modal {
+  display: grid;
   max-width: 100%;
   max-height: 100%;
   position: fixed;
@@ -873,19 +898,19 @@ section .bigdivider img {
   left: 0;
   width: 100%;
   height: 100%;
-  display: grid;
   place-content: center;
   z-index: 99;
 }
 
 .modal .background {
+  display: grid;
   position: inherit;
   left: inherit;
   top: inherit;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  display: grid;
+  opacity: 0;
   place-content: center;
 }
 
@@ -894,6 +919,7 @@ section .bigdivider img {
   border: 4px double rgb(196, 177, 166);
   z-index: 100;
   position: relative;
+  opacity: 0;
 }
 
 .modal .content .titleBar {
@@ -1373,26 +1399,6 @@ section .bigdivider img {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
-.services .servicesTable {
-  display: flex;
-  gap: 10px;
-  padding: 10px 0;
-  margin: 10px 0;
-  flex-wrap: wrap;
-}
-
-@font-face {
-  font-family: "Cabin";
-  src: url("./../fonts/cabin/Cabin-Regular.ttf") format("truetype");
-  font-weight: normal;
-}
-@font-face {
-  font-family: "Cabin";
-  src: url("./../fonts/cabin/Cabin-Bold.ttf") format("truetype");
-  font-weight: bold;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
 section {
   padding: 10px;
   position: relative;
@@ -1583,6 +1589,7 @@ section .bigdivider img {
 }
 
 .modal {
+  display: grid;
   max-width: 100%;
   max-height: 100%;
   position: fixed;
@@ -1590,18 +1597,18 @@ section .bigdivider img {
   left: 0;
   width: 100%;
   height: 100%;
-  display: grid;
   place-content: center;
   z-index: 99;
 }
 .modal .background {
+  display: grid;
   position: inherit;
   left: inherit;
   top: inherit;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  display: grid;
+  opacity: 0;
   place-content: center;
 }
 .modal .content {
@@ -1609,6 +1616,7 @@ section .bigdivider img {
   border: 4px double rgb(196, 177, 166);
   z-index: 100;
   position: relative;
+  opacity: 0;
 }
 .modal .content .titleBar {
   color: white;
@@ -1926,6 +1934,7 @@ section .bigdivider img {
   text-rendering: optimizeLegibility;
 }
 .modal {
+  display: grid;
   max-width: 100%;
   max-height: 100%;
   position: fixed;
@@ -1933,19 +1942,19 @@ section .bigdivider img {
   left: 0;
   width: 100%;
   height: 100%;
-  display: grid;
   place-content: center;
   z-index: 99;
 }
 
 .modal .background {
+  display: grid;
   position: inherit;
   left: inherit;
   top: inherit;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  display: grid;
+  opacity: 0;
   place-content: center;
 }
 
@@ -1954,6 +1963,7 @@ section .bigdivider img {
   border: 4px double rgb(196, 177, 166);
   z-index: 100;
   position: relative;
+  opacity: 0;
 }
 
 .modal .content .titleBar {
@@ -2343,6 +2353,7 @@ section .bigdivider img {
   text-rendering: optimizeLegibility;
 }
 .modal {
+  display: grid;
   max-width: 100%;
   max-height: 100%;
   position: fixed;
@@ -2350,19 +2361,19 @@ section .bigdivider img {
   left: 0;
   width: 100%;
   height: 100%;
-  display: grid;
   place-content: center;
   z-index: 99;
 }
 
 .modal .background {
+  display: grid;
   position: inherit;
   left: inherit;
   top: inherit;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  display: grid;
+  opacity: 0;
   place-content: center;
 }
 
@@ -2371,6 +2382,7 @@ section .bigdivider img {
   border: 4px double rgb(196, 177, 166);
   z-index: 100;
   position: relative;
+  opacity: 0;
 }
 
 .modal .content .titleBar {
@@ -2658,9 +2670,9 @@ section .bigdivider img {
   }
 }
 .infoModal {
+  display: grid;
   width: 900px;
   height: 560px;
-  display: grid;
   grid-auto-flow: column;
   grid-template-columns: 2fr 3fr;
 }
@@ -2686,12 +2698,12 @@ section .bigdivider img {
 }
 
 .infoModal .info {
+  display: grid;
   grid-column: span 3;
   background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
   color: white;
   text-align: center;
   padding: 20px;
-  display: grid;
   grid-template-rows: auto auto 1fr auto;
   text-shadow: 0.1em 0.1em 0.2em black;
   overflow: auto;
@@ -2708,8 +2720,8 @@ section .bigdivider img {
 }
 
 .infoModal .info .wrapper {
-  overflow: auto;
   display: grid;
+  overflow: auto;
   align-items: center;
 }
 
@@ -2719,6 +2731,20 @@ section .bigdivider img {
 
 .infoModal .info .wrapper .body {
   color: lightgrey;
+}
+
+.infoModal .info .wrapper .body .oracle-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px 20px;
+}
+
+.infoModal .info .wrapper .body .oracle-cards .menuItem {
+  display: flex;
+}
+
+.infoModal .info .wrapper .body .oracle-cards .menuItem .description {
+  text-align: left !important;
 }
 
 .infoModal .info .wrapper .body p {

@@ -8,36 +8,39 @@ import MenuItemSpecial from '../../components/MenuItemSpecial/_MenuItemSpecial';
 import SelectNav from '../../components/common/SelectNav';
 import Title from '../../components/common/Title';
 import InfoModal from '../../components/common/Modals/InfoModal/InfoModal';
+import MenuGroupFadeIn from './MenuGroupFadeIn';
+
+import FadeIn from '../../components/common/FadeIn';
 
 type Props = {
     handleModal: (content: any) => void;
 }
 
+const sections = [
+    {
+        name: "Drinks",
+        weekly: "cocktail",
+        types: ["drink", "cocktail"]
+    },
+    {
+        name: "Meals",
+        weekly: "meal",
+        types: ["meal"]
+    },
+    {
+        name: "Desserts",
+        types: ["dessert"]
+    },
+    {
+        name: "Luxe",
+        types: ["luxe"]
+    }
+];
+
 function Menu({ handleModal }:Props) {
     const [ menu, setMenu ] = useState<MenuTypeType[]>([]);
     const [ weeklySpecials, setWeeklySpecials ] = useState<any>([]);
     const [ selectedSection, setSelectedSection ] = useState<number>(0);
-
-    const sections = [
-        {
-            name: "Drinks",
-            weekly: "cocktail",
-            types: ["drink", "cocktail"]
-        },
-        {
-            name: "Meals",
-            weekly: "meal",
-            types: ["meal"]
-        },
-        {
-            name: "Desserts",
-            types: ["dessert"]
-        },
-        {
-            name: "Luxe",
-            types: ["luxe"]
-        }
-    ];
 
     const oldMenu = menu.find(type => type.name === "legacy");
     const oldMenuModal = oldMenu && <InfoModal 
@@ -121,26 +124,23 @@ function Menu({ handleModal }:Props) {
             <div className="menuList">
                 {
                     currentSpecial !== undefined &&
-                        <div className="specialMenuSection">
-                            <MenuItemSpecial item={currentSpecial.item} key={`${currentSpecial.name}special`} />
-                        </div>
-                        
+                    <MenuItemSpecial item={currentSpecial.item} key={`${currentSpecial.name}special`} />
                 }
 
                 {menu.map(type => (
                     sections[selectedSection].types.includes(type.name) &&
                         <div className="category">
-                            <Title 
-                                text={type.title}
-                                icon={`images/icons/${type.name}.png`}
-                                divider={false}
-                                key={type.title}
-                            />
+                            <FadeIn delay={currentSpecial ? 0.3 : 0}>
+                                <Title 
+                                    text={type.title}
+                                    icon={`images/icons/${type.name}.png`}
+                                    divider={false}
+                                    key={type.title}
+                                />
+                            </FadeIn>
                             
                             <div className="items">
-                                {type.items.map(item => (
-                                    <MenuItem item={item!} key={item.id} />
-                                ))}
+                                <MenuGroupFadeIn items={type.items} delay={currentSpecial ? 0.4 : 0}/>
                             </div>
                         </div>
                 ))}

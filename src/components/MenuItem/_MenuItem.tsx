@@ -1,12 +1,15 @@
+import { forwardRef } from "react";
+
 import { MenuItemType } from "../../commonTypes";
 import { formatStringAsPrice } from "../../commonFunctions";
 import sources from "../../sources";
 
 type Props = {
     item: MenuItemType
+    ref?: any
 }
 
-function MenuItem(props: Props) {
+export default forwardRef(function MenuItem(props: Props) {
     const { 
         id,
         name,
@@ -16,6 +19,10 @@ function MenuItem(props: Props) {
         type
     } = props.item;
 
+    const {
+        ref
+    } = props;
+
     const typesWithImages = ['meal', 'luxe', 'dessert'];
 
     const cdn = sources.cdn + "/oasis/dining_items/";
@@ -23,7 +30,7 @@ function MenuItem(props: Props) {
     const imgName = cdn + id + imgFormat;
 
     return (
-        <div className={`menuItem`} key={name}>
+        <div className={`menuItem`} key={name} ref={ref}>
             {typesWithImages.includes(type) &&
             <span className="column">
                     <span className="image">
@@ -49,6 +56,4 @@ function MenuItem(props: Props) {
             </span>
         </div>
     );
-}
-
-export default MenuItem;
+});
