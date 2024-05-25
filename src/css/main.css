@@ -23,8 +23,6 @@
 }
 .modal {
   display: grid;
-  max-width: 100%;
-  max-height: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -499,8 +497,6 @@ section .bigdivider img {
 }
 .modal {
   display: grid;
-  max-width: 100%;
-  max-height: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -891,8 +887,6 @@ section .bigdivider img {
 }
 .modal {
   display: grid;
-  max-width: 100%;
-  max-height: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -1190,6 +1184,9 @@ section .bigdivider img {
   display: grid;
   gap: 5px;
   justify-content: center;
+}
+.home .event-banner img {
+  width: 100%;
 }
 .home .logo {
   text-align: center;
@@ -1590,8 +1587,6 @@ section .bigdivider img {
 
 .modal {
   display: grid;
-  max-width: 100%;
-  max-height: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -1935,8 +1930,6 @@ section .bigdivider img {
 }
 .modal {
   display: grid;
-  max-width: 100%;
-  max-height: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -2285,7 +2278,6 @@ section .bigdivider img {
 }
 
 .galleryModal {
-  max-height: 100vh;
   overflow: hidden;
 }
 
@@ -2323,7 +2315,7 @@ section .bigdivider img {
   display: flex;
   gap: 5px;
   color: white;
-  background: getColor(gradients, steel);
+  background: linear-gradient(to bottom right, rgb(49, 49, 49), black);
   justify-content: center;
   align-content: center;
   padding: 3px;
@@ -2337,7 +2329,7 @@ section .bigdivider img {
 }
 
 .galleryModal .bottomNav .dot.active {
-  color: getColor(solids, wine);
+  color: rgb(134, 0, 0);
 }
 
 @font-face {
@@ -2354,8 +2346,6 @@ section .bigdivider img {
 }
 .modal {
   display: grid;
-  max-width: 100%;
-  max-height: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -2656,7 +2646,7 @@ section .bigdivider img {
 
 .imageModal img {
   width: 100%;
-  max-height: 90vh;
+  max-height: 80vh;
   margin-bottom: -4px;
 }
 

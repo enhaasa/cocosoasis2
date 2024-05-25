@@ -109,7 +109,6 @@ function Home() {
       </div>
       
       <main>
-        
         {sections.map(section => (
           <Section 
             title={section.title} 
@@ -121,7 +120,7 @@ function Home() {
       </main>
 
       <footer>
-          <span>©2022-2023 Coco's Oasis All Rights Reserved</span>
+          <span>©2022-2024 Coco's Oasis All Rights Reserved</span>
           <span>•</span>
           <span>Website by _enhasa</span>
       </footer>

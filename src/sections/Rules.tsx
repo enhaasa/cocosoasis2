@@ -34,7 +34,6 @@ function Rules() {
                 <li>Do not use Shout or Yell chat. These are reserved for employees.</li>
             </ul>
 
-            
             <strong>Search Info</strong>
             <p>
                 Looking to Meld Materia status is reserved for employees.<br />

@@ -98,7 +98,7 @@ const includedSerivces: Service[] = [
         available: true,
     }, {
         header: "Relaxing Music Stream",
-        undertitle: "Personally currated romantic songs on Twitch",
+        undertitle: "Personally hand-picked romantic songs on Twitch",
         icon: MusicIcon,
         body: 
             <span>
@@ -106,7 +106,7 @@ const includedSerivces: Service[] = [
                     We value your evening at the Oasis and want and want to help set the tone for comfort and romance.
                 </p>
                 <p>
-                    That's why our stream has multiple, personally currated playlists with everything from acoustic guitar, piano and beautiful Bossa Nova covers of many well-known songs.
+                    That's why our stream has multiple, personally hand-picked playlists with everything from acoustic guitar, piano and beautiful Bossa Nova covers of many well-known songs.
                     The tracks are often accompanied by soft background-noises of dripping rain, ocean breezes, or crackles from a warm fireplace.
                 </p>
                 <p>

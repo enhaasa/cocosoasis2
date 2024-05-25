@@ -45,7 +45,9 @@ function StaffItem(props: Props) {
                     </div>}
 
                 <div className="image">
-                    <img src={image_url ? image_url : undefined} loading="lazy" alt='Staff'></img>
+                    {image_url &&
+                        <img src={image_url} loading="lazy" alt=''></img>
+                    }
                 </div>
 
                 <div className="text">

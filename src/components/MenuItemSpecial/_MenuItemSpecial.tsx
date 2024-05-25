@@ -2,7 +2,6 @@ import { MenuItemType } from "../../commonTypes";
 import { formatStringAsPrice, capitalizeWords } from "../../commonFunctions";
 import sources from "../../sources";
 
-import FadeIn from "../common/FadeIn";
 import BounceIn from "../common/BounceIn";
 
 type Props = {
@@ -20,11 +19,6 @@ function MenuItemSpecial(props: Props) {
         image_url,
         type
     } = props.item;
-
-
-    function trimFull(string:string):string {
-        return string.replace(/\s/g, '');
-    }
 
     const typesWithImages = ['meal', 'luxe', 'dessert'];
 

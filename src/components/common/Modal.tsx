@@ -36,7 +36,7 @@ function Modal(props: Props & { children?: React.ReactNode}) {
 
         setTimeout(()=> {
             handleClose();
-        }, animations.fadeOut.duration * 1500)
+        }, animations.fadeOut.duration * 1500);
     }
 
     return (

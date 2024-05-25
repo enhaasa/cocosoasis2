@@ -3,14 +3,14 @@ import getExternal from '../../getExternal';
 import db_cache from '../../db_cache';
 import format from '../../format';
 import { MenuItemType, MenuTypeType } from '../../commonTypes';
-import MenuItem from '../../components/MenuItem/_MenuItem';
 import MenuItemSpecial from '../../components/MenuItemSpecial/_MenuItemSpecial';
 import SelectNav from '../../components/common/SelectNav';
 import Title from '../../components/common/Title';
 import InfoModal from '../../components/common/Modals/InfoModal/InfoModal';
-import MenuGroupFadeIn from './MenuGroupFadeIn';
+import MenuGroupFadeIn from './GroupFadeIn';
 
 import FadeIn from '../../components/common/FadeIn';
+import LazyLoadWrapper from '../../components/common/LazyLoadWrapper';
 
 type Props = {
     handleModal: (content: any) => void;
@@ -87,7 +87,6 @@ function Menu({ handleModal }:Props) {
                 const successfulResults = results.filter(result => result.status === 'fulfilled').map(result => (result as PromiseFulfilledResult<MenuItemType>).value);
     
                 // Filter out weekly items from the regular menu
-                
                 menu = menu.filter((item: MenuItemType) => !successfulResults.find(specialItem => specialItem.id === item.id));
                 setMenu(format.menu(menu));
     

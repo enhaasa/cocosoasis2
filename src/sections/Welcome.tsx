@@ -22,6 +22,8 @@ import ValentinesComFan2024 from './../images/communityfavourite2024.webp';
 import Valentines2023Image from './../images/valentines2023.webp';
 import Halloween2023WinnerImage from './../images/halloween2023winner.webp';
 
+import EventBannerImage from './../images/Cocos_Oasis_Kohzee_Collab.png';
+
 type Props = {
     handleModal: (content: any) => void;
     nextOpening: OpeningType | null;
@@ -85,6 +87,12 @@ function Home({handleModal, nextOpening}: Props) {
                 </div>
             </div>
 
+            <div className="divider" /> 
+
+            <div className='event-banner'>
+                <img src={EventBannerImage} alt='Reservation' />
+            </div>
+
             <div className="divider" />
             <div className="venueInfo">
                 <div className="column">
@@ -104,7 +112,7 @@ function Home({handleModal, nextOpening}: Props) {
                         <span className="infoWithIcon">
                             <img src={timeIcon} alt='Time'/>
                             Opening times: <br />
-                            7pm to 10pm ST
+                            6pm to 9pm ST
                         </span>
                     </div>
                     <div className="divider" />
