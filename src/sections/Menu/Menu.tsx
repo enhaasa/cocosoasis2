@@ -19,21 +19,21 @@ type Props = {
 const sections = [
     {
         name: "Drinks",
-        weekly: "cocktail",
-        types: ["drink", "cocktail"]
+        weekly: "Cocktails",
+        types: ["Drinks", "Cocktails"]
     },
     {
         name: "Meals",
-        weekly: "meal",
-        types: ["meal"]
+        weekly: "Meals",
+        types: ["Meals"]
     },
     {
         name: "Desserts",
-        types: ["dessert"]
+        types: ["Desserts"]
     },
     {
         name: "Luxe",
-        types: ["luxe"]
+        types: ["Luxe"]
     }
 ];
 
@@ -42,7 +42,7 @@ function Menu({ handleModal }:Props) {
     const [ weeklySpecials, setWeeklySpecials ] = useState<any>([]);
     const [ selectedSection, setSelectedSection ] = useState<number>(0);
 
-    const oldMenu = menu.find(type => type.name === "legacy");
+    const oldMenu = menu.find(type => type.name === "Legacy");
     const oldMenuModal = oldMenu && <InfoModal 
         content = {{
             header: "Old Menu",

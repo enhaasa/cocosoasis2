@@ -34,7 +34,7 @@ export default forwardRef(function MenuItem(props: Props) {
             {typesWithImages.includes(type) &&
             <span className="column">
                     <span className="image">
-                    <img src={imgName} alt='Menu Item' loading="lazy">
+                    <img src={imgName} alt='' loading="lazy">
                     </img>
                 </span>
             </span>}

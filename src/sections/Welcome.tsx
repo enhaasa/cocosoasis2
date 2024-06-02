@@ -22,7 +22,7 @@ import ValentinesComFan2024 from './../images/communityfavourite2024.webp';
 import Valentines2023Image from './../images/valentines2023.webp';
 import Halloween2023WinnerImage from './../images/halloween2023winner.webp';
 
-import EventBannerImage from './../images/Cocos_Oasis_Kohzee_Collab.png';
+import EventBannerImage from './../images/Cocos_Oasis_Kohzee_Collab.webp';
 
 type Props = {
     handleModal: (content: any) => void;
