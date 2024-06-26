@@ -1,5 +1,5 @@
 import { MenuItemType } from "../../commonTypes";
-import { formatStringAsPrice, capitalizeWords } from "../../commonFunctions";
+import { formatStringAsPrice } from "../../commonFunctions";
 import sources from "../../sources";
 
 import BounceIn from "../common/BounceIn";

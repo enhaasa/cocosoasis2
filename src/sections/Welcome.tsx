@@ -16,6 +16,7 @@ import getExternal from '../getExternal';
 import InfoModal from '../components/common/Modals/InfoModal/InfoModal';
 import ImageButton from './../components/common/ImageButton';
 import Title from './../components/common/Title';
+import db_cache from '../db_cache';
 
 import Valentines2024Image from './../images/valentines2024laura.webp';
 import ValentinesComFan2024 from './../images/communityfavourite2024.webp';
@@ -31,10 +32,15 @@ type Props = {
 
 function Home({handleModal, nextOpening}: Props) {
     const [ venueGallery, setVenueGallery ] = useState<ImageType[]>([]);
+    const [ realm, setRealm ] = useState<any>();
 
     useEffect(() => {
         getExternal.files("venue").then(data => {
             setVenueGallery(format.gallery(data));
+        });
+
+        db_cache.get('realm').then(data => {
+            setRealm(data[0]);
         });
     }, []);
 
@@ -80,7 +86,7 @@ function Home({handleModal, nextOpening}: Props) {
                         <img src={twitchIcon} alt='Twitch' /> Music Stream
                     </a>
 
-                    <a className="discord" href="https://discord.gg/B5PP9FBDRS" target="_blank" rel="noreferrer">
+                    <a className="discord" href={realm?.discord_invite_link} target="_blank" rel="noreferrer">
                         <img src={discordIcon} alt='Discord' /> Community
                     </a>
                     

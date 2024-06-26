@@ -14,6 +14,7 @@ if (isset($_GET['q'])) {
         ['staff', 'staff?realm_id=1'],
         ['partners', 'partners?realm_id=1'],
         ['openings', 'openings?realm_id=1'],
+        ['realm', 'realm?realm_id=1']
     ];
 
     $query = $_GET['q'] ?? null;
