@@ -8,9 +8,7 @@ import SelectNav from '../../components/common/SelectNav';
 import Title from '../../components/common/Title';
 import InfoModal from '../../components/common/Modals/InfoModal/InfoModal';
 import MenuGroupFadeIn from './GroupFadeIn';
-
 import FadeIn from '../../components/common/FadeIn';
-import LazyLoadWrapper from '../../components/common/LazyLoadWrapper';
 
 type Props = {
     handleModal: (content: any) => void;
@@ -19,12 +17,14 @@ type Props = {
 const sections = [
     {
         name: "Drinks",
-        weekly: "Cocktails",
+        weekly: "Cocktail",
+        weeklyId: 3,
         types: ["Drinks", "Cocktails"]
     },
     {
         name: "Meals",
-        weekly: "Meals",
+        weekly: "Meal",
+        weeklyId: 4,
         types: ["Meals"]
     },
     {
@@ -79,7 +79,7 @@ function Menu({ handleModal }:Props) {
                 const specialSections = sections.filter(section => section.weekly && section.weekly);
     
                 // Group all promises and await all at once
-                const promises = specialSections.map(section => getExternal.weekly(section.weekly!));
+                const promises = specialSections.map(section => getExternal.weekly(section.weeklyId!));
     
                 const results = await Promise.allSettled(promises);
     
@@ -91,7 +91,7 @@ function Menu({ handleModal }:Props) {
                 setMenu(format.menu(menu));
     
                 // Render specials, only including the successful ones
-                const specials = successfulResults.map((item, index) => ({ name: specialSections[index].weekly, item: item }));
+                const specials = successfulResults.map((item, index) => ({ name: specialSections[index].weekly, item: item, weeklyName: specialSections[index].weekly }));
                 setWeeklySpecials(specials);
             } catch (error) {
                 console.error('Failed to fetch weekly specials:', error);
@@ -123,7 +123,7 @@ function Menu({ handleModal }:Props) {
             <div className="menuList">
                 {
                     currentSpecial !== undefined &&
-                    <MenuItemSpecial item={currentSpecial.item} key={`${currentSpecial.name}special`} />
+                    <MenuItemSpecial item={currentSpecial.item} name={currentSpecial.weeklyName} key={`${currentSpecial.name}special`} />
                 }
 
                 {menu.map(type => (

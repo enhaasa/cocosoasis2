@@ -9,8 +9,8 @@ const getExternal = {
         const result = JSON.parse(await this.query(query, "/db_cache/get.php?table="));
         return result;
     },
-    weekly: async function(type: string) {
-        return fetch(`https://littlekiwi.app/api/special_menu_item?type='${type}'`)
+    weekly: async function(categoryId: number) {
+        return fetch(`https://littlekiwi.app/api/special_menu_item?category_id='${categoryId}'`)
             .then(res => res.json())
             .then(data => data);
     },

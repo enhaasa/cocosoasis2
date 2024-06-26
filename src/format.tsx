@@ -32,7 +32,7 @@ const format = {
             //Turn first character uppercase
             typeText = typeText.charAt(0).toUpperCase() + typeText.slice(1);
             
-            if (ruleIndex === null) return typeText + "s";
+            if (ruleIndex === null) return typeText;
             return rules[ruleIndex].replacement;
         }
 

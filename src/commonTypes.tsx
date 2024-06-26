@@ -12,6 +12,7 @@ export type MenuItemType = {
     item: string;
     is_available: string | boolean;
     image_url: string | boolean;
+    weeklyName?: string;
 }
 
 export type MenuTypeType = {

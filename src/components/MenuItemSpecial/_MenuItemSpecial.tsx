@@ -5,7 +5,8 @@ import sources from "../../sources";
 import BounceIn from "../common/BounceIn";
 
 type Props = {
-    item: MenuItemType
+    item: MenuItemType,
+    name?: string;
 }
 
 function MenuItemSpecial(props: Props) {
@@ -17,10 +18,10 @@ function MenuItemSpecial(props: Props) {
         ingredients,
         description,
         image_url,
-        type
+        type,
     } = props.item;
 
-    const typesWithImages = ['meal', 'luxe', 'dessert'];
+    const typesWithImages = ['Meals', 'Luxe', 'Desserts'];
 
     const cdn = sources.cdn + "/oasis/dining_items/";
     const imgFormat = ".webp";
@@ -40,7 +41,7 @@ function MenuItemSpecial(props: Props) {
 
                     <span className="column" >
                         <div className="row">
-                                <span className="label">{`${capitalizeWords(type)} of the week`}</span>
+                                <span className="label">{`${props.name} of the week`}</span>
 
                         </div>
                         <div className="row">

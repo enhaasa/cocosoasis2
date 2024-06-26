@@ -87,11 +87,13 @@ function Home({handleModal, nextOpening}: Props) {
                 </div>
             </div>
 
+            {/*
             <div className="divider" /> 
-
+            
             <div className='event-banner'>
                 <img src={EventBannerImage} alt='Reservation' />
             </div>
+            */}
 
             <div className="divider" />
             <div className="venueInfo">

@@ -23,7 +23,7 @@ export default forwardRef(function MenuItem(props: Props) {
         ref
     } = props;
 
-    const typesWithImages = ['meal', 'luxe', 'dessert'];
+    const typesWithImages = ['Meals', 'Luxe', 'Desserts'];
 
     const cdn = sources.cdn + "/oasis/dining_items/";
     const imgFormat = ".webp";

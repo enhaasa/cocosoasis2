@@ -37,7 +37,10 @@ export function capitalizeFirstLetter(string: string): string {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-export function capitalizeWords(full: string): string {
+export function capitalizeWords(full?: string): string {
+
+    if (full === undefined) return '';
+
     return full
       .split(" ")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
