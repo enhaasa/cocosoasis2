@@ -403,7 +403,7 @@ section .bigdivider img {
   color: lightgrey;
   text-shadow: 0.1em 0.1em 0.2em black;
 }
-.about .collection .item .banner.event-manager {
+.about .collection .item .banner.head-of-operations {
   background: linear-gradient(to bottom right, #803A5C, #27121c);
   color: lightgrey;
   text-shadow: 0.1em 0.1em 0.2em black;
@@ -1185,8 +1185,12 @@ section .bigdivider img {
   gap: 5px;
   justify-content: center;
 }
+.home .event-banner {
+  display: grid;
+  justify-items: center;
+}
 .home .event-banner img {
-  width: 100%;
+  height: 800px;
 }
 .home .logo {
   text-align: center;

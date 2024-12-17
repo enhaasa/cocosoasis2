@@ -22,8 +22,9 @@ import Valentines2024Image from './../images/valentines2024laura.webp';
 import ValentinesComFan2024 from './../images/communityfavourite2024.webp';
 import Valentines2023Image from './../images/valentines2023.webp';
 import Halloween2023WinnerImage from './../images/halloween2023winner.webp';
+import Halloween2024WinnerImage from './../images/halloween2024winner.webp';
 
-import EventBannerImage from './../images/Cocos_Oasis_Kohzee_Collab.webp';
+import EventBannerImage from './../images/Oasis_Silkie_Mafia_Night.webp';
 
 type Props = {
     handleModal: (content: any) => void;
@@ -93,13 +94,14 @@ function Home({handleModal, nextOpening}: Props) {
                 </div>
             </div>
 
-            {/*
-            <div className="divider" /> 
             
-            <div className='event-banner'>
-                <img src={EventBannerImage} alt='Reservation' />
-            </div>
-            */}
+            {/*<>
+                <div className="divider" /> 
+                
+                <div className='event-banner'>
+                    <img src={EventBannerImage} alt='Reservation' />
+                </div>
+            </>*/}
 
             <div className="divider" />
             <div className="venueInfo">
@@ -120,7 +122,7 @@ function Home({handleModal, nextOpening}: Props) {
                         <span className="infoWithIcon">
                             <img src={timeIcon} alt='Time'/>
                             Opening times: <br />
-                            6pm to 9pm ST
+                            7pm to 10pm ST
                         </span>
                     </div>
                     <div className="divider" />
@@ -164,20 +166,35 @@ function Home({handleModal, nextOpening}: Props) {
                 
                 <div className="main">
                     <div className="title">
-                        Valentines 2024 Photo Contest Winner
+                        Halloween 2024 Photo Contest Winner
                     </div>
                     <div className="description">
                         by Laura Sykurwyn  
                     </div>
                     <div className="image">
                         <ImageButton
-                            image={{name: "Valentines 2024 Winner", url: Valentines2024Image}}
+                            image={{name: "Halloween 2024 Winner", url: Halloween2024WinnerImage}}
                             handleModal={handleModal}
                         />
                     </div>
                 </div>
 
                 <div className="gallery">
+                    <div className="item">
+                        <div className="title">
+                            Valentines 2024 Photo Contest Winner
+                        </div>
+                        <div className="description">
+                            by Laura Sykurwyn  
+                        </div>
+                        <div className="image">
+                            <ImageButton
+                                image={{name: "Valentines 2024 Winner", url: Valentines2024Image}}
+                                handleModal={handleModal}
+                            />
+                        </div>
+                    </div>
+
                     <div className="item">
                         <div className="title">
                             Valentines 2024 Community Favourite

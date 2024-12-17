@@ -7,16 +7,6 @@ export type Card = {
 
 const cards: Card[] = [
     {
-        name: 'Basic Reading',
-        description: 'Receive a general message or advice tailored to your current situation or question.',
-        cards: 2,
-        price: 100000
-    }, {
-        name: 'Past Lives',
-        description: 'Delve into karmic memories or explore professional paths influenced by your past lives.',
-        cards: 3,
-        price: 150000
-    }, {
         name: 'Messages From Your Soul',
         description: 'Discover the messages your soul is urging you to reconnect with, illuminating paths for personal growth.',
         cards: 3,
@@ -27,10 +17,10 @@ const cards: Card[] = [
         cards: 3,
         price: 150000
     }, {
-        name: 'Love & Other Relationship',
-        description: 'Receive a comprehensive analysis and evolutionary perspective on your relationships, filled with detailed insights.',
-        cards: 8,
-        price: 400000
+        name: 'Lenormand Reading',
+        description: 'A detailed answer to your precise, practical question about romance, work or your everyday life.',
+        cards: 5,
+        price: 250000
     }
 ]
 

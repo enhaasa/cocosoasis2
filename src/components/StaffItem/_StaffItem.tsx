@@ -22,8 +22,8 @@ function StaffItem(props: Props) {
         handleModal
     } = props;
 
-    function formatSpecialTitle(title:string):string {
-        return capitalizeWords(title.replaceAll("-", " "));
+    function formatBannerTitle(title: string): string {
+        return title.replaceAll(" ", "-").toLowerCase();
     }
 
     const staffModal = <InfoModal content={{
@@ -40,8 +40,8 @@ function StaffItem(props: Props) {
                 <img className="backgroundDecor" src={backgroundDecor} alt='Staff Background Decor'/>
 
                 {title !== 'staff' &&
-                    <div className={`banner ${title}`}>
-                        <div className="specialPosition">{formatSpecialTitle(title)}</div>
+                    <div className={`banner ${formatBannerTitle(title)}`}>
+                        <div className="specialPosition">{title}</div>
                     </div>}
 
                 <div className="image">

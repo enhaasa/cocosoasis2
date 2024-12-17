@@ -34,7 +34,7 @@ function Staff({ handleModal }: Props) {
             }
 
             function sortByTitle(staff: StaffItemType[]): StaffItemType[] {
-            const titles = ["owner", "assistant", "event-planner"];
+            const titles = ["Owner", "Assistant", "Head of Operations"];
             const titleOrder: { [title: string]: number } = {};
             titles.forEach((title, index) => titleOrder[title] = index);
             
@@ -79,7 +79,7 @@ function Staff({ handleModal }: Props) {
                         </p>
                         <p>
                             Although much has changed over time, the heart of the Oasis has ever been beating for the same purpose: 
-                            To offer a romantic, relaxing, and immersive experience, both to the lovebirds of Eorzea and for any soul who needs a break from everyday life.
+                            To offer a romantic, immersive, and luxurious experience, both to the lovebirds of Eorzea and for any soul who needs a break from everyday life.
                         </p>
                     </span>
                 </div>
